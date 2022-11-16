@@ -1,0 +1,50 @@
+/* Estilos de la NavBar */
+
+.navbar {
+    background-color: rgb(240, 185, 78);
+    -webkit-box-shadow: 0px -4px 20px 0px rgba(0,0,0,0.35); 
+    box-shadow: 0px 9px 12px 0px rgba(58, 13, 21,0.3);
+}
+.nav-link {
+    color: rgb(58, 13, 21);
+    font-weight: 500;
+    font-size: 20px;
+}
+body {
+    background-color: rgb(245, 235, 202);
+}
+
+#navbarNav {
+    text-align: center;
+}
+
+.navbar-toggler {
+    background-color: rgb(58, 13, 21);
+}
+
+#navbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
+
+#menuIcons {
+    position: relative;
+    top: 2px;
+    left: -10px;
+
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 800,
+  'GRAD' 200,
+  'opsz' 48
+}
+
+#logoNavBar {
+    width: 40px;
+    position: relative;
+    left: 5px;
+}
