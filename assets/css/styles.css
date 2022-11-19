@@ -36,11 +36,11 @@ body {
 }
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 1,
-  'wght' 800,
-  'GRAD' 200,
-  'opsz' 48
+font-variation-settings:
+'FILL' 1,
+'wght' 800,
+'GRAD' 200,
+'opsz' 48
 }
 
 #logoNavBar {
@@ -48,3 +48,60 @@ body {
     position: relative;
     left: 5px;
 }
+
+/*ESTILOS CARRITO DE COMPRAS*/
+
+
+#user-column, li{
+    list-style: none;
+    
+
+}
+.accordion-item{
+    background-color: rgb(245, 235, 202);
+}
+
+
+/*Estilos de botones de columna de usuario*/
+#btn{
+    background-color: rgb(240, 185, 90);
+    box-shadow: 0px 0px 5px 3px rgb(240, 185, 90);
+    border-radius: 5px;
+}
+
+#total-container{
+    background-color: rgb(240, 185, 90);
+    box-shadow: 0px 0px 5px 3px rgb(240, 185, 90);
+    border-radius: 5px;
+}
+
+/* Scroll Personalizado */
+.order{
+    width: 500px;
+    height: 200px;
+    margin: 10px auto;
+    padding: 20px;
+    overflow: auto;
+    font-family: 'Open Sans';
+    border-radius: 4px;
+}
+.order::-webkit-scrollbar {
+	width: 7px;
+}
+
+.order::-webkit-scrollbar-thumb {
+	background: #ff9d00;
+	border-radius: 5px;
+}
+
+#productcard1 {
+    background-color: rgb(245, 235, 202);
+
+}
+
+#productcard2 {
+    background-color: rgb(245, 235, 202);
+
+}
+
+
