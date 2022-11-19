@@ -1,61 +1,103 @@
 function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HTML
     var navBar = document.getElementById("navbar");
     navBar.innerHTML = `
-    <nav class="navbar navbar-expand-sm">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="index.html">
-        <img src="../assets/img/LogoBalxhe.png" alt="" id="logoNavBar">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon">B</span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center" id="menu-center">
-        <ul class="navbar-nav ">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="index.html">Inicio</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="products.html">Productos</a>
-          </li>
-          
-          <li class="nav-item">
-            <a class="nav-link" href="about-us.html">¿Quienes somos?</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="FAQ.html">FAQ</a>
-          </li>
-          
-        </ul>
-      </div>
-      
-        <ul class="navbar-nav d-flex" id="menuIcons">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">
-                <span class="material-symbols-outlined">
-                    account_circle
-                </span>
+    <div id="menuDesplegable">
+            <button id="togglerMenu" onclick="myFunction(this)">
+                <div class="animatedButton">
+                    <div class="bar1"></div>
+                    <div class="bar2"></div>
+                    <div class="bar3"></div>
+                </div>
+            </button>
+        </div>
+        
+        <div id=logo>
+            <a href="./index.html">
+                <img src="./assets/img/logo_banner-bigger.png" alt="" id="logoNavBar">
+                <img src="./assets/img/LogoBalxhe.png" alt="" id="logoMobileNavBar">
+        
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="shopping-cart.html">
-                <span class="material-symbols-outlined">
-                    shopping_cart
-                </span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-                <span class="material-symbols-outlined">
+        </div>
+        
+        <div id=navbar1>
+            <nav>
+                <a href="./index.html">Inicio</a>
+                <a href="./products.html">Productos</a>
+                <a href="./about-us.html">¿Quienes somos?</a>
+                <a href="./FAQ.html">FAQ</a>
+            </nav>
+        </div>
+        
+        <div id="menuIcons">
+            <a href="#">
+                <span class="material-symbols-outlined" id="mobileNavbarIconOut">
                     search
                 </span>
             </a>
-          </li>
+            <a aria-current="page" href="./user-page.html">
+                <span class="material-symbols-outlined" id="mobileNavbarIconOut">
+                    account_circle
+                </span>
+            </a>
+            <a href="shopping-cart.html">
+                <span class="material-symbols-outlined" id="shoppingCartIcon">
+                    shopping_cart
+                </span>
+            </a>
+        </div>
+        <div id="menuMobile">
+            <ul>
+                <li>
+                    <a href="./index.html">
+                        <form>
+                            <input type="text" class="searchInput" value=" Buscar Productos" id="inputBuscador"></input>
+                            <a class="searchInput" type="submit" value="Submit">
+                                <span class="material-symbols-outlined" id="menuMobileIcons">
+                                    search
+                                </span>
+                            </a>
+                        </form>
+                    </a>
+                </li>
+                <li><a href="./user-page.html">
+                        <span class="material-symbols-outlined"  id="menuMobileIcons">
+                            account_circle
+                        </span>
+                        Account</a></li>
+                <li><a href="./index.html">Inicio</a></li>
+                <li><a href="./products.html">Productos</a></li>
+                <li><a href="./about-us.html">¿Quienes somos?</a> </li>
+                <li><a href="./FAQ.html">FAQ</a></li>
+        
+                <ul>
+        </div>
+  
+  `;
 
-          
-        </ul>
-      
-    </div>
-  </nav>`;
+}
+var openMenu = false;
+function myFunction(x) {
+  x.classList.toggle("change");
+  navbar.classList.toggle("change");
+    if (!openMenu){
+      setTimeout(() => {
+      menuMobile.classList.toggle("change");
+      }, 500);
+      openMenu = !openMenu;
+    } else {
+      menuMobile.classList.toggle("change");
+      openMenu = !openMenu;
+    }
+}
+function  preventRefreshButton () {
+  document.getElementById("inputBuscador").addEventListener("click", function(event){
+    event.preventDefault()
+  });
+
 }
 
+
 runNavBar(); //Corremos la funcion para que se agregue.
+preventRefreshButton();
+
+
