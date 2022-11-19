@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,155 +8,163 @@
 
     <link rel="icon" type="image/x-icon" href="./assets/img/LogoBalxhe.png"> <!--FavIcon-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> <!--Bootstrap 5-->
-    <link href="./assets/css/styles.css" rel="stylesheet"> <!--Own CSS-->
+    <link href="../assets/css/styles.css" rel="stylesheet"> <!--Own CSS-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> <!--Material Icons by Google-->
 
     <title>Carrito - Balxhe</title>
 </head>
 <body>
-    <div id="navbar"></div> <!--Con JS se agregará la NavBar-->
+    <div id="navbar">
+
+    </div> <!--Con JS se agregará la NavBar-->
+    
     <div class="container" > <!--El contenido de este DIV es temporal-->
         <br>
         <center><h1>Shopping Cart</h1></center>
     </div>
+    <div id="info"></div>
+</div>
 
-    <div class="container-fluid" > <!--Contenedor principal-->
-        <div class="row"> <!--Contenedor de las columnas de usuario y orden -->
-            <div class="col-md-7" id="user-column"> <!--Columna de usuario-->
+<div class="container-fluid" > <!--Contenedor principal-->
+    <div class="row"> <!--Contenedor de las columnas de usuario y orden -->
+        <div class="col-md-7" id="user-column"> <!--Columna de usuario-->
 
-                <button type="button" class="btn btn-primary btn-lg" id="loginbtn">Iniciar sesión</button> <!--BOTÓN INICIAR SESIÓN-->
+            <button type="button" class="btn btn-primary btn-lg" id="loginbtn">Iniciar sesión</button> <!--BOTÓN INICIAR SESIÓN-->
 
-                <div class="accordion" id="accordionPanelsStayOpenExample" > <!--ACCORDION DE BOOTSTRAP-->
-                    <!--USUARIO-->
-                    <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" id="btn"><!--BOTÓN DE USUARIO-->
-                        USUARIO
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
-                        <ul id="UserList">
-                            <li id="email">Correo electrónico: </li> <!--EMAIL CONTENEDOR-->
-                            <li id="username">Nombre de usuario: </li> <!--USERNAME CONTENEDOR-->
+            <div class="accordion" id="accordionPanelsStayOpenExample" > <!--ACCORDION DE BOOTSTRAP-->
+                <!--USUARIO-->
+                <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne" id="btn"><!--BOTÓN DE USUARIO-->
+                    USUARIO
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                    <ul id="UserList">
+                        <li id="email">Correo electrónico: </li> <!--EMAIL CONTENEDOR-->
+                        <li id="username">Nombre de usuario: </li> <!--USERNAME CONTENEDOR-->
+                    </ul>
+                </div>
+                </div>
+
+
+                <!--INFORMACIÓN DE CONTACTO-->
+                <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo" id="btn"> <!--BOTÓN DE INFORMACIÓN DE CONTACTO-->
+                    INFORMACIÓN DE CONTACTO
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
+                    <div class="accordion-body">
+                        <ul  id="ContactList">
+                            <li id="name">Nombre: </li> <!--NOMBRE CONTENEDOR-->
+                            <li id="lastname">Apellido: </li> <!--APELLIDO CONTENEDOR-->
+                            <li id="phone">Número de telefóno: </li> <!--No. TELEFONO CONTENEDOR-->
                         </ul>
                     </div>
-                    </div>
-
-
-                    <!--INFORMACIÓN DE CONTACTO-->
-                    <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo" id="btn"> <!--BOTÓN DE INFORMACIÓN DE CONTACTO-->
-                        INFORMACIÓN DE CONTACTO
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingTwo">
-                        <div class="accordion-body">
-                            <ul  id="ContactList">
-                                <li id="name">Nombre: </li> <!--NOMBRE CONTENEDOR-->
-                                <li id="lastname">Apellido: </li> <!--APELLIDO CONTENEDOR-->
-                                <li id="phone">Número de telefóno: </li> <!--No. TELEFONO CONTENEDOR-->
-                            </ul>
-                        </div>
-                    </div>
-                    </div>
-
-                    <!--DIRECCIÓN DE ENVÍO-->
-                    <div class="accordion-item">
-                    <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree" id="btn"><!--BOTÓN DE DIRECCIÓN DE ENVÍO-->
-                        DIRECCIÓN DE ENVÍO
-                        </button>
-                    </h2>
-                    <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
-                        <div class="accordion-body">
-                            <ul  id="AdressList">
-                                <li id="street">Calle </li> <!--CALLE CONTENEDOR-->
-                                <li id="nbh">Colonia: </li> <!--COLONIA CONTENEDOR-->
-                                <li id="hde">Hora de envío: </li> <!--HORA DE ENVÍO CONTENEDOR-->
-                                <li id="ei">Indicaciones especiales: </li> <!--INDICACIONES ESPECIALES CONTENEDOR-->
-                            </ul>
-                        </div>
-                    </div>
-                    </div>
+                </div>
                 </div>
 
-                <!--SECCIÓN DE ENVÍOS-->
-
-                <h2 id="shippingtext">TIPO DE ENVÍO</h2>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                    Envío standard
-                    </label>
+                <!--DIRECCIÓN DE ENVÍO-->
+                <div class="accordion-item">
+                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree" id="btn"><!--BOTÓN DE DIRECCIÓN DE ENVÍO-->
+                    DIRECCIÓN DE ENVÍO
+                    </button>
+                </h2>
+                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse" aria-labelledby="panelsStayOpen-headingThree">
+                    <div class="accordion-body">
+                        <ul  id="AdressList">
+                            <li id="street">Calle </li> <!--CALLE CONTENEDOR-->
+                            <li id="nbh">Colonia: </li> <!--COLONIA CONTENEDOR-->
+                            <li id="hde">Hora de envío: </li> <!--HORA DE ENVÍO CONTENEDOR-->
+                            <li id="ei">Indicaciones especiales: </li> <!--INDICACIONES ESPECIALES CONTENEDOR-->
+                        </ul>
+                    </div>
                 </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                    Envío express
-                    </label>
                 </div>
             </div>
 
+            <!--SECCIÓN DE ENVÍOS-->
 
-
-            <div class="col-md-5"> <!--Contenedor de la orden-->
-                <div class="row">
-                    <h2 id="order text">TU ORDEN</h2>
-
-                    <div class="order">
-                        <div class="card mb-3" style="max-width: 540px;" id="productcard1">
-                            <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="..." class="img-fluid rounded-start" alt="...">
-                            </div>
-
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-
-                        <div class="card mb-3" style="max-width: 540px;" id="productcard2">
-                            <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="..." class="img-fluid rounded-start" alt="...">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="card" id="total-container"> <!--PRECIOS CONTENEDOR-->
-                    <div class="card-body">
-                        <h6>Subtotal:</h6>
-                        <h6>Descuento:</h6>
-                        <h6>Envío:</h6>
-                        <h6>Total:</h6>
-                    </div>
-                </div>
+            <h2 id="shippingtext">TIPO DE ENVÍO</h2>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                <label class="form-check-label" for="flexRadioDefault1">
+                Envío standard
+                </label>
             </div>
-
-
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                <label class="form-check-label" for="flexRadioDefault2">
+                Envío express
+                </label>
+            </div>
         </div>
+
+
+
+        <div class="col-md-5"> <!--Contenedor de la orden-->
+            <div class="row">
+                <h2 id="order text">TU ORDEN</h2>
+
+                <div class="order">
+                    <div class="card mb-3" style="max-width: 540px;" id="productcard1">
+                        <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="..." class="img-fluid rounded-start" alt="...">
+                        </div>
+
+                        <div class="col-md-8">
+                            <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+
+                    <div class="card mb-3" style="max-width: 540px;" id="productcard2">
+                        <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="..." class="img-fluid rounded-start" alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="card" id="total-container"> <!--PRECIOS CONTENEDOR-->
+                <div class="card-body">
+                    <h6>Subtotal:</h6>
+                    <h6>Descuento:</h6>
+                    <h6>Envío:</h6>
+                    <h6>Total:</h6>
+                </div>
+            </div>
+        </div>
+
+
     </div>
+</div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+
+
+
     <script src="./assets/js/scripts.js"></script>
-    <script src="/assets/JS/sCart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script> <!--Script de Bootstrap 5-->
 </body>
 </html>
 
