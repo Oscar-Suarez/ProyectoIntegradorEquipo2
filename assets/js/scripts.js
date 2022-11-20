@@ -1,8 +1,9 @@
 function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HTML
     var navBar = document.getElementById("navbar");
+    navbar.classList.toggle("container"); //Agregamos compatibilidad con Bootstrap
     navBar.innerHTML = `
     <div id="menuDesplegable">
-            <button id="togglerMenu" onclick="myFunction(this)">
+            <button id="togglerMenu" onclick="animation(this)">
                 <div class="animatedButton">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
@@ -39,7 +40,7 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
                     account_circle
                 </span>
             </a>
-            <a href="shopping-cart.html">
+            <a href="shopping-cart.html" id="shoppingCartContainer">
                 <span class="material-symbols-outlined" id="shoppingCartIcon">
                     shopping_cart
                 </span>
@@ -76,7 +77,7 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
 
 }
 var openMenu = false;
-function myFunction(x) {
+function animation(x) {
   x.classList.toggle("change");
   navbar.classList.toggle("change");
     if (!openMenu){
