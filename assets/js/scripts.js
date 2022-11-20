@@ -1,9 +1,9 @@
 function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HTML
     var navBar = document.getElementById("navbar");
-    navbar.classList.toggle("container"); //Agregamos compatibilidad con Bootstrap
+    navBar.classList.toggle("container"); //Agregamos compatibilidad con Bootstrap
     navBar.innerHTML = `
     <div id="menuDesplegable">
-            <button id="togglerMenu" onclick="animation(this)">
+            <button id="togglerMenu">
                 <div class="animatedButton">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
@@ -76,9 +76,9 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
   `;
 
 }
-var openMenu = false;
-function animation(x) {
-  x.classList.toggle("change");
+
+function animation() {
+  togglerMenu.classList.toggle("change");
   navbar.classList.toggle("change");
     if (!openMenu){
       setTimeout(() => {
@@ -90,6 +90,7 @@ function animation(x) {
       openMenu = !openMenu;
     }
 }
+
 function  preventRefreshButton () {
   document.getElementById("inputBuscador").addEventListener("click", function(event){
     event.preventDefault()
@@ -100,5 +101,9 @@ function  preventRefreshButton () {
 
 runNavBar(); //Corremos la funcion para que se agregue.
 preventRefreshButton();
+var openMenu = false;
+var togglerMenu = document.getElementById("togglerMenu");
+console.log(togglerMenu);
+togglerMenu.addEventListener("click", animation);
 
 
