@@ -14,11 +14,36 @@
 </head>
 <body>
     <div id="navbar"></div> <!--Con JS se agregará la NavBar-->
-    
-    <div class="container" > <!--El contenido de este DIV es temporal-->
+    <div class="imagen-inicio">
+        <img src="" alt="Imagen cerveza"> <!-- Agregar imagen cerveza-->
+        </div>
+        <!-- Insertar navbar real aqui abajo-->
+        <nav class="navbar">
+        <h1> Inicio sesión </h1>
+        <form>  
+            <div class="form-placeholders">
+                <div> 
+                    <input required placeholder ="Correo electronico*" type="text" id="correo"/>
+                </div>
+                <br>
+                <div> 
+                <input required placeholder ="Contraseña*" type="password"  id="contraseña"/>
+                </div>
+                <br>
+                <a href="" style="text-decoration:none">¿Olvidó su contraseña?</a> <!-- Insertar en comillas del href el url de la pagina de iniciar sesion-->
+                <br>
+                <br>
+                <div>
+                    <button type="submit" id="boton-inicio">Iniciar sesión</button>  
+                </div>
+            </div>
+        </form>
         <br>
-        <center><h1>Pagina de Login</h1></center>
-    </div>
+        <br>   
+        <a href="/signup.html" style="text-decoration:none">Crear cuenta</a> <!-- Insertar en comillas del href el url de la pagina de crear cuenta-->
+        <a href="/index.html" style="text-decoration:none">Volver a la tienda</a> <!-- Insertar en comillas del href el url de la pagina de Volver a la tienda-->
+        <!-- Insertar la parte de abajo de la pagina que tienen todas las demas donde viene lo de avisos generales y las redes sociales-->
     <script src="./assets/js/scripts.js"></script>
+
 </body>
 </html>
