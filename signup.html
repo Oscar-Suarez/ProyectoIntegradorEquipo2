@@ -14,43 +14,43 @@
 </head>
 <body>
     <div id="navbar"></div> <!--Con JS se agregará la NavBar-->
-    <div class="imagen-inicio">
-        <img src="" alt="Imagen cerveza"> <!-- Agregar imagen cerveza-->
-    </div>
-
+        <img src="/assets//img/beer.jpeg" alt="Imagen cerveza"  width="1920" height="30"> <!-- Agregar imagen cerveza-->
+        <div class="center">
     <h1> Crear cuenta </h1>
 
     <form>   
-        <div class="form-placeholders">
+        <div>
             <div> 
-                <input required placeholder ="Nombre*" type="text" id="Nombre"  size = "50" min="10" max="100"
-                border: black 3px double;}/>
+                <input class="form-placeholders" required placeholder ="Nombre*" type="text" id="Nombre"/>
             </div>
             <br>
             <div> 
-            <input required placeholder ="Apellido*" type="text" id="Apellido"/>
+            <input class="form-placeholders" required placeholder ="Apellido*" type="text" id="Apellido"/>
             </div>
             <br>
             <!-- Aqui voy a poner la opcion multiple para que elijan dia mes y año-->
             <div> 
-                <input required placeholder ="FechaNacimiento*" type="text" id="FechaNacimiento"/>
+                <!-- <input class="form-placeholders" required placeholder ="FechaNacimiento*" type="text" id="FechaNacimiento"/> -->
+                <input class="form-placeholders" required placeholder ="fecha*" type="date" id="start" name="trip-start"
+       value="aaaa-mm-dd"
+       min="1920-01-01" max="2004-12-31">
             </div>
             <br>
             <div> 
-                <input required placeholder ="Correo electronico*" type="text" id="correo"/>
+                <input class="form-placeholders" required placeholder ="Correo electronico*" type="text" id="correo"/>
             </div>
             <br>
             <div> 
-            <input required placeholder ="Contraseña*" type="password"  id="contraseña"/>
+            <input class="form-placeholders" required placeholder ="Contraseña*" type="password"  id="contraseña"/>
             </div>
             <br>
             <div> 
-                <input required placeholder ="Confirmar contraseña*" type="password" id="confirmar-contraseña"/>
+                <input class="form-placeholders" required placeholder ="Confirmar contraseña*" type="password" id="confirmar-contraseña"/>
             </div>
             <br>
             <br>
             <div> 
-                <button type="submit" id="boton-crear">Crear</button>  
+                <button class="boton-crear" type="submit" id="boton-crear">Crear</button>  
             </div>
         </div>  
     </form> 
@@ -58,6 +58,7 @@
     <a href="/login.html" style="text-decoration:none">Iniciar sesion</a> <!-- Insertar en comillas del href el url de la pagina de iniciar sesion-->
     <a href="/index.html" style="text-decoration:none">Volver a la tienda</a> <!-- Insertar en comillas del href el url de la pagina de Volver a la tienda-->
     <!-- Insertar la parte de abajo de la pagina que tienen todas las demas donde viene lo de avisos generales y las redes sociales-->
+    </div>
     <script src="./assets/js/scripts.js"></script>
 
 </body>
