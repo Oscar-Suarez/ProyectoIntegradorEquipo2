@@ -16,7 +16,7 @@
     <div id="navbar"></div> <!--Con JS se agregará la NavBar-->
         <img src="/assets/img/beer.jpeg" alt="Imagen cerveza"  width="1920" height="30"> <!-- Agregar imagen cerveza-->
         <div class="center">
-        <h1> Inicio sesión </h1>
+        <h1 class="titulo-login-signup" > Inicio sesión </h1>
         <form>  
             <div>
                 <div> 
@@ -24,24 +24,28 @@
                 </div>
                 <br>
                 <div> 
-                <input class="form-placeholders" required placeholder ="Contraseña*" type="password"  id="contraseña"/>
+                    <input class="form-placeholders" required placeholder ="Contraseña*" type="password"  id="contraseña"/>
                 </div>
                 <br>
-                <a href="" style="text-decoration:none">¿Olvidó su contraseña?</a> <!-- Insertar en comillas del href el url de la pagina de iniciar sesion-->
+                <a href="" style="text-decoration:none" class= "vinculo-login-signup" >¿Olvidó su contraseña?</a> <!-- Insertar en comillas del href el url de la pagina de iniciar sesion-->
                 <br>
                 <br>
                 <div>
-                    <button type="submit" id="boton-inicio">Iniciar sesión</button>  
-                </div>
+                  <button class="boton-inicio" type="submit" id="boton-inicio">Iniciar sesión</button>  
+                 </div>
+              
             </div>
         </form>
+        <a href="/signup.html" class="vinculo-login-signup">Crear cuenta</a> <!-- Insertar en comillas del href el url de la pagina de crear cuenta-->
         <br>
-        <br>   
-        <a href="/signup.html" style="text-decoration:none">Crear cuenta</a> <!-- Insertar en comillas del href el url de la pagina de crear cuenta-->
-        <a href="/index.html" style="text-decoration:none">Volver a la tienda</a> <!-- Insertar en comillas del href el url de la pagina de Volver a la tienda-->
+        <a href="/index.html" class="vinculo-login-signup">Volver a la tienda</a> <!-- Insertar en comillas del href el url de la pagina de Volver a la tienda-->
         <!-- Insertar la parte de abajo de la pagina que tienen todas las demas donde viene lo de avisos generales y las redes sociales-->
         </div>
     <script src="./assets/js/scripts.js"></script>
 
 </body>
 </html>
+
+
+
+ <!-- minlength="3" maxlength="64"-->

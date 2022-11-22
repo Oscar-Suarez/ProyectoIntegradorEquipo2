@@ -381,4 +381,30 @@ body {
         width : 350px;
         height : 50px;
         border-radius: 10px;
+        margin-bottom: 10px;
+        font-family: 'Montserrat', sans-serif; 
     }
+
+    .boton-inicio {
+        size : "50" min="10" max="100";
+        background-color: rgb(221, 123, 44);
+        border: none;
+        color: white;
+        width : 350px;
+        height : 50px;
+        border-radius: 10px;
+        font-family: 'Montserrat', sans-serif; 
+        margin-bottom: 10px;
+    }
+
+    
+    .vinculo-login-signup {
+        text-decoration:none;
+        font-family: 'Montserrat', sans-serif; 
+        color: black;
+    }
+
+     .titulo-login-signup {
+        font-family: 'Ubuntu', sans-serif; 
+        color: black;
+     }
