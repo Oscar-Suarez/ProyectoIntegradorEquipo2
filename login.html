@@ -14,11 +14,38 @@
 </head>
 <body>
     <div id="navbar"></div> <!--Con JS se agregará la NavBar-->
-    
-    <div class="container" > <!--El contenido de este DIV es temporal-->
+        <img src="/assets/img/beer.jpeg" alt="Imagen cerveza"  width="1920" height="30"> <!-- Agregar imagen cerveza-->
+        <div class="center">
+        <h1 class="titulo-login-signup" > Inicio sesión </h1>
+        <form>  
+            <div>
+                <div> 
+                    <input class="form-placeholders" required placeholder ="Correo electronico*" type="text" id="correo"/>
+                </div>
+                <br>
+                <div> 
+                    <input class="form-placeholders" required placeholder ="Contraseña*" type="password"  id="contraseña"/>
+                </div>
+                <br>
+                <a href="" style="text-decoration:none" class= "vinculo-login-signup" >¿Olvidó su contraseña?</a> <!-- Insertar en comillas del href el url de la pagina de iniciar sesion-->
+                <br>
+                <br>
+                <div>
+                  <button class="boton-inicio" type="submit" id="boton-inicio">Iniciar sesión</button>  
+                 </div>
+              
+            </div>
+        </form>
+        <a href="/signup.html" class="vinculo-login-signup">Crear cuenta</a> <!-- Insertar en comillas del href el url de la pagina de crear cuenta-->
         <br>
-        <center><h1>Pagina de Login</h1></center>
-    </div>
+        <a href="/index.html" class="vinculo-login-signup">Volver a la tienda</a> <!-- Insertar en comillas del href el url de la pagina de Volver a la tienda-->
+        <!-- Insertar la parte de abajo de la pagina que tienen todas las demas donde viene lo de avisos generales y las redes sociales-->
+        </div>
     <script src="./assets/js/scripts.js"></script>
+
 </body>
 </html>
+
+
+
+ <!-- minlength="3" maxlength="64"-->
