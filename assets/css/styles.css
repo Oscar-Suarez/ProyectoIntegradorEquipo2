@@ -359,13 +359,38 @@ body {
 
 }
 
+
+
 /*ESTILOS CARRITO DE COMPRAS*/
+#principalContainer{
+    font-family: 'Montserrat', sans-serif;
+}
+
+/*Botón de login*/
+#loginbtn{
+    background-color: rgb(240, 185, 90);
+    color: rgb(58, 13, 21);
+    font-weight: bold;
+    transition: .3s ease all;
+    border-radius: 5px;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 50px 10px 40px 10px;
+    align-content: center;
+}
 
 
+/*COLUMNA DE USUARIO*/
 #user-column, li{
     list-style: none;
-    
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    color: rgb(43, 0, 8);
+}
 
+#user-column, ul{
+    padding: 15px 0px 15px 8px;
+    
 }
 .accordion-item{
     background-color: rgb(245, 235, 202);
@@ -377,22 +402,20 @@ body {
     background-color: rgb(240, 185, 90);
     box-shadow: 0px 0px 5px 3px rgb(240, 185, 90);
     border-radius: 5px;
+    color: rgb(58, 13, 21);
+    font-weight: bold;
 }
 
-#total-container{
-    background-color: rgb(240, 185, 90);
-    box-shadow: 0px 0px 5px 3px rgb(240, 185, 90);
-    border-radius: 5px;
-}
 
-/* Scroll Personalizado */
-.order{
+/*COLUMNA DE ORDEN*/
+/* Scroll personalizado */
+.orderContainer{ /* Aquí están las propiedades del contenedor para poder instalar una scrollbar*/
     width: 500px;
     height: 200px;
     margin: 10px auto;
     padding: 20px;
     overflow: auto;
-    font-family: 'Open Sans';
+
     border-radius: 4px;
 }
 .order::-webkit-scrollbar {
@@ -413,3 +436,28 @@ body {
     background-color: rgb(245, 235, 202);
 
 }
+
+/*Estilos del contenedor del total*/
+#totalContainer{
+    background-color: rgb(240, 185, 90);
+    box-shadow: 0px 0px 5px 3px rgb(240, 185, 90);
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(58, 13, 21);
+}
+
+#shippingText{
+
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(58, 13, 21);
+    margin: 30px 0px 10px 15px;
+}
+
+#orderText{
+    font-family: 'Montserrat', sans-serif;
+    color: rgb(58, 13, 21);
+    margin: 30px 0px 0px 15px;
+}
+
+
+
