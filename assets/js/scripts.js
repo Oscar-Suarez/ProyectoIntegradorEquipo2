@@ -1,8 +1,7 @@
 function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HTML
     var navBar = document.getElementById("navbar");
-    navBar.classList.toggle("container"); //Agregamos compatibilidad con Bootstrap
     navBar.innerHTML = `
-    <div id="menuDesplegable">
+    <div id="botonMenuDesplegable">
             <button id="togglerMenu">
                 <div class="animatedButton">
                     <div class="bar1"></div>
@@ -20,7 +19,7 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
             </a>
         </div>
         
-        <div id=navbar1>
+        <div id=menuText>
             <nav>
                 <a href="./index.html">Inicio</a>
                 <a href="./products.html">Productos</a>
@@ -46,14 +45,14 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
                 </span>
             </a>
         </div>
-        <div id="menuMobile">
+        <div class="container" id="menuDesplegable">
             <ul>
                 <li>
                     <a href="./index.html">
                         <form>
                             <input type="text" class="searchInput" value=" Buscar Productos" id="inputBuscador"></input>
                             <a class="searchInput" type="submit" value="Submit">
-                                <span class="material-symbols-outlined" id="menuMobileIcons">
+                                <span class="material-symbols-outlined" id="menuDesplegableIcons">
                                     search
                                 </span>
                             </a>
@@ -61,7 +60,7 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
                     </a>
                 </li>
                 <li><a href="./user-page.html">
-                        <span class="material-symbols-outlined"  id="menuMobileIcons">
+                        <span class="material-symbols-outlined"  id="menuDesplegableIcons">
                             account_circle
                         </span>
                         Account</a></li>
@@ -82,11 +81,11 @@ function animation() {
   navbar.classList.toggle("change");
     if (!openMenu){
       setTimeout(() => {
-      menuMobile.classList.toggle("change");
+      menuDesplegable.classList.toggle("change");
       }, 500);
       openMenu = !openMenu;
     } else {
-      menuMobile.classList.toggle("change");
+      menuDesplegable.classList.toggle("change");
       openMenu = !openMenu;
     }
 }
@@ -97,6 +96,13 @@ function  preventRefreshButton () {
   });
 
 }
+
+var attributions = `
+<a href="https://www.flaticon.com/free-icons/facebook" title="facebook icons">Facebook icons created by Pixel perfect - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/instagram" title="instagram icons">Instagram icons created by Pixel perfect - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/twitter" title="twitter icons">Twitter icons created by Pixel perfect - Flaticon</a>
+
+`;
 
 
 runNavBar(); //Corremos la funcion para que se agregue.
