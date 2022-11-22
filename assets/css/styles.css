@@ -344,11 +344,12 @@ body {
     }
     
 }
-<<<<<<< HEAD
 
 
 
-/*ESTILOS CARRITO DE COMPRAS*/
+/*######################################################################
+                        ESTILOS CARRITO DE COMPRAS
+#######################################################################*/
 #principalContainer{
     font-family: 'Montserrat', sans-serif;
 }
@@ -448,8 +449,69 @@ body {
 
 
 
-=======
+
 /*######################################################################
                         OTROS COMPONENTES....
 #######################################################################*/
->>>>>>> 00c8827d0111c3df51fa7e68d4893da207d9060d
+
+
+
+
+/* Estilo de pagina de inicio sesion*/
+
+.imagen-inicio {
+    width: 1920;
+    height: 30;
+    }
+
+.center {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+    }  
+
+.form-placeholders {
+    width : 615px;
+    height : 50px;
+    border: black 3px double;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+/* Estilo de pagina de crear cuenta*/
+    .boton-crear {
+        size : "50" min="10" max="100";
+        background-color: rgb(221, 123, 44);
+        border: none;
+        color: white;
+        width : 350px;
+        height : 50px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        font-family: 'Montserrat', sans-serif; 
+    }
+
+    .boton-inicio {
+        size : "50" min="10" max="100";
+        background-color: rgb(221, 123, 44);
+        border: none;
+        color: white;
+        width : 350px;
+        height : 50px;
+        border-radius: 10px;
+        font-family: 'Montserrat', sans-serif; 
+        margin-bottom: 10px;
+    }
+
+    
+    .vinculo-login-signup {
+        text-decoration:none;
+        font-family: 'Montserrat', sans-serif; 
+        color: black;
+    }
+
+     .titulo-login-signup {
+        font-family: 'Ubuntu', sans-serif; 
+        color: black;
+     }
+
