@@ -16,17 +16,17 @@
     <body>
         <div id="navbar"></div>
         <!--Con JS se agregará la NavBar-->
-    
+        
         <div class="container mt-3" id="page-container">
-            <div class="row" id="Tittle">
-                <h4>Mis Pedidos</h4>
+            <div class="row" id="BannerMyAccount">
+                <h4>Mi Cuenta Balxhe</h4>
             </div>
             <div class="row">
-                <div class="col-lg-4 order-lg-2 mt-2 text-center">
+                <div class="col-lg-4 order-lg-2 mt-2">
                     <!--User Data-->
                     <!--Mis Datos-->
                     <div class="m-1" id="InfoAccount">
-                        <div class="container-fluid col-lg" id="UserPhoto">
+                        <div class="container-fluid col-lg text-center" id="UserPhoto">
                             <img src="./assets/img/unknown_user.png" id="UserPhoto">
                         </div>
         
@@ -70,14 +70,60 @@
                                 </h2>
                                 <div id="flush-collapseOne" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        <ul>
-                                            <li>Nombre</li>
-                                            <li>Apellido</li>
-                                            <li>Edad</li>
-                                            <li>Correo Electronico</li>
+                                    <div class="accordion-body m-2">
+                                        <form id="UserData">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-sm-6">
+                                                    <label for="Nombre">Nombre </label>
+                                                    <input class="form-placeholders" required placeholder="Nombre*" type="text"
+                                                        id="Nombre" />
+                                                </div>
+                                                <br>
+                                                <div class="col-lg-12 col-sm-6 mt-1">
+                                                    <label for="Apellido">Apellido </label>
+                                                    <input class="form-placeholders" required placeholder="Apellido*"
+                                                        type="text" id="Apellido" />
+                                                </div>
+                                            </div>
         
-                                        </ul>
+                                            <div class="row">
+                                                <div class="col-12 mt-1">
+                                                    <label for="">Fecha de Nacimiento </label>
+                                                    <input class="form-placeholders" required placeholder="fecha*" type="date"
+                                                        id="start" name="trip-start" value="aaaa-mm-dd" min="1920-01-01"
+                                                        max="2004-12-31">
+                                                </div>
+                                            </div>
+        
+                                            <div class="row">
+                                                <div class="col-12 mt-1">
+                                                    <label for="">Correo Electronico</label>
+                                                    <input class="form-placeholders" required placeholder="Correo electronico*"
+                                                        type="text" id="correo" />
+                                                </div>
+                                            </div>
+        
+                                            <div class="row">
+                                                <div class="col-lg-12 col-sm-6 mt-1">
+                                                    <label for="">Contraseña</label>
+                                                    <input class="form-placeholders" required placeholder="Contraseña*"
+                                                        type="password" id="contraseña" />
+                                                </div>
+                                                <br>
+                                                <div class="col-lg-12 col-sm-6 mt-1">
+                                                    <label for="">Repetir Contraseña</label>
+                                                    <input class="form-placeholders" required
+                                                        placeholder="Confirmar contraseña*" type="password"
+                                                        id="confirmar-contraseña" />
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col text-center">
+                                                    <button class="boton" type="submit" id="boton-guardar">Guardar Cambios</button>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -93,8 +139,69 @@
                                 </h2>
                                 <div id="flush-collapseTwo" class="accordion-collapse collapse"
                                     aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">
-                                        Direcciones del Usuario
+                                    <div class="accordion-body m-2">
+                                        <form id="UserAddress">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-sm-12 mt-1">
+                                                    <label for="">Calle</label>
+                                                    <input  class="form-placeholders" 
+                                                            required placeholder="Calle o Avenida*"
+                                                            type="text"
+                                                            id="Calle"
+                                                            value="Av. Fuentes de Morelia"/>
+                                                </div>
+                                                <br>
+                                                <div class="col-lg-12 col-sm-6 mt-1">
+                                                    <label for=""># Ext</label>
+                                                    <input  class="form-placeholders"
+                                                            required placeholder="Numero Exterior*"
+                                                            type="number" 
+                                                            id="NumeroCasaExterno" 
+                                                            value="551"/>
+                                                </div>
+                                                <div class="col-lg-12 col-sm-6 mt-1">
+                                                    <label for=""># Int</label>
+                                                    <input  class="form-placeholders"
+                                                            required placeholder="Numero Interior"
+                                                            type="number"
+                                                            id="NumeroCasaInterno"
+                                                            value=""/>
+                                                </div>
+                                            </div>
+        
+                                            <div class="row">
+                                                <div class="col-lg-12 col-sm-6 mt-1">
+                                                    <label for="">Codigo Postal</label>
+                                                    <input  class="form-placeholders"
+                                                            required placeholder="Codigo Postal*"
+                                                            type="number"
+                                                            id="Calle"
+                                                            value="58088"/>
+                                                </div>
+                                                <div class="col-lg-12 col-sm-6 mt-1">
+                                                    <label for="">Colonia</label>
+                                                    <input class="form-placeholders" required placeholder="Colonia*" type="text"
+                                                        id="Calle" />
+                                                </div>
+                                            </div>
+        
+                                            <div class="row">
+                                                <div class="col-12 mt-1">
+                                                    <label for="">Indicaciones Extras</label>
+                                                    <input  class="form-placeholders"
+                                                            required placeholder="Indicaciones para ubicar su domicilio más rapido*"
+                                                            type="text"
+                                                            id="IndicacionesExtras"
+                                                            value="Frente a una dispensadora de Agua Potable Manantiales"/>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="row">
+                                                <div class="col text-center">
+                                                    <button class="boton" type="submit" id="boton-guardar">Guardar Cambios</button>
+                                                </div>
+                                            </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
