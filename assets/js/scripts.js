@@ -41,7 +41,7 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
             </a>
             <ul class="dropdown-menu dropdown-menu-dark">
                     <li>
-                        <a class="dropdown-item" href="./login.html">
+                        <a class="dropdown-item" href="./signup.html">
                         <span class="material-symbols-outlined">
                             person_add
                         </span>
@@ -61,14 +61,14 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
 
 
                     <li>
-                        <a class="dropdown-item" href="./login.html">
+                        <a class="dropdown-item" href="./user-page.html">
                         <span class="material-symbols-outlined">
                         account_circle
                         </span>
                         Mi Cuenta
                         </a>
                     </li>
-                    <div id="CloseSesion">
+                    <li id="CloseSesion">
                             <h3 id="flush-headingThree">
                                 <button type="button" class="btn btn-danger m-3">
                                     <p>
@@ -79,7 +79,7 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
                                     </p>
                                 </button>
                             </h3>
-                    </div>
+                    </li>
 
 
             </ul>

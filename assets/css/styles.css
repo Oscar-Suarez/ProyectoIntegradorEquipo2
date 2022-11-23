@@ -128,6 +128,10 @@ div {
         margin: -5px;
         border-radius: 5px;
     }
+    .dropdown-menu li:hover {
+        background-color: var(--color5);
+    }
+
     #CloseSesion {
         border-radius: 0px 0px 10px 10px;
         transition: 0.4s;
@@ -144,9 +148,8 @@ div {
     }
 
 
-    .dropdown-menu li:hover {
-        background-color: var(--color5);
-    }
+
+ 
 
     /* CSS DE LOS ICONOS (FONT) MATERIAL DESIGN */
     .material-symbols-outlined {
