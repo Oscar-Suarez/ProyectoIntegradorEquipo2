@@ -117,6 +117,37 @@ div {
         top: 10px;
         font-size: 35px;
     }
+
+    .dropdown-menu.show {
+        background-color: var(--color4);
+        border-radius: 10px;
+        box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.271);
+        width: 250px;
+    }
+    .dropdown-menu li {
+        margin: -5px;
+        border-radius: 5px;
+    }
+    #CloseSesion {
+        border-radius: 0px 0px 10px 10px;
+        transition: 0.4s;
+        text-align: center;
+    }
+    #CloseSesion button{
+        height: 50px;
+        font-weight: 500;
+        font-size: 18px;
+    }
+    #CloseSesion button p  {
+        position: relative;
+        top: -9px;
+    }
+
+
+    .dropdown-menu li:hover {
+        background-color: var(--color5);
+    }
+
     /* CSS DE LOS ICONOS (FONT) MATERIAL DESIGN */
     .material-symbols-outlined {
         font-variation-settings:
@@ -380,7 +411,7 @@ div {
 #######################################################################*/
 <<<<<<< HEAD
 div#Tittle {
-    height: 70px;
+    height: 100px;
     display: flex;
     align-items: flex-end;
 }
@@ -449,15 +480,7 @@ div#e-Mail div {
     color: var(--color1);
 }
 
-#CloseSesion {
-    background-color: var(--color5);
-    border-radius: 0px 0px 10px 10px;
-    transition: 0.4s;
-}
 
-#CloseSesion:hover {
-    background-color: var(--color4);
-}
 
 .card-profile-stats>div {
     margin-right: 1rem;

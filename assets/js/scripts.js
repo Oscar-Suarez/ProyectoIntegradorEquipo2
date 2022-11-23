@@ -39,10 +39,49 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
                     account_circle
                 </span>
             </a>
-            <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="./signup.html">Sign Up</a></li>
-                    <li><a class="dropdown-item" href="./login.html">Log in</a></li>
-                    <li><a class="dropdown-item" href="./user-page.html">Mi Cuenta</a></li>
+            <ul class="dropdown-menu dropdown-menu-dark">
+                    <li>
+                        <a class="dropdown-item" href="./login.html">
+                        <span class="material-symbols-outlined">
+                            person_add
+                        </span>
+                        Sign Up
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a class="dropdown-item" href="./login.html">
+                        <span class="material-symbols-outlined">
+                            login
+                        </span>
+                        Log in
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a class="dropdown-item" href="./login.html">
+                        <span class="material-symbols-outlined">
+                        account_circle
+                        </span>
+                        Mi Cuenta
+                        </a>
+                    </li>
+                    <div id="CloseSesion">
+                            <h3 id="flush-headingThree">
+                                <button type="button" class="btn btn-danger m-3">
+                                    <p>
+                                    <span class="material-symbols-outlined">
+                                    logout
+                                    </span>
+                                    Cerrar Sesión
+                                    </p>
+                                </button>
+                            </h3>
+                    </div>
+
+
             </ul>
             
 
