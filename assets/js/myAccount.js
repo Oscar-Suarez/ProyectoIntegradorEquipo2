@@ -44,7 +44,7 @@ var order = `<div class="row m-1 mb-3" id="Order">
 
 var myOrders = document.getElementById("MyOrders");
 
-for (let i=1; i<=2; i++) {
+for (let i=1; i<=4; i++) {
     myOrders.innerHTML += order;
 }
 

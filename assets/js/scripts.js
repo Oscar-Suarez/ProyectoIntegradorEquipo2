@@ -34,11 +34,19 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
                     search
                 </span>
             </a>
-            <a aria-current="page" href="./user-page.html">
+            <a data-bs-toggle="dropdown" role="button" aria-expanded="false">
                 <span class="material-symbols-outlined" id="mobileNavbarIconOut">
                     account_circle
                 </span>
             </a>
+            <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="./signup.html">Sign Up</a></li>
+                    <li><a class="dropdown-item" href="./login.html">Log in</a></li>
+                    <li><a class="dropdown-item" href="./user-page.html">Mi Cuenta</a></li>
+            </ul>
+            
+
+        
             <a href="shopping-cart.html" id="shoppingCartContainer">
                 <span class="material-symbols-outlined" id="shoppingCartIcon">
                     shopping_cart
