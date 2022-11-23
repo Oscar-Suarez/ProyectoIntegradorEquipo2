@@ -24,59 +24,76 @@
     <div id="navbar"></div>
     <!--Con JS se agregará la NavBar-->
     <!--<img src="./assets//img/beer.jpeg" alt="Imagen cerveza" width="1920" height="30"> Agregar imagen cerveza-->
-    <div class="container text-center mt-5">
+    <div class="container mt-5">
 
-        <h1 class="titulo-login-signup"> Crear cuenta </h1>
+        <h1 class="titulo-login-signup text-center"> Crear cuenta </h1>
 
-        <form>
-            <div class="container">
-                <div>
+        <form id="UserData">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <label for="Nombre">Nombre </label>
                     <input class="form-placeholders" required placeholder="Nombre*" type="text" id="Nombre" />
                 </div>
                 <br>
-                <div>
+                <div class="col-lg-6 col-md-6 mt-1">
+                    <label for="Apellido">Apellido </label>
                     <input class="form-placeholders" required placeholder="Apellido*" type="text" id="Apellido" />
                 </div>
-                <br>
-                <!-- Aqui voy a poner la opcion multiple para que elijan dia mes y año-->
-                <div>
-                    <!-- <input class="form-placeholders" required placeholder ="FechaNacimiento*" type="text" id="FechaNacimiento"/> -->
+            </div>
+
+            <div class="row">
+                <div class="col-12 mt-1">
+                    <label for="">Fecha de Nacimiento </label>
                     <input class="form-placeholders" required placeholder="fecha*" type="date" id="start"
                         name="trip-start" value="aaaa-mm-dd" min="1920-01-01" max="2004-12-31">
                 </div>
-                <br>
-                <div>
+            </div>
+
+            <div class="row">
+                <div class="col-12 mt-1">
+                    <label for="">Correo Electronico</label>
                     <input class="form-placeholders" required placeholder="Correo electronico*" type="text"
                         id="correo" />
                 </div>
-                <br>
-                <div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg-6 col-md-6 mt-1">
+                    <label for="">Contraseña</label>
                     <input class="form-placeholders" required placeholder="Contraseña*" type="password"
                         id="contraseña" />
                 </div>
                 <br>
-                <div>
+                <div class="col-lg-6 col-md-6 mt-1">
+                    <label for="">Repetir Contraseña</label>
                     <input class="form-placeholders" required placeholder="Confirmar contraseña*" type="password"
                         id="confirmar-contraseña" />
                 </div>
-                <br>
-                <br>
-                <div>
-                    <button class="boton-crear" type="submit" id="boton-crear">Crear</button>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col text-center">
+                    <button class="boton" type="submit" id="boton-guardar">Guardar Cambios</button>
                 </div>
             </div>
         </form>
+        <div class="container text-center">
+            <a href="login.html" class="vinculo-login-signup">Iniciar sesion</a>
+            <!-- Insertar en comillas del href el url de la pagina de iniciar sesion-->
+            <br>
+            <a href="/index.html" class="vinculo-login-signup">Volver a la tienda</a>
+            <!-- Insertar en comillas del href el url de la pagina de Volver a la tienda-->
+            <!-- Insertar la parte de abajo de la pagina que tienen todas las demas donde viene lo de avisos generales y las redes sociales-->
+        </div>
 
-        <a href="login.html" class="vinculo-login-signup">Iniciar sesion</a>
-        <!-- Insertar en comillas del href el url de la pagina de iniciar sesion-->
-        <br>
-        <a href="/index.html" class="vinculo-login-signup">Volver a la tienda</a>
-        <!-- Insertar en comillas del href el url de la pagina de Volver a la tienda-->
-        <!-- Insertar la parte de abajo de la pagina que tienen todas las demas donde viene lo de avisos generales y las redes sociales-->
     </div>
     <script src="./assets/js/scripts.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+        integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+        crossorigin="anonymous"></script>
 
 
 </body>
