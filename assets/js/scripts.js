@@ -68,6 +68,16 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
                         Mi Cuenta
                         </a>
                     </li>
+
+                    <li>
+                        <a class="dropdown-item" href="./my-orders.html">
+                        <span class="material-symbols-outlined">
+                        package
+                        </span>
+                        Mis Pedidos
+                        </a>
+                    </li>
+
                     <li id="CloseSesion">
                             <h3 id="flush-headingThree">
                                 <button type="button" class="btn btn-danger m-3">

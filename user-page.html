@@ -16,219 +16,272 @@
     <body>
         <div id="navbar"></div>
         <!--Con JS se agregará la NavBar-->
-        
-        <div class="container mt-3" id="page-container">
-            <div class="row" id="BannerMyAccount">
-                <h4>Mi Cuenta Balxhe</h4>
-            </div>
-            <div class="row">
-                <div class="col-lg-4 order-lg-2 mt-2">
-                    <!--User Data-->
-                    <!--Mis Datos-->
-                    <div class="m-1" id="InfoAccount">
-                        <div class="container-fluid col-lg text-center" id="UserPhoto">
-                            <img src="./assets/img/unknown_user.png" id="UserPhoto">
-                        </div>
-        
-                        <div class="text-center mt-3">
-                            <h4>
-                                <b>Usera Namecion</b>
-                            </h4>
-                            <!--#################################################################-->
-                            <div class="card-profile-stats d-flex justify-content-center mt-md-2">
-                                <div>
-                                    <span class="heading">10</span>
-                                    <span class="description">Compras</span>
-                                </div>
-                                <div>
-                                    <span class="heading">10</span>
-                                    <span class="description">Lista de Deseos</span>
-                                </div>
-                                <div>
-                                    <span class="heading">21</span>
-                                    <span class="description">Edad</span>
-                                </div>
-                            </div>
-                            <!--#################################################################-->
-        
-                            <div class="h6 mt-2" id="e-Mail">
-                                <div>correo_electronico</div>
-                                <div>@email.com</div>
-                            </div>
-                            <br>
-                        </div>
-        
-                        <div class="accordion accordion-flush " id="accordionFlushExample">
-        
-                            <div class="accordion-item ">
-                                <h2 class="accordion-header" id="flush-headingOne">
-                                    <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                        aria-controls="flush-collapseOne">
-                                        Mis Datos
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                    aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body m-2">
-                                        <form id="UserData">
-                                            <div class="row">
-                                                <div class="col-lg-12 col-sm-6">
-                                                    <label for="Nombre">Nombre </label>
-                                                    <input class="form-placeholders" required placeholder="Nombre*" type="text"
-                                                        id="Nombre" />
-                                                </div>
-                                                <br>
-                                                <div class="col-lg-12 col-sm-6 mt-1">
-                                                    <label for="Apellido">Apellido </label>
-                                                    <input class="form-placeholders" required placeholder="Apellido*"
-                                                        type="text" id="Apellido" />
-                                                </div>
-                                            </div>
-        
-                                            <div class="row">
-                                                <div class="col-12 mt-1">
-                                                    <label for="">Fecha de Nacimiento </label>
-                                                    <input class="form-placeholders" required placeholder="fecha*" type="date"
-                                                        id="start" name="trip-start" value="aaaa-mm-dd" min="1920-01-01"
-                                                        max="2004-12-31">
-                                                </div>
-                                            </div>
-        
-                                            <div class="row">
-                                                <div class="col-12 mt-1">
-                                                    <label for="">Correo Electronico</label>
-                                                    <input class="form-placeholders" required placeholder="Correo electronico*"
-                                                        type="text" id="correo" />
-                                                </div>
-                                            </div>
-        
-                                            <div class="row">
-                                                <div class="col-lg-12 col-sm-6 mt-1">
-                                                    <label for="">Contraseña</label>
-                                                    <input class="form-placeholders" required placeholder="Contraseña*"
-                                                        type="password" id="contraseña" />
-                                                </div>
-                                                <br>
-                                                <div class="col-lg-12 col-sm-6 mt-1">
-                                                    <label for="">Repetir Contraseña</label>
-                                                    <input class="form-placeholders" required
-                                                        placeholder="Confirmar contraseña*" type="password"
-                                                        id="confirmar-contraseña" />
-                                                </div>
-                                            </div>
-                                            <br>
-                                            <div class="row">
-                                                <div class="col text-center">
-                                                    <button class="boton" type="submit" id="boton-guardar">Guardar Cambios</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-        
-        
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingTwo">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseTwo" aria-expanded="false"
-                                        aria-controls="flush-collapseTwo">
-                                        Direcciones
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                    aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body m-2">
-                                        <form id="UserAddress">
-                                            <div class="row">
-                                                <div class="col-lg-12 col-sm-12 mt-1">
-                                                    <label for="">Calle</label>
-                                                    <input  class="form-placeholders" 
-                                                            required placeholder="Calle o Avenida*"
-                                                            type="text"
-                                                            id="Calle"
-                                                            value="Av. Fuentes de Morelia"/>
-                                                </div>
-                                                <br>
-                                                <div class="col-lg-12 col-sm-6 mt-1">
-                                                    <label for=""># Ext</label>
-                                                    <input  class="form-placeholders"
-                                                            required placeholder="Numero Exterior*"
-                                                            type="number" 
-                                                            id="NumeroCasaExterno" 
-                                                            value="551"/>
-                                                </div>
-                                                <div class="col-lg-12 col-sm-6 mt-1">
-                                                    <label for=""># Int</label>
-                                                    <input  class="form-placeholders"
-                                                            required placeholder="Numero Interior"
-                                                            type="number"
-                                                            id="NumeroCasaInterno"
-                                                            value=""/>
-                                                </div>
-                                            </div>
-        
-                                            <div class="row">
-                                                <div class="col-lg-12 col-sm-6 mt-1">
-                                                    <label for="">Codigo Postal</label>
-                                                    <input  class="form-placeholders"
-                                                            required placeholder="Codigo Postal*"
-                                                            type="number"
-                                                            id="Calle"
-                                                            value="58088"/>
-                                                </div>
-                                                <div class="col-lg-12 col-sm-6 mt-1">
-                                                    <label for="">Colonia</label>
-                                                    <input class="form-placeholders" required placeholder="Colonia*" type="text"
-                                                        id="Calle" />
-                                                </div>
-                                            </div>
-        
-                                            <div class="row">
-                                                <div class="col-12 mt-1">
-                                                    <label for="">Indicaciones Extras</label>
-                                                    <input  class="form-placeholders"
-                                                            required placeholder="Indicaciones para ubicar su domicilio más rapido*"
-                                                            type="text"
-                                                            id="IndicacionesExtras"
-                                                            value="Frente a una dispensadora de Agua Potable Manantiales"/>
-                                                </div>
-                                            </div>
-                                            <br>
-                                            <div class="row">
-                                                <div class="col text-center">
-                                                    <button class="boton" type="submit" id="boton-guardar">Guardar Cambios</button>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="accordion-item">
-                                <h2 class="accordion-header" id="flush-headingThree">
-                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                        data-bs-target="#flush-collapseThree" aria-expanded="false"
-                                        aria-controls="flush-collapseThree">
-                                        Formas de Pago
-                                    </button>
-                                </h2>
-                                <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                    <div class="accordion-body">Paypal<br>MercadoPago</div>
-                                </div>
-                            </div>
-                        </div>
-        
-                        <div id="botton">
+        <div id="page-content">
+            <div id="LateralBar">
+                <ul>
+                    <a href="./user-page.html">
+                        <li>
+                            <span class="material-symbols-outlined">
+                                account_circle
+                            </span>
+                            <h>Mi Cuenta</h>
+                            
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li>
+                            <span class="material-symbols-outlined">
+                                history
+                            </span>
+                            <h>Historial</h>
+                        </li>
+                    </a>
+                    <a href="./my-orders.html">
+                        <li>
+                            <span class="material-symbols-outlined">
+                                package
+                            </span>
+                            <h>Mis Pedidos</h>
+                        </li>
+                    </a>
+                    <a href="#">
+                        <li>
+                            <span class="material-symbols-outlined">
+                                star
+                            </span>
+                            <h>Lista de Deseos</h>
+                        </li>
+                    </a>
+                </ul>
 
+            </div>
+
+            <div class="container-fluid" id="Contents">
+                <div class="row">
+                    <div class="col mt-2">
+                        <!--User Data-->
+                        <!--Mis Datos-->
+                        <div class="row" id="BannerMyAccount"></div>
+                        <div class="m-1" id="InfoAccount">
+                            <div class="container-fluid col-lg" id="HeaderUserPhoto">
+                                <div id="UserPhoto"></div>
+                            </div>
+            
+                            <div class="text-center mt-3">
+                                <h4 id="UserName">
+                                    <b>Walbertho Montero</b>
+                                </h4>
+                                <!--#################################################################-->
+                                <div class="card-profile-stats d-flex justify-content-center mt-md-2">
+                                    <div>
+                                        <span class="heading">110</span>
+                                        <span class="description">Compras</span>
+                                    </div>
+                                    <div>
+                                        <span class="heading">25</span>
+                                        <span class="description">Años</span>
+                                    </div>
+                                </div>
+                                <!--#################################################################-->
+            
+                                <div class="h6 mt-2" id="e-Mail">
+                                    <div id="e-Mail-1">montero</div>
+                                    <div id="e-Mail-2">@walle.mx</div>
+                                </div>
+                                <br>
+                            </div>
+            
+                            <div class="accordion accordion-flush " id="accordionFlushExample">
+            
+                                <div class="accordion-item ">
+                                    <h2 class="accordion-header" id="flush-headingOne">
+                                        <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseOne" aria-expanded="false"
+                                            aria-controls="flush-collapseOne">
+                                            Mis Datos
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body m-2">
+
+                                            <form id="UserData">
+                                                <div class="row">
+                                                    <div class="col-lg-6 col-sm-6">
+                                                        <label for="Nombre">
+                                                            Nombre
+                                                        </label>
+                                                        <input  class="form-placeholders"
+                                                                required placeholder="Nombre*"
+                                                                type="text"
+                                                                id="Nombre"
+                                                                value="Walbertho Efrain" />
+                                                    </div>
+                                                    
+                                                    <div class="col-lg-6 col-sm-6 mt-1">
+                                                        <label for="Apellido">
+                                                            Apellido
+                                                        </label>
+                                                        <input  class="form-placeholders"
+                                                                required placeholder="Apellidos*"
+                                                                type="text"
+                                                                id="Apellido"
+                                                                value="Montero Cervantes"/>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="row">
+                                                    <div class="col-12 mt-1">
+                                                        <label for="">
+                                                            Fecha de Nacimiento
+                                                        </label>
+                                                        <input  class="form-placeholders"
+                                                                required placeholder="fecha*"
+                                                                type="date"
+                                                                id="start"
+                                                                name="trip-start"
+                                                                value="1997-12-05" 
+                                                                min="1920-01-01"
+                                                                max="2004-12-31">
+                                                    </div>
+                                                </div>
+            
+                                                <div class="row">
+                                                    <div class="col-12 mt-1">
+                                                        <label for="">
+                                                            Correo Electronico
+                                                        </label>
+                                                        <input  class="form-placeholders"
+                                                                required placeholder="Correo electronico*"
+                                                                type="text"
+                                                                id="correo"
+                                                                value="montero@walle.mx">
+                                                    </div>
+                                                </div>
+            
+                                    
+                                                <div class="row mt-4">
+                                                    <div class="col text-center">
+                                                        <button class="boton" type="submit" id="boton-guardar">Guardar Cambios</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+            
+            
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseTwo" aria-expanded="false"
+                                            aria-controls="flush-collapseTwo">
+                                            Direcciones
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body m-2">
+                                            <form id="UserAddress">
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-sm-12 mt-1">
+                                                        <label for="">
+                                                            Calle
+                                                        </label>
+                                                        <input  class="form-placeholders" 
+                                                                required placeholder="Calle o Avenida*"
+                                                                type="text"
+                                                                id="Calle"
+                                                                value="Av. Fuentes de Morelia"/>
+                                                    </div>
+                                                    <br>
+                                                    <div class="col-lg-12 col-sm-6 mt-1">
+                                                        <label for="">
+                                                            #Ext
+                                                        </label>
+                                                        <input  class="form-placeholders"
+                                                                required placeholder="Numero Exterior*"
+                                                                type="number" 
+                                                                id="NumeroCasaExterno" 
+                                                                value="551"/>
+                                                    </div>
+                                                    <div class="col-lg-12 col-sm-6 mt-1">
+                                                        <label for="">
+                                                            # Int
+                                                        </label>
+                                                        <input  class="form-placeholders"
+                                                                required placeholder="Numero Interior"
+                                                                type="number"
+                                                                id="NumeroCasaInterno"
+                                                                value=""/>
+                                                    </div>
+                                                </div>
+            
+                                                <div class="row">
+                                                    <div class="col-lg-12 col-sm-6 mt-1">
+                                                        <label for="">
+                                                            Codigo Postal
+                                                        </label>
+                                                        <input  class="form-placeholders"
+                                                                required placeholder="Codigo Postal*"
+                                                                type="number"
+                                                                id="Calle"
+                                                                value="58088"/>
+                                                    </div>
+                                                    <div class="col-lg-12 col-sm-6 mt-1">
+                                                        <label for="">
+                                                            Colonia
+                                                        </label>
+                                                        <input  class="form-placeholders"
+                                                                required placeholder="Colonia*"
+                                                                type="text"
+                                                                id="Calle"
+                                                                value="Fuentes de las Rosas">
+                                                    </div>
+                                                </div>
+            
+                                                <div class="row">
+                                                    <div class="col-12 mt-1">
+                                                        <label for="">Indicaciones Extras</label>
+                                                        <input  class="form-placeholders"
+                                                                required placeholder="Indicaciones para ubicar su domicilio más rapido*"
+                                                                type="text"
+                                                                id="IndicacionesExtras"
+                                                                value="Frente a una dispensadora de Agua Potable Manantiales"/>
+                                                    </div>
+                                                </div>
+                                                <br>
+                                                <div class="row">
+                                                    <div class="col text-center">
+                                                        <button class="boton" type="submit" id="boton-guardar">Guardar Cambios</button>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="flush-headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                            data-bs-target="#flush-collapseThree" aria-expanded="false"
+                                            aria-controls="flush-collapseThree">
+                                            Formas de Pago
+                                        </button>
+                                    </h2>
+                                    <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                        <div class="accordion-body">Paypal<br>MercadoPago</div>
+                                    </div>
+                                </div>
+                            </div>
+            
+                            <div id="botton">
+
+                            </div>
                         </div>
+            
+            
                     </div>
-        
-        
-                </div>
-                <div class="col-lg-8 col order-lg-1 mt-2" id="MyOrders">
-                    <!--Mis Ordenes-->
                 </div>
             </div>
         </div>

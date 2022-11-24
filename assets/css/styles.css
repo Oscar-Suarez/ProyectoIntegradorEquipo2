@@ -128,6 +128,12 @@ h1, h2, h3, h4, h5, h6{
         .dropdown-menu li:hover {
             background-color: var(--color5);
         }
+
+        .dropdown-menu a:focus:hover {
+            transform: translate(-4px, 0px);
+            background-color: var(--colorBG);
+            border-radius: 10px;
+        }
     
         #CloseSesion {
             border-radius: 0px 0px 10px 10px;
@@ -409,194 +415,326 @@ h1, h2, h3, h4, h5, h6{
 }
 
 /*######################################################################
+                        CSS DE LA LATERAL-BAR
+#######################################################################*/
+
+@media {
+    div#LateralBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 215px;
+        height: 100%;
+        grid-area: LateralBar;
+        background-color: var(--color4); 
+        transition: 0.25s;
+        padding-top: 80px;
+    }
+    div#LateralBar ul {
+        padding-left: 0;
+    }
+
+    div#LateralBar a {
+        text-decoration: none;
+        color: var(--color1);
+    }
+    div#LateralBar li {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        height: 70px;
+
+
+        list-style-type: none;
+        font-size: 20px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+    div#LateralBar li:hover {
+        background-color: var(--color5);
+        border-radius: 10px;
+    }
+    div#LateralBar a:link {
+        background-color: var(--colorBG);
+        border-radius: 10px;
+    }
+
+
+    div#LateralBar span {
+        margin: 5px;
+        padding-left: 10px;
+        font-size: 35px;
+    }
+
+
+    @media (max-width: 992px) {
+        div#LateralBar {
+            width: 70px;
+        }
+
+        div#LateralBar li{
+            justify-content: center;
+        }
+
+        div#LateralBar h {
+            display: none;
+        }
+
+        div#LateralBar span {
+           padding-left: 0;
+            font-size: 35px;
+        }
+        @media (max-width: 576px) {
+
+            div#LateralBar {
+                width: 50px;
+            }
+        }
+    }
+}
+
+/*######################################################################
                         CSS de MyAccount
 #######################################################################*/
 @media { /*My Account*/
     
-div#BannerMyAccount {
-    height: 70px;
-    display: flex;
-    align-items: flex-end;
-}
+    div#page-content {
+        display: grid;
+        grid-template-areas: "LateralBar Contenido";
+        grid-template-columns: 225px 1fr;
+    }
 
-div#BannerMyAccount h4 {
-    margin-left: 10px;
-    font-weight: 600;
-}
+    div#Contents {
+        grid-area: Contenido;
+        padding-left: 10%;
+        padding-right: 10%;
+        transition: 0.4s;
+    }
 
-@media (max-width:  992px) {
+    div#BannerMyAccount {
+        height: 80px;
+        display: flex;
+        align-items: flex-end;
+    }
+
     div#BannerMyAccount h4 {
-        display: none;
+        margin-left: 10px;
+        font-weight: 600;
+    }
+    @media (max-width: 992px) {
+        div#page-content {
+            grid-template-columns: 70px 1fr;
+        }
+        div#Contents {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+    }
+
+    @media (max-width: 576px) {
+        div#page-content {
+            grid-template-columns: 50px 1fr;
+        }
+
+        div#Contents {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+    }
+    
+    div#InfoAccount,
+    div#Order {
+        background-color: var(--colorBG);
+        border-radius: 10px;
+        height: max-content;
+
+        -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+        transition: 0.5s;
+    }
+
+    div#InfoAccount:hover,
+    div#Order:hover {
+        -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
+    }
+
+    div#HeaderUserPhoto {
+        height: 85px;
+        display: flex;
+        justify-content: center;
+
+    }
+
+    div#UserPhoto {
+        position: relative;
+        top: -75px;
+        height: 150px;
+        width: 150px;
+        background-image: url("../img/wallePhoto.jpg");
+        background-size: 100%;
+        border-radius: 100px;
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.04);
+        transition: 0.3s;
+    }
+
+    div#UserPhoto:hover {
+        top: -80px;
+        height: 160px;
+        width: 160px;
+        box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    div#e-Mail div {
+        display: inline-flex;
+        margin: -2px;
+    }
+
+    .accordion-item {
+        background-color: var(--colorBG);
+        border: 0;
+    }
+
+    .accordion-button.collapsed {
+        background-color: var(--color5);
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: var(--color5);
+        
+        color: var(--color1);
+    }
+
+
+
+    .card-profile-stats>div {
+        margin-right: 1rem;
+        padding: .875rem;
+        text-align: center;
+    }
+
+    .card-profile-stats>div:last-child {
+        margin-right: 0;
+    }
+
+    .card-profile-stats>div .heading {
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+    }
+
+    .card-profile-stats>div .description {
+        font-size: 15px;
+        color: #000000;
+    }
+
+    #UserData label {
+        font-size: 15px;
+        font-weight: 500;
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+
+    div#botton {
+        height: 20px;
+        background-color: var(--color5);
+        border-radius: 0px 0px 10px 10px;
     }
 }
 
-div#InfoAccount,
-div#Order {
-    background-color: var(--colorBG);
-    border-radius: 10px;
-    height: max-content;
+/*######################################################################
+                        CSS de My Orders
+#######################################################################*/
+@media { /*My Orders*/
+    
+    
+    div#OrderDate {
+        display: flex;
+        align-items: center;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+        font-size: 15px;
+        font-weight: 500;
+        padding: 10px;
+    }
+    
+    div#TotalPrice {
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: right;
+    }
+    
+    div#TotalPrice span#TotalPrice {
+        margin-left: 5px;
+        font-weight: 500;
+    }
+    
+    div#OrderList {
+        height: auto;
+    }
+    
+    div.Product {
+        height: 150px;
+        display: grid;
+        grid-template-areas: "Image Tittle BuyAgain"
+            "Image Info   Price"
+            "Image Info   Price";
+        grid-template-rows: min-content 1fr 1fr;
+        grid-template-columns: min-content auto max-content;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+        margin-top: 10px;
+    }
+    
+    
+    div.Image {
+        grid-area: Image;
+    }
+    
+    div.Image img {
+        width: 70px;
+        height: 70px;
+        border: 0.5px solid rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.04);
+    }
+    
+    div.Tittle {
+        grid-area: Tittle;
+        padding-left: 10px;
+        display: flex;
+        align-items: flex-end;
+    }
+    
+    div.BuyAgain {
+        grid-area: BuyAgain;
+    }
+    
+    div.Info {
+        grid-area: Info;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 13px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    div.Price {
+        grid-area: Price;
+        display: flex;
+        position: relative;
+        align-items: flex-end;
+        margin-bottom: 10px;
+    }
+    
+    div.Price span {
+        margin-left: 5px;
+        font-weight: 600;
+    }
+    }
 
-    -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
-    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
-    transition: 0.5s;
-}
-
-div#InfoAccount:hover,
-div#Order:hover {
-    -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
-    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
-}
-
-div#UserPhoto {
-    height: 85px;
-}
-
-img#UserPhoto {
-    position: relative;
-    top: -75px;
-    height: 150px;
-    border-radius: 1000px;
-    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.04);
-    transition: 0.3s;
-}
-
-img#UserPhoto:hover {
-    top: -80px;
-    height: 160px;
-    box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
-}
-
-div#e-Mail div {
-    display: inline-flex;
-    margin: -2px;
-}
-
-.accordion-item {
-    background-color: var(--colorBG);
-}
-
-.accordion-button.collapsed {
-    background-color: var(--color5);
-}
-
-.accordion-button:not(.collapsed) {
-    background-color: var(--color4);
-    color: var(--color1);
-}
-
-
-
-.card-profile-stats>div {
-    margin-right: 1rem;
-    padding: .875rem;
-    text-align: center;
-}
-
-.card-profile-stats>div:last-child {
-    margin-right: 0;
-}
-
-.card-profile-stats>div .heading {
-    font-size: 20px;
-    font-weight: bold;
-    display: block;
-}
-
-.card-profile-stats>div .description {
-    font-size: 15px;
-    color: #000000;
-}
-
-#UserData label {
-    font-size: 15px;
-    font-weight: 500;
-    margin-left: 5px;
-    margin-bottom: 5px;
-}
-
-div#OrderDate {
-    display: flex;
-    align-items: center;
-    border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
-    font-size: 15px;
-    font-weight: 500;
-    padding: 10px;
-}
-
-div#TotalPrice {
-    border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    justify-content: right;
-}
-
-div#TotalPrice span#TotalPrice {
-    margin-left: 5px;
-    font-weight: 500;
-}
-
-div#OrderList {
-    height: auto;
-}
-
-div.Product {
-    height: 150px;
-    display: grid;
-    grid-template-areas: "Image Tittle BuyAgain"
-        "Image Info   Price"
-        "Image Info   Price";
-    grid-template-rows: min-content 1fr 1fr;
-    grid-template-columns: min-content auto max-content;
-    border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
-    margin-top: 10px;
-}
-
-
-div.Image {
-    grid-area: Image;
-}
-
-div.Image img {
-    width: 70px;
-    height: 70px;
-    border: 0.5px solid rgba(0, 0, 0, 0.2);
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.04);
-}
-
-div.Tittle {
-    grid-area: Tittle;
-    padding-left: 10px;
-    display: flex;
-    align-items: flex-end;
-}
-
-div.BuyAgain {
-    grid-area: BuyAgain;
-}
-
-div.Info {
-    grid-area: Info;
-    padding-left: 10px;
-    padding-right: 10px;
-    font-size: 13px;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
-}
-
-div.Price {
-    grid-area: Price;
-    display: flex;
-    position: relative;
-    align-items: flex-end;
-    margin-bottom: 10px;
-}
-
-div.Price span {
-    margin-left: 5px;
-    font-weight: 600;
-}
-}
 
 /*######################################################################
                         CSS de LOGIN PAGE
