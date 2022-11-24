@@ -37,81 +37,77 @@
 
     <!--Contenedor principal-->
     <div class="container" id="principalContainer">
-        <!--Contenedor de las columnas de usuario y orden -->
+        <!--Contenedor de las columnas de forma de pago y orden -->
         <div class="row">
 
             <!--Columna de usuario-->
             <div class="col-md-7" id="user-column">
 
-                <!--BOTÓN INICIAR SESIÓN-->
-                <button type="button" class="btn btn-primary btn-lg" id="loginbtn">INICIAR SESIÓN</button>
 
                 <!--ACCORDION DE BOOTSTRAP-->
                 <div class="pricipalAccordion" id="accordionPanelsStayOpenExample">
-                    <!--USUARIO-->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
 
-                            <!--BOTÓN DE USUARIO-->
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                aria-controls="panelsStayOpen-collapseOne" id="btn">
-                                USUARIO
-                            </button>
+                    <div id="divPagos">
+                        <h2>Pagos</h2>
+                        <div class="my-3">
+                            <div class="form-check">
+                                <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked=""
+                                    required="">
+                                <label class="form-check-label" for="credit">Tarjeta de crédito/débito</label>
+                            </div>
 
-                        </h2>
-                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                            aria-labelledby="panelsStayOpen-headingOne">
-                            <ul id="UserList">
-                                <!--EMAIL CONTENEDOR-->
-                                <li id="email">Correo electrónico: </li>
-                                <!--USERNAME CONTENEDOR-->
-                                <li id="username">Nombre de usuario: </li>
-                            </ul>
-                        </div>
-                    </div>
-
-
-                    <!--INFORMACIÓN DE CONTACTO-->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-
-                            <!--BOTÓN DE INFORMACIÓN DE CONTACTO-->
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                                aria-controls="panelsStayOpen-collapseTwo" id="btn">
-                                INFORMACIÓN DE CONTACTO
-                            </button>
-
-                        </h2>
-                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-                            aria-labelledby="panelsStayOpen-headingTwo">
-                            <div id="contactContainer">
-                                <ul id="contactList">
-                                    <!--NOMBRE CONTENEDOR-->
-                                    <li id="name">Nombre: </li>
-                                    <!--APELLIDO CONTENEDOR-->
-                                    <li id="lastname">Apellido: </li>
-                                    <!--No. TELEFONO CONTENEDOR-->
-                                    <li id="phone">Número de telefóno: </li>
-                                </ul>
+                            <div class="form-check">
+                                <input id="paypal" name="paymentMethod" type="radio" class="form-check-input"
+                                    required="">
+                                <label class="form-check-label" for="paypal">PayPal</label>
                             </div>
                         </div>
+                        <div class="row gy-3">
+                            <div class="col-md-6">
+                            <label for="cc-name" class="form-label">Nombre en la tarjeta</label>
+                            <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                            <small class="text-muted">Nombre completo como se muestra en la tarjeta</small>
+                            <div class="invalid-feedback">
+                            Se requiere el nombre en la tarjeta
+                            </div>
+                            </div>
+                            <div class="col-md-6">
+                            <label for="cc-number" class="form-label">Número de tarjeta de crédito</label>
+                            <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                            <div class="invalid-feedback">
+                            Se requiere número de tarjeta de crédito
+                            </div>
+                            </div>
+                            <div class="col-md-3">
+                            <label for="cc-expiration" class="form-label">Vencimiento</label>
+                            <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                            <div class="invalid-feedback">
+                            Fecha de vencimiento requerida
+                            </div>
+                            </div>
+                            <div class="col-md-3">
+                            <label for="cc-cvv" class="form-label">CVV</label>
+                            <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                            <div class="invalid-feedback">
+                            Código de seguridad requerido
+                            </div>
+                            </div>
+                            </div>
                     </div>
 
                     <!--DIRECCIÓN DE ENVÍO-->
                     <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
 
                             <!--BOTÓN DE DIRECCIÓN DE ENVÍO-->
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
                                 aria-controls="panelsStayOpen-collapseThree" id="btn">
                                 DIRECCIÓN DE ENVÍO
                             </button>
 
                         </h2>
-                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
                             aria-labelledby="panelsStayOpen-headingThree">
                             <div id="adressContainer">
                                 <ul id="adressList">
@@ -127,22 +123,6 @@
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <!--SECCIÓN DE ENVÍOS-->
-
-                <h2 id="shippingText">TIPO DE ENVÍO</h2>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Envío standard:
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        Envío express:
-                    </label>
                 </div>
             </div>
 
@@ -203,13 +183,11 @@
                         <h6>Total:</h6>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary btn-lg" id="loginbtn"><a href="./shopping-cart - formas de pago.html">Continuar a pago</a></button>
             </div>
 
 
         </div>
     </div>
-
 
 
 
@@ -224,7 +202,3 @@
 </body>
 
 </html>
-
-
-
-
