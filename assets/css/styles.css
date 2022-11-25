@@ -18,7 +18,7 @@
     --color4: rgb(221, 123, 44);
     --color5: rgb(240, 185, 78);
     --color6:rgb(245, 235, 202);
-    --colorBG: rgb(230, 225, 211);  
+    --colorBG: rgb(251, 245, 229);  
     --height-navbar: 70px;
     --height-navfooter: 90px;
     --shadow-before: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
@@ -28,11 +28,19 @@
 
 
 body {
+
     Background: -webkit-linear-gradient(-120deg, var(--colorBG) 10%, var(--colorBG) 90%);
-    /*rgb(245, 226, 175);*/
+    /*;*/
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6,
+h1, h2, h3 ,h4 ,h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 450;
 }
 
 
@@ -40,8 +48,6 @@ body {
     outline: 4px solid rgba(156, 13, 2, 0.5);
     outline-offset: 0px;
 }
-
-
 
 /*######################################################################
                         CSS DE LA NAVBAR
@@ -991,6 +997,58 @@ body {
 @media {
 
     
+
+    @supports (font-variation-settings: "wght" 250) {
+        h1#TittlePage {
+          color: var(--color1);
+          font-size: 50px;
+          text-transform: uppercase;
+          letter-spacing: -2px;
+        }
+    }
+
+    div.spacer {
+        height: 8px;
+        width: 1.1%;
+        background-color: var(--color1);
+        position: relative;
+        margin: auto;
+        top: -10px;
+        border-radius: 100px;
+        transform: scale(80, 0.4);
+    }
+
+    div.container#FAQPage {
+        padding: 0;
+        overflow: hidden;
+        height: auto;
+        border-radius: 20px;
+        box-shadow: var(--shadow-before);
+        transition: 0.3s;
+        border: 0.1px solid rgba(156, 13, 2, 0.5);
+    }
+
+    div.container#FAQPage:hover {
+        box-shadow: var(--shadow-after);
+    }
+
+
+    div.container#FAQPage div.accordion-item {
+        border-bottom: 0.1px solid rgba(156, 13, 2, 0.5);
+    }
+    
+
+
+
+    .FAQ-body {
+        padding: 20px;
+        font-style: oblique;
+    }
+    
+    div.container#FAQPage button.accordion-button {
+        font-size: 18px;
+        font-weight: 500;
+    }
     
 }
 
