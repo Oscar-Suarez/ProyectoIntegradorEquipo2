@@ -18,333 +18,756 @@
     --color4: rgb(221, 123, 44);
     --color5: rgb(240, 185, 78);
     --colorBG:rgb(245, 235, 202);  
-
     --height-navbar: 70px;
+    --height-navfooter: 90px;
 }
 body {
-    background-color: var(--colorBG);
+    Background-color: #e7ddd8;
+    /*rgb(245, 226, 175);*/
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Monserrat', sans-serif;
+}
+
+.btn-danger:hover {
+    outline: 4px solid rgba(156, 13, 2, 0.5);
+    outline-offset: 0px;
+}
+
+
 /*######################################################################
                         CSS DE LA NAVBAR
 #######################################################################*/
 
-#navbar {
-    /*ESTBLECE LA POSICIÓN DE LA NAVBAR PEGADA ARRIBA*/
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    line-height: var(--height-navbar);
-    z-index: 10;
-    /* DIMESIONES DE LA NAVBAR */
-    width: auto; 
-    height: var(--height-navbar);
-    /* ESTILO DE LA NAVBAR */
-    background-color: var(--color5);
-    -webkit-border-radius: 0px 0px 15px 15px;
-    border-radius: 0px 0px 15px 15px;
+@media { /*NavBar*/
+    #navbar {
+        /*ESTBLECE LA POSICIÓN DE LA NAVBAR PEGADA ARRIBA*/
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        line-height: var(--height-navbar);
+        z-index: 10;
+    
+        /* DIMESIONES DE LA NAVBAR */
+     
+        height: var(--height-navbar);
+    
+        /* ESTILO DE LA NAVBAR */
+        background-color: var(--color5);
+        -webkit-border-radius: 0px 0px 15px 15px;
+        border-radius: 0px 0px 15px 15px;
+    }
+    
+    @media (min-width: 768px) /* NAVBAR --> DESKTOP & TABLETS */ {
+        
+        /* CSS PARA TODA LA NAVBAR EN GENERAL */
+        #navbar  {
+            /* PROPIEDADES DE LA SOMBRA DE LA NAVBAR */
+            -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1); 
+            box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+            transition: 0.5s;
+        }
+        #navbar:hover {
+            /* PROPIEDADES DE LA SOMBRA->NAVBAR CUANDO EL USUARIO
+                COLOCA EL CURSON ENCIMA DE LA NAVBAR */
+            -webkit-box-shadow: 0px 0px 10px 5px rgba(58, 13, 21, 0.5);
+            box-shadow: 0px 0px 10px 5px rgba(58, 13, 21,0.5);
+        }
+    
+        /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR 
+        PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
+        #logo {   
+            float: left;      /* alinear horizontalmente los divs hijos dentro del div padre */
+            height: 100%;     /* ocupar el 100% de espacio vertical del div padre */
+        }
+        #menuText {
+            float: left;      /* alinear horizontalmente los divs hijos dentro del div padre */
+            height: 100%;     /* ocupar el 100% de espacio vertical del div padre */
+            text-align: center; 
+        }
+        #menuIcons {
+            float: left;      /* alinear horizontalmente los divs hijos dentro del div padre */
+            height: 100%;     /* ocupar el 100% de espacio vertical del div padre */
+            text-align: right;    /* alinear el texto a la derecha del div*/
+            padding-right: 10px;  /* espaciado del borde derecho*/
+        }
+        #menuDesplegable, #botonMenuDesplegable {
+            display: none;
+        }
+    
+        /* ESTILO DE LOS ELEMENTOS DE LA NAVBAR */
+        #menuText a, #menuIcons a{
+            font-size: 20px;   
+            text-decoration: none;      /* eliminar el underline del link */
+            color: var(--color1);   
+            margin-left: 5px;     /* espaciado entre los elementos elementos */
+            margin-right: 5px;    /* espaciado entre los elementos elementos */
+            font-weight: 600;
+        }
+    
+        #menuIcons span {
+            position: relative;
+            top: 10px;
+            font-size: 35px;
+        }
+    
+        .dropdown-menu.show {
+            background-color: var(--color4);
+            border-radius: 10px;
+            box-shadow: 0px 1px 10px 1px rgba(0, 0, 0, 0.271);
+            width: 250px;
+        }
+        .dropdown-menu li {
+            margin: -5px;
+            border-radius: 5px;
+        }
+        .dropdown-menu li:hover {
+            background-color: var(--color5);
+        }
+
+        .dropdown-menu a:focus:hover {
+            transform: translate(-4px, 0px);
+            background-color: var(--colorBG);
+            border-radius: 10px;
+        }
+    
+        #CloseSesion {
+            border-radius: 0px 0px 10px 10px;
+            transition: 0.4s;
+            text-align: center;
+        }
+        #CloseSesion button{
+            height: 50px;
+            font-weight: 500;
+            font-size: 18px;
+        }
+        #CloseSesion button p  {
+            position: relative;
+            top: -9px;
+        }
+    
+    
+    
+     
+    
+        /* CSS DE LOS ICONOS (FONT) MATERIAL DESIGN */
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 500,
+            'GRAD' 800,
+            'opsz' 18
+        }
+        .material-symbols-outlined:hover {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 800,
+            'GRAD' 800,
+            'opsz' 18
+        }
+    
+        @media (min-width: 992px){
+    
+            /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR 
+                PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
+            #logo {   
+                width: 25%;       /* porcentaje del espacio horizontal que ocupan del div padre */
+            }
+            #menuText {
+                width: 50%;       /* porcentaje del espacio horizontal que ocupan del div padre */
+            }
+            #menuIcons {
+                 width: 25%;       /* porcentaje del espacio horizontal que ocupan del div padre */
+            }
+        
+            #logoNavBar {
+                position: absolute;
+                top:0;
+                left: 10px;
+                height: 50px;
+                margin-top: 10px;
+            }
+        
+            #logoMobileNavBar {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 991px) and (min-width: 768px){
+        
+            /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR 
+                PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
+            #logo {   
+                width: 10%;       /* porcentaje del espacio horizontal que ocupan del div padre */
+        
+            }
+            #menuText {
+                width: 65%;       /* porcentaje del espacio horizontal que ocupan del div padre */
+        
+            }
+            #menuIcons {
+                 width: 25%;       /* porcentaje del espacio horizontal que ocupan del div padre */
+            }
+        
+            #logoNavBar {
+                display: none;
+            }
+        
+            #logoMobileNavBar {
+                position: absolute;
+                top:0;
+                left: 25px;
+                height: 50px;
+                margin-top: 10px;
+            }
+        }
+    }
+    
+    @media (max-width: 767px) /* NAVBAR --> MOBILE */ {
+        :root {
+            --height-navbar: 60px; /* Reasignamos la variable */
+        }
+    
+        /* COMPORTAMIENTO Y ESTILO DE LA NAVBAR MOBILE */
+            #navbar  {
+                height: var(--height-navbar);
+    
+                /* ESTBLECE LA DISTRIBUCIÓN DE LA NAVBAR */
+                display: grid;
+                grid-auto-columns: 33.333%; 
+                grid-template-areas: 
+                "botonMenuDesplegable           logo            shoppingCart"
+                "menuDesplegable            menuDesplegable     menuDesplegable";
+                
+                /* PROPIEDADES DE LA SOMBRA DE LA NAVBAR */
+                -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.2);
+                box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.2);
+                transition: 0.5s;
+            }
+            #navbar:hover, .change#nanbar:hover {
+                /* PROPIEDADES DE LA SOMBRA->NAVBAR CUANDO EL USUARIO
+                COLOCA EL CURSON ENCIMA DE LA NAVBAR EN MODO MOBILE */
+                -webkit-box-shadow: 0px 0px 4px 5px rgba(0, 0, 0, 0.5);
+                box-shadow: 0px 0px 6px 5px rgba(0, 0, 0, 0.5);
+            }
+            .change#navbar {
+                /* DESPLIEGUE DEL MENU COLAPSABLE */
+                height: 380px;
+            }
+    
+        /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR
+            PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
+            #botonMenuDesplegable {
+                grid-area: botonMenuDesplegable;
+                height: var(--height-navbar);
+                text-align: left;
+            }
+            #logo {   
+                grid-area: logo;      
+                height: var(--height-navbar);
+                text-align: center;
+                align-items: center;
+            }
+            #menuIcons {
+                grid-area: shoppingCart; 
+                height: var(--height-navbar);
+            }
+            #shoppingCartContainer {
+                display: inherit;
+                height: var(--height-navbar);
+                text-align: right;
+            }
+            #menuText {
+                display: none;
+            }
+            #menuDesplegable {
+                display: none;
+                grid-area: menuDesplegable;
+                transition: 0.3s;
+            }
+            .change#menuDesplegable {
+                display: block;
+                text-align: left;
+                width: 100%;
+            }
+    
+        /* ESTILO DE LOS ELEMENTOS DE LA NAVBAR */
+            /*ELEMENTOS BOTON-MENU DESPLEGABLE */
+            #togglerMenu {
+                height: var(--height-navbar);
+                background-color: transparent;
+                border: 0px;
+                padding-left: 20px;
+    
+            }
+            .bar1, .bar2, .bar3 {
+                width: 30px;
+                height: 5px;
+                background-color: var(--color1);
+                margin: 5px 0;
+                transition: 0.4s;
+                border-radius: 2px;
+            }
+    
+            .change .bar1 {
+                transform: translate(0, 10px) rotate(315deg);
+                background-color: var(--color3);
+            }
+    
+            .change .bar2 {
+                opacity: 0;
+            }
+    
+            .change .bar3 {
+                transform: translate(0px, -10px) rotate(-315deg);
+                background-color: var(--color3);
+            }
+    
+            /* LOGO EN NAVBAR MODO MOBILE */
+            #logoMobileNavBar {
+                position: relative;
+                align-items: center;
+                text-align: center;
+                height: 45px;
+    
+            }
+    
+            /* ICONO DEL CARRITO DE COMPRAS */
+            #shoppingCartIcon {
+                position: relative;
+                top: 10px;
+                font-size: 40px;
+                padding-right: 15px ;
+                color: var(--color1);
+                transition: 0.3s;
+            }
+            #shoppingCartIcon:hover {
+                color: var(--color3);
+            }
+    
+            /* DESAPARECER ELEMENTOS QUE NO ENTRAN EN LA NAVBAR MOBILE */
+            #mobileNavbarIconOut, #logoNavBar  {
+                display: none;
+            }
+    
+            /* ELEMENTOS DEL MENU DESPLEGABLE */
+            span#menuDesplegableIcons {
+                position: relative;
+                top: 7px;
+                font-size: 30px;
+            }
+            input.searchInput {
+                width: 70%;
+                height: 45px;
+                border-radius: 10px;
+                border: 2px solid var(--color1);
+                margin-top: 10px;
+                margin-bottom: 30px;
+            }
+            input.searchInput:focus {
+                border: 2px solid var(--color3);
+                outline: 4px solid rgba(97, 19, 27, 0.5);
+                outline-offset: 0px;
+            }
+            button.searchInput {
+                width: 20%;
+                height: 50px;
+                background-color: transparent;
+                border: 0;
+            }
+            #menuDesplegable ul, #menuDesplegable a {
+                list-style-type: none;
+                font-size: 23px;
+                font-weight: 600;
+                text-decoration: none;
+                color: var(--color1);
+                transition: color .3s;  
+            }
+            #menuDesplegable li {
+                margin: -20px;
+                position: relative;
+            }
+            #menuDesplegable a:hover {
+                color: var(--color3);
+            }
+    
+            /* CSS DE LOS ICONOS (FONT) MATERIAL DESIGN */
+            .material-symbols-outlined {
+                font-variation-settings:
+                'FILL' 0,
+                'wght' 600,
+                'GRAD' 800,
+                'opsz' 30
+            }
+            .material-symbols-outlined:hover {
+                font-variation-settings:
+                'FILL' 1,
+                'wght' 600,
+                'GRAD' 400,
+                'opsz' 98
+                }
+        
+    }
 }
-@media (min-width: 768px) /* NAVBAR --> DESKTOP & TABLETS */ {
-    /* CSS PARA TODA LA NAVBAR EN GENERAL */
-    #navbar  {
-        /* PROPIEDADES DE LA SOMBRA DE LA NAVBAR */
-        -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1); 
+
+/*######################################################################
+                        CSS DE LA LATERAL-BAR
+#######################################################################*/
+
+@media {
+    div#LateralBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 215px;
+        height: 100%;
+        grid-area: LateralBar;
+        background-color: var(--color4); 
+        transition: 0.25s;
+        padding-top: 80px;
+    }
+    div#LateralBar ul {
+        padding-left: 0;
+    }
+
+    div#LateralBar a {
+        text-decoration: none;
+        color: var(--color1);
+    }
+    div#LateralBar li {
+        display: flex;
+        align-items: center;
+
+        width: 100%;
+        height: 70px;
+
+
+        list-style-type: none;
+        font-size: 20px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+    div#LateralBar li:hover {
+        background-color: var(--color5);
+        border-radius: 10px;
+    }
+    div#LateralBar a:link {
+        background-color: var(--colorBG);
+        border-radius: 10px;
+    }
+
+
+    div#LateralBar span {
+        margin: 5px;
+        padding-left: 10px;
+        font-size: 35px;
+    }
+
+
+    @media (max-width: 992px) {
+        div#LateralBar {
+            width: 70px;
+        }
+
+        div#LateralBar li{
+            justify-content: center;
+        }
+
+        div#LateralBar h {
+            display: none;
+        }
+
+        div#LateralBar span {
+           padding-left: 0;
+            font-size: 35px;
+        }
+        @media (max-width: 576px) {
+
+            div#LateralBar {
+                width: 50px;
+            }
+        }
+    }
+}
+
+/*######################################################################
+                        CSS de MyAccount
+#######################################################################*/
+@media { /*My Account*/
+    
+    div#page-content {
+        display: grid;
+        grid-template-areas: "LateralBar Contenido";
+        grid-template-columns: 225px 1fr;
+    }
+
+    div#Contents {
+        grid-area: Contenido;
+        padding-left: 10%;
+        padding-right: 10%;
+        transition: 0.4s;
+    }
+
+    div#BannerMyAccount {
+        height: 80px;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    div#BannerMyAccount h4 {
+        margin-left: 10px;
+        font-weight: 600;
+    }
+    @media (max-width: 992px) {
+        div#page-content {
+            grid-template-columns: 70px 1fr;
+        }
+        div#Contents {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+    }
+
+    @media (max-width: 576px) {
+        div#page-content {
+            grid-template-columns: 50px 1fr;
+        }
+
+        div#Contents {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+    }
+    
+    div#InfoAccount,
+    div#Order {
+        background-color: var(--colorBG);
+        border-radius: 10px;
+        height: max-content;
+
+        -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
         box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
         transition: 0.5s;
     }
-    #navbar:hover {
-        /* PROPIEDADES DE LA SOMBRA->NAVBAR CUANDO EL USUARIO
-            COLOCA EL CURSON ENCIMA DE LA NAVBAR */
-        -webkit-box-shadow: 0px 0px 10px 5px rgba(58, 13, 21, 0.5);
-        box-shadow: 0px 0px 10px 5px rgba(58, 13, 21,0.5);
+
+    div#InfoAccount:hover,
+    div#Order:hover {
+        -webkit-box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.4);
     }
 
-    /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR 
-    PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
-    #logo {   
-        float: left;      /* alinear horizontalmente los divs hijos dentro del div padre */
-        height: 100%;     /* ocupar el 100% de espacio vertical del div padre */
-    }
-    #navbar1 {
-        float: left;      /* alinear horizontalmente los divs hijos dentro del div padre */
-        height: 100%;     /* ocupar el 100% de espacio vertical del div padre */
-        text-align: center; 
-    }
-    #menuIcons {
-        float: left;      /* alinear horizontalmente los divs hijos dentro del div padre */
-        height: 100%;     /* ocupar el 100% de espacio vertical del div padre */
-        text-align: right;    /* alinear el texto a la derecha del div*/
-        padding-right: 10px;  /* espaciado del borde derecho*/
-    }
-    #menuDesplegable, #menuMobile {
-        display: none;
+    div#HeaderUserPhoto {
+        height: 85px;
+        display: flex;
+        justify-content: center;
+
     }
 
-    /* ESTILO DE LOS ELEMENTOS DE LA NAVBAR */
-    #navbar1 a, #menuIcons a{
-        font-size: 20px;   
-        text-decoration: none;      /* eliminar el underline del link */
-        color: var(--color1);   
-        margin-left: 5px;     /* espaciado entre los elementos elementos */
-        margin-right: 5px;    /* espaciado entre los elementos elementos */
-        font-weight: 600;
-    }
-
-    #menuIcons span {
+    div#UserPhoto {
         position: relative;
-        top: 10px;
-        font-size: 35px;
-    }
-    /* CSS DE LOS ICONOS (FONT) MATERIAL DESIGN */
-    .material-symbols-outlined {
-        font-variation-settings:
-        'FILL' 0,
-        'wght' 500,
-        'GRAD' 800,
-        'opsz' 18
-    }
-    .material-symbols-outlined:hover {
-        font-variation-settings:
-        'FILL' 1,
-        'wght' 800,
-        'GRAD' 800,
-        'opsz' 18
-    }
-
-    @media (min-width: 992px){
-
-        /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR 
-            PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
-        #logo {   
-            width: 25%;       /* porcentaje del espacio horizontal que ocupan del div padre */
-        }
-        #navbar1 {
-            width: 50%;       /* porcentaje del espacio horizontal que ocupan del div padre */
-        }
-        #menuIcons {
-             width: 25%;       /* porcentaje del espacio horizontal que ocupan del div padre */
-        }
-    
-        #logoNavBar {
-            position: absolute;
-            top:0;
-            left: 10px;
-            height: 50px;
-            margin-top: 10px;
-        }
-    
-        #logoMobileNavBar {
-            display: none;
-        }
-    }
-    
-    @media (max-width: 991px) and (min-width: 768px){
-    
-        /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR 
-            PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
-        #logo {   
-            width: 10%;       /* porcentaje del espacio horizontal que ocupan del div padre */
-    
-        }
-        #navbar1 {
-            width: 65%;       /* porcentaje del espacio horizontal que ocupan del div padre */
-    
-        }
-        #menuIcons {
-             width: 25%;       /* porcentaje del espacio horizontal que ocupan del div padre */
-        }
-    
-        #logoNavBar {
-            display: none;
-        }
-    
-        #logoMobileNavBar {
-            position: absolute;
-            top:0;
-            left: 25px;
-            height: 50px;
-            margin-top: 10px;
-        }
-    }
-}
-@media (max-width: 767px) /* NAVBAR --> MOBILE */ {
-    :root {
-        --height-navbar: 60px;
-    }
-
-    #navbar  {
-        height: var(--height-navbar);
-        /*ESTBLECE LA POSICIÓN DE LA NAVBAR PEGADA ARRIBA*/
-        display: grid;
-        grid-auto-columns: 33.33%;
-        grid-template-areas: 
-        "menuDesplegable logo shoppingCart"
-        "menuMobile menuMobile menuMobile";
-        /* PROPIEDADES DE LA SOMBRA DE LA NAVBAR */
-        -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.2);
-        transition: 0.5s;
-    }
-    
-    #navbar:hover, .change#nanbar:hover {
-        /* PROPIEDADES DE LA SOMBRA->NAVBAR CUANDO EL USUARIO
-        COLOCA EL CURSON ENCIMA DE LA NAVBAR EN MODO MOBILE */
-        -webkit-box-shadow: 0px 0px 4px 5px rgba(0, 0, 0, 0.5);
-        box-shadow: 0px 0px 6px 5px rgba(0, 0, 0, 0.5);
-    }
-
-    .change#navbar {
-        /* DESPLIEGUE DEL MENU COLAPSABLE */
-        height: 380px;
-    }
-
-    /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR
-        PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
-    #menuDesplegable {
-        grid-area: menuDesplegable;
-        height: var(--height-navbar);
-        text-align: left;
-    }
-    #logo {   
-        grid-area: logo;      /* alinear horizontalmente los divs hijos dentro del div padre */
-        height: var(--height-navbar);     /* ocupar el 100% de espacio vertical del div padre */
-        text-align: center;
-        align-items: center;
-    }
-    #menuIcons {
-        grid-area: shoppingCart;      /* alinear horizontalmente los divs hijos dentro del div padre */
-        height: var(--height-navbar);     /* ocupar el 100% de espacio vertical del div padre */
-    }
-    #shoppingCartContainer {
-        display: inherit;
-        height: var(--height-navbar);
-        text-align: right;
-    }
-    #navbar1 {
-        display: none;
-    }
-    #menuMobile {
-        display: none;
-        grid-area: menuMobile;
+        top: -75px;
+        height: 150px;
+        width: 150px;
+        background-image: url("../img/wallePhoto.jpg");
+        background-size: 100%;
+        border-radius: 100px;
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.04);
         transition: 0.3s;
     }
-    .change#menuMobile {
-        display: block;
-        text-align: left;
-        width: 100%;
-    }
-    /* ESTILO DE LOS ELEMENTOS DE LA NAVBAR */
-    #togglerMenu {
-        height: var(--height-navbar);
-        background-color: transparent;
-        border: 0px;
-        padding-left: 10px;
 
+    div#UserPhoto:hover {
+        top: -80px;
+        height: 160px;
+        width: 160px;
+        box-shadow: 0px 0px 10px 4px rgba(0, 0, 0, 0.1);
     }
-    #logoMobileNavBar {
-        position: relative;
-        align-items: center;
-        text-align: center;
-        height: 45px;
 
+    div#e-Mail div {
+        display: inline-flex;
+        margin: -2px;
     }
-    #shoppingCartIcon {
-        position: relative;
-        top: 10px;
-        font-size: 40px;
-        padding-right: 5px ;
-        color: var(--color1);
-        transition: 0.3s;
-    }
-    #shoppingCartIcon:hover {
-        color: var(--color3);
-    }
-    #mobileNavbarIconOut, #logoNavBar  {
-        display: none;
-    }
-    span#menuMobileIcons {
-        position: relative;
-        top: 7px;
-        font-size: 30px;
-    }
-    input.searchInput {
-        width: 70%;
-        height: 45px;
-        border-radius: 10px;
-        border: 2px solid var(--color1);
-        margin-top: 10px;
-        margin-bottom: 30px;
-    }
-    input.searchInput:focus {
-        border: 2px solid var(--color3);
-        outline: 4px solid rgba(97, 19, 27, 0.5);
-        outline-offset: 0px;
-    }
-    button.searchInput {
-        width: 20%;
-        height: 50px;
-        background-color: transparent;
+
+    .accordion-item {
+        background-color: var(--colorBG);
         border: 0;
     }
-    #menuMobile ul, #menuMobile a {
-        list-style-type: none;
-        font-size: 23px;
-        font-weight: 600;
-        text-decoration: none;
+
+    .accordion-button.collapsed {
+        background-color: var(--color5);
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: var(--color5);
+        
         color: var(--color1);
-        transition: color .5s;  
-    }
-    #menuMobile li {
-        margin: -20px;
-        margin-left: -20px;
-        position: relative;
-        align-items: center;
-    }
-    #menuMobile a:hover {
-        color: var(--color3);
-    }
-    /* CSS DE LOS ICONOS (FONT) MATERIAL DESIGN */
-    .material-symbols-outlined {
-        font-variation-settings:
-        'FILL' 0,
-        'wght' 600,
-        'GRAD' 800,
-        'opsz' 30
-    }
-    .material-symbols-outlined:hover {
-        font-variation-settings:
-        'FILL' 1,
-        'wght' 600,
-        'GRAD' 400,
-        'opsz' 98
-        }
-
-    .bar1,
-    .bar2,
-    .bar3 {
-        width: 30px;
-        height: 5px;
-        background-color: var(--color1);
-        margin: 5px 0;
-        transition: 0.4s;
-        border-radius: 2px;
     }
 
-    .change .bar1 {
-        transform: translate(0, 10px) rotate(315deg);
-        background-color: var(--color3);
+
+
+    .card-profile-stats>div {
+        margin-right: 1rem;
+        padding: .875rem;
+        text-align: center;
     }
 
-    .change .bar2 {
-        opacity: 0;
+    .card-profile-stats>div:last-child {
+        margin-right: 0;
     }
 
-    .change .bar3 {
-        transform: translate(0px, -10px) rotate(-315deg);
-        background-color: var(--color3);
+    .card-profile-stats>div .heading {
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
     }
-    
+
+    .card-profile-stats>div .description {
+        font-size: 15px;
+        color: #000000;
+    }
+
+    #UserData label {
+        font-size: 15px;
+        font-weight: 500;
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+
+    div#botton {
+        height: 20px;
+        background-color: var(--color5);
+        border-radius: 0px 0px 10px 10px;
+    }
 }
 
+/*######################################################################
+                        CSS de My Orders
+#######################################################################*/
+@media { /*My Orders*/
+    
+    
+    div#OrderDate {
+        display: flex;
+        align-items: center;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+        font-size: 15px;
+        font-weight: 500;
+        padding: 10px;
+    }
+    
+    div#TotalPrice {
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: right;
+    }
+    
+    div#TotalPrice span#TotalPrice {
+        margin-left: 5px;
+        font-weight: 500;
+    }
+    
+    div#OrderList {
+        height: auto;
+    }
+    
+    div.Product {
+        height: 150px;
+        display: grid;
+        grid-template-areas: "Image Tittle BuyAgain"
+            "Image Info   Price"
+            "Image Info   Price";
+        grid-template-rows: min-content 1fr 1fr;
+        grid-template-columns: min-content auto max-content;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+        margin-top: 10px;
+    }
+    
+    
+    div.Image {
+        grid-area: Image;
+    }
+    
+    div.Image img {
+        width: 70px;
+        height: 70px;
+        border: 0.5px solid rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.04);
+    }
+    
+    div.Tittle {
+        grid-area: Tittle;
+        padding-left: 10px;
+        display: flex;
+        align-items: flex-end;
+    }
+    
+    div.BuyAgain {
+        grid-area: BuyAgain;
+    }
+    
+    div.Info {
+        grid-area: Info;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 13px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    div.Price {
+        grid-area: Price;
+        display: flex;
+        position: relative;
+        align-items: flex-end;
+        margin-bottom: 10px;
+    }
+    
+    div.Price span {
+        margin-left: 5px;
+        font-weight: 600;
+    }
+    }
+
+
+/*######################################################################
+                        CSS de LOGIN PAGE
+#######################################################################*/
+@media {/* LOGIN PAGE*/
+
+    .center {
+        margin: auto;
+        max-width: 400px;
+        padding: 10px;
+        text-align: center;
+        }
+
+    .form-placeholders {
+        width : 100%;
+        height : auto;
+        border: 1px solid var(--color1);
+        border-radius: 10px;
+        box-shadow: 0 1px 5px 1px rgba(0, 0, 0, 0.1);
+        padding: 10px;
+        transition: 0.3s;
+    }
+
+    .form-placeholders:hover {
+        box-shadow: 0 2px 10px 1px rgba(0, 0, 0, 0.4);
+    }
+
+    .form-placeholders:focus{
+        outline: 4px solid #ff84006e;
+    }
+}
+
+<<<<<<< HEAD
 
 
 /*######################################################################
@@ -451,9 +874,12 @@ body {
 
 
 
+=======
+>>>>>>> c049d8ae0a752c7bee07a6e7d39ce5c23008c64c
 /*######################################################################
-                        OTROS COMPONENTES....
+                        CSS de SIGN UP PAGE
 #######################################################################*/
+<<<<<<< HEAD
 
 
 
@@ -482,14 +908,26 @@ body {
 /* Estilo de pagina de crear cuenta*/
     .boton-crear {
         size : "50" min="10" max="100";
+=======
+@media {/* SIGN UP PAGE*/
+    
+    
+    .boton-crear, .boton {
+        size: "50" min="10" max="100";
+>>>>>>> c049d8ae0a752c7bee07a6e7d39ce5c23008c64c
         background-color: rgb(221, 123, 44);
         border: none;
         color: white;
-        width : 350px;
+        width : 100%;
+        max-width: 300px;
         height : 50px;
         border-radius: 10px;
         margin-bottom: 10px;
         font-family: 'Montserrat', sans-serif; 
+    }
+
+    .boton-crear:hover, .boton:hover {
+        outline: 4px solid #ff84006e;
     }
 
     .boton-inicio {
@@ -514,5 +952,16 @@ body {
      .titulo-login-signup {
         font-family: 'Ubuntu', sans-serif; 
         color: black;
+<<<<<<< HEAD
      }
 
+=======
+        margin-bottom: 20px;
+     }
+
+     div#padre {
+        width: 500px;
+     }
+
+    }
+>>>>>>> c049d8ae0a752c7bee07a6e7d39ce5c23008c64c

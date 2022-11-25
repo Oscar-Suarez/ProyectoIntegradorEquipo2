@@ -1,9 +1,8 @@
 function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HTML
     var navBar = document.getElementById("navbar");
-    navbar.classList.toggle("container"); //Agregamos compatibilidad con Bootstrap
     navBar.innerHTML = `
-    <div id="menuDesplegable">
-            <button id="togglerMenu" onclick="animation(this)">
+    <div id="botonMenuDesplegable">
+            <button id="togglerMenu">
                 <div class="animatedButton">
                     <div class="bar1"></div>
                     <div class="bar2"></div>
@@ -20,7 +19,7 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
             </a>
         </div>
         
-        <div id=navbar1>
+        <div id=menuText>
             <nav>
                 <a href="./index.html">Inicio</a>
                 <a href="./products.html">Productos</a>
@@ -35,25 +34,82 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
                     search
                 </span>
             </a>
-            <a aria-current="page" href="./user-page.html">
+            <a data-bs-toggle="dropdown" role="button" aria-expanded="false">
                 <span class="material-symbols-outlined" id="mobileNavbarIconOut">
                     account_circle
                 </span>
             </a>
+            <ul class="dropdown-menu dropdown-menu-dark">
+                    <li>
+                        <a class="dropdown-item" href="./signup.html">
+                        <span class="material-symbols-outlined">
+                            person_add
+                        </span>
+                        Sign Up
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a class="dropdown-item" href="./login.html">
+                        <span class="material-symbols-outlined">
+                            login
+                        </span>
+                        Log in
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a class="dropdown-item" href="./user-page.html">
+                        <span class="material-symbols-outlined">
+                        account_circle
+                        </span>
+                        Mi Cuenta
+                        </a>
+                    </li>
+
+                    <li>
+                        <a class="dropdown-item" href="./my-orders.html">
+                        <span class="material-symbols-outlined">
+                        package
+                        </span>
+                        Mis Pedidos
+                        </a>
+                    </li>
+
+                    <li id="CloseSesion">
+                            <h3 id="flush-headingThree">
+                                <button type="button" class="btn btn-danger m-3">
+                                    <p>
+                                    <span class="material-symbols-outlined">
+                                    logout
+                                    </span>
+                                    Cerrar Sesión
+                                    </p>
+                                </button>
+                            </h3>
+                    </li>
+
+
+            </ul>
+            
+
+        
             <a href="shopping-cart.html" id="shoppingCartContainer">
                 <span class="material-symbols-outlined" id="shoppingCartIcon">
                     shopping_cart
                 </span>
             </a>
         </div>
-        <div id="menuMobile">
+        <div class="container" id="menuDesplegable">
             <ul>
                 <li>
                     <a href="./index.html">
                         <form>
                             <input type="text" class="searchInput" value=" Buscar Productos" id="inputBuscador"></input>
                             <a class="searchInput" type="submit" value="Submit">
-                                <span class="material-symbols-outlined" id="menuMobileIcons">
+                                <span class="material-symbols-outlined" id="menuDesplegableIcons">
                                     search
                                 </span>
                             </a>
@@ -61,7 +117,7 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
                     </a>
                 </li>
                 <li><a href="./user-page.html">
-                        <span class="material-symbols-outlined"  id="menuMobileIcons">
+                        <span class="material-symbols-outlined"  id="menuDesplegableIcons">
                             account_circle
                         </span>
                         Account</a></li>
@@ -76,20 +132,21 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
   `;
 
 }
-var openMenu = false;
-function animation(x) {
-  x.classList.toggle("change");
+
+function animation() {
+  togglerMenu.classList.toggle("change");
   navbar.classList.toggle("change");
     if (!openMenu){
       setTimeout(() => {
-      menuMobile.classList.toggle("change");
+      menuDesplegable.classList.toggle("change");
       }, 500);
       openMenu = !openMenu;
     } else {
-      menuMobile.classList.toggle("change");
+      menuDesplegable.classList.toggle("change");
       openMenu = !openMenu;
     }
 }
+
 function  preventRefreshButton () {
   document.getElementById("inputBuscador").addEventListener("click", function(event){
     event.preventDefault()
@@ -97,8 +154,19 @@ function  preventRefreshButton () {
 
 }
 
+var attributions = `
+<a href="https://www.flaticon.com/free-icons/facebook" title="facebook icons">Facebook icons created by Pixel perfect - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/instagram" title="instagram icons">Instagram icons created by Pixel perfect - Flaticon</a>
+<a href="https://www.flaticon.com/free-icons/twitter" title="twitter icons">Twitter icons created by Pixel perfect - Flaticon</a>
+
+`;
+
 
 runNavBar(); //Corremos la funcion para que se agregue.
 preventRefreshButton();
+var openMenu = false;
+var togglerMenu = document.getElementById("togglerMenu");
+console.log(togglerMenu);
+togglerMenu.addEventListener("click", animation);
 
 
