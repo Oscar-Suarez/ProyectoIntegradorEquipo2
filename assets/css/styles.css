@@ -37,17 +37,75 @@ body {
     font-family: 'Ubuntu', sans-serif;
 }
 
-.h1, .h2, .h3, .h4, .h5, .h6,
-h1, h2, h3 ,h4 ,h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 450;
+.titulo {
+    font-family: 'Ubuntu', sans-serif; 
+    color: var(--color1);
+
+ }
+
+ .boton {
+    background-color: var(--color4);
+    border: 0;
+    color: white;
+    width: auto;
+    padding: 10px 15px 10px 15px;
+    border-radius: 10px;
+    height : auto;
+}
+
+.boton:hover {
+    outline: 4px solid #ff84006e;
+}
+
+.vinculo-login-signup {
+    text-decoration:none;
+    font-family: 'Montserrat', sans-serif; 
+    color: black;
 }
 
 
-.btn-danger:hover {
-    outline: 4px solid rgba(156, 13, 2, 0.5);
-    outline-offset: 0px;
+
+/*______________________________________________________________________
+########################################################################
+                        CSS over Bootstrap 5
+######################################################################*/
+
+@media {
+    .h1, .h2, .h3, h1, h2, h3  {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+    }
+    .h4, .h5, .h6 ,h4 ,h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 525;
+    }
+
+    .accordion-item {
+        background-color: var(--color6);
+        border: 0;
+    }
+
+    .accordion-button.collapsed {
+        background-color: var(--color5);
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: var(--color5);
+        
+        color: var(--color1);
+    }
+
+    button.accordion-button {
+        font-size: 18px;
+        font-weight: 550;
+    }
+
+    .btn-danger:hover {
+        outline: 4px solid rgba(156, 13, 2, 0.5);
+        outline-offset: 0px;
+    }
 }
+
 
 /*######################################################################
                         CSS DE LA NAVBAR
@@ -116,7 +174,7 @@ h1, h2, h3 ,h4 ,h5, h6 {
             color: var(--color1);   
             margin-left: 5px;     /* espaciado entre los elementos elementos */
             margin-right: 5px;    /* espaciado entre los elementos elementos */
-            font-weight: 600;
+            font-weight: 400;
         }
     
         #menuIcons span {
@@ -380,7 +438,7 @@ h1, h2, h3 ,h4 ,h5, h6 {
             #menuDesplegable ul, #menuDesplegable a {
                 list-style-type: none;
                 font-size: 23px;
-                font-weight: 600;
+                font-weight: 450;
                 text-decoration: none;
                 color: var(--color1);
                 transition: color .3s;  
@@ -461,7 +519,7 @@ h1, h2, h3 ,h4 ,h5, h6 {
 
         list-style-type: none;
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 500;
         transition: 0.3s;
     }
     div#LateralBar li:hover {
@@ -632,10 +690,7 @@ h1, h2, h3 ,h4 ,h5, h6 {
     
     }
 
-    
 
-    
-    
 
     div#BannerMyAccount {
         height: 80px;
@@ -645,7 +700,6 @@ h1, h2, h3 ,h4 ,h5, h6 {
 
     div#BannerMyAccount h4 {
         margin-left: 10px;
-        font-weight: 600;
     }
     
     
@@ -694,23 +748,7 @@ h1, h2, h3 ,h4 ,h5, h6 {
         margin: -2px;
     }
 
-    .accordion-item {
-        background-color: var(--color6);
-        border: 0;
-    }
-
-    .accordion-button.collapsed {
-        background-color: var(--color5);
-    }
-
-    .accordion-button:not(.collapsed) {
-        background-color: var(--color5);
-        
-        color: var(--color1);
-    }
-
-
-
+    
     .card-profile-stats>div {
         margin-right: 1rem;
         padding: .875rem;
@@ -871,33 +909,6 @@ h1, h2, h3 ,h4 ,h5, h6 {
                         CSS de SIGN UP PAGE
 #######################################################################*/
 @media {/* SIGN UP PAGE*/
-    
-    
-    .boton-crear, .boton {
-        background-color: var(--color4);
-        border: 0;
-        color: white;
-        width: auto;
-        padding: 10px 15px 10px 15px;
-        border-radius: 10px;
-        height : auto;
-    }
-
-    .boton-crear:hover, .boton:hover {
-        outline: 4px solid #ff84006e;
-    }
-    
-    .vinculo-login-signup {
-        text-decoration:none;
-        font-family: 'Montserrat', sans-serif; 
-        color: black;
-    }
-
-     .titulo-login-signup {
-        font-family: 'Ubuntu', sans-serif; 
-        color: black;
-        margin-bottom: 20px;
-     }
 
      div#padre {
         width: 500px;
@@ -951,7 +962,7 @@ h1, h2, h3 ,h4 ,h5, h6 {
         z-index: 9;
     }
     div.card-body span.mx-1 {
-        font-weight: 700;
+        font-weight: 600;
         
     }
 
@@ -985,8 +996,6 @@ h1, h2, h3 ,h4 ,h5, h6 {
                         ESTILOS PAGINA PRODUCTOS
 #######################################################################*/
 @media {
-
-
     
 }
 
@@ -996,27 +1005,20 @@ h1, h2, h3 ,h4 ,h5, h6 {
 #######################################################################*/
 @media {
 
-    
-
-    @supports (font-variation-settings: "wght" 250) {
-        h1#TittlePage {
-          color: var(--color1);
-          font-size: 50px;
-          text-transform: uppercase;
-          letter-spacing: -2px;
-        }
-    }
-
     div.spacer {
-        height: 8px;
-        width: 1.1%;
+        height: 100%;
+        width: 100%;
         background-color: var(--color1);
-        position: relative;
         margin: auto;
+        clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+        position: relative;
         top: -10px;
-        border-radius: 100px;
-        transform: scale(80, 0.4);
+        transform: scale(100%, 20%);
+
+
+
     }
+
 
     div.container#FAQPage {
         padding: 0;
@@ -1037,17 +1039,9 @@ h1, h2, h3 ,h4 ,h5, h6 {
         border-bottom: 0.1px solid rgba(156, 13, 2, 0.5);
     }
     
-
-
-
     .FAQ-body {
         padding: 20px;
         font-style: oblique;
-    }
-    
-    div.container#FAQPage button.accordion-button {
-        font-size: 18px;
-        font-weight: 500;
     }
     
 }
@@ -1056,18 +1050,14 @@ h1, h2, h3 ,h4 ,h5, h6 {
 /*######################################################################
                         ESTILOS PRODUCT PAGE
 #######################################################################*/
-@media {
-
-    
+@media {   
     
 }
 
 /*######################################################################
                         ESTILOS ABOUT US PAGE
 #######################################################################*/
-@media {
-
-    
+@media {  
     
 }
 
@@ -1082,7 +1072,5 @@ h1, h2, h3 ,h4 ,h5, h6 {
                         ESTILOS FAQ
 #######################################################################*/
 @media {
-
-    
-    
+  
 }
