@@ -19,28 +19,32 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
 
     <title>Carrito de compras- Balxhe</title>
 </head>
 
 <body>
-    <div id="navbar"></div> <!--Con JS se agregará la NavBar-->
+    <div id="navbar"></div>
+    <!--Con JS se agregará la NavBar-->
     <div id="page-content">
-    
+
         <div id="LateralBar"></div>
         <!--Con JS se agregará la LateralBar-->
-    
+
         <!--Contenedor principal-->
         <div class="container-fluid mt-3" id="Contents">
             <!--Contenedor de las columnas de usuario y orden -->
             <div class="row">
-                <div class="col-lg-7 order-lg-2 mt-4  mb-3"><!--Contenedor de la orden-->
+                <div class="col-lg-7 order-lg-2 mb-5">
+                    <!--Contenedor de la orden-->
                     <div class="h4 m-2 mb-3">Tú Orden</div>
                     <div class="p-4" id="Order">
-        
+
                         <div class="orderContainer p-2">
-                            
+
                         </div>
 
                         <!--PRECIOS CONTENEDOR-->
@@ -57,66 +61,131 @@
                     </div>
                 </div>
 
-                <div class="col-lg-5 order-lg-1  mb-5" id="user-column"> <!--Columna de usuario-->
-                    
-
-                    <div class="row" id="BannerMyAccount"></div>
-
-
-                    
-                    <div class="" id="InfoAccount">
-
-
-                        <div class="container-fluid col-lg" id="HeaderUserPhoto">
-                            <div id="UserPhoto"></div>
-                        </div>
-        
-                        <div class="text-center mt-3">
-                            <h4 id="UserName">
-                                WalleMontero97
-                            </h4>
-                            
-                            <div class="h6 mt-1" id="e-Mail">
-                                <div id="e-Mail-1">montero</div>
-                                <div id="e-Mail-2">@walle.mx</div>
+                <div class="col-lg-5 order-lg-1  mb-5" id="user-column">
+                    <!--Columna de usuario-->
+                    <div class="h4 m-2 mb-3">Tus Datos</div>
+                    <div id="InfoAccount">
+                        <div id="header">
+                            <div id="HeaderUserPhoto2">
+                                <div class="shopping-cart-page" id="UserPhoto2"></div>
                             </div>
-                            <br>
+
+                            <div id="HeaderInfo">
+                                <div class="h4" id="UserName">
+                                    WalleMontero97
+                                </div>
+
+                                <div class="h6 ms-2" id="e-Mail">
+                                    <div id="e-Mail-1">montero</div>
+                                    <div id="e-Mail-2">@walle.mx</div>
+                                </div>
+                                <br>
+                            </div>
                         </div>
 
-    
+
                         <!--ACCORDION DE BOOTSTRAP-->
                         <div class="Accordion  accordion-flush" id="accordionPanelsStayOpenExample">
                             <!--USUARIO-->
-                            
-                            
-    
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+
+                                    <!--BOTÓN DE USUARIO-->
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne" id="btn">
+                                        Formas de Pago
+                                    </button>
+
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show p-3"
+                                    aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="">
+                                        <div class="form-check">
+                                            <input id="credit" name="paymentMethod" type="radio"
+                                                class="form-check-input" checked="" required="">
+                                            <label class="form-check-label" for="credit">Tarjeta de
+                                                crédito/débito</label>
+                                        </div>
+
+                                        <div class="form-check">
+                                            <input id="paypal" name="paymentMethod" type="radio"
+                                                class="form-check-input" required="">
+                                            <label class="form-check-label" for="paypal">PayPal</label>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="     col-lg-12 col-md-6 mb-2">
+                                            <label for="cc-name" class="form-label">Nombre en la tarjeta</label>
+                                            <input type="text" class="form-control form-placeholders" id="cc-name"
+                                                placeholder="" required="">
+                                            <small class="text-muted">Nombre completo como se muestra en la
+                                                tarjeta</small>
+                                            <div class="invalid-feedback">
+                                                Se requiere el nombre en la tarjeta
+                                            </div>
+                                        </div>
+                                        <div class="     col-lg-12 col-md-6 mb-2">
+                                            <label for="cc-number" class="form-label">Número de tarjeta de
+                                                crédito</label>
+                                            <input type="text" class="form-control form-placeholders" id="cc-number"
+                                                placeholder="" required="">
+                                            <div class="invalid-feedback">
+                                                Se requiere número de tarjeta de crédito
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 mb-2">
+                                        <div class="col-md-6 mb-2">
+                                            <label for="cc-expiration" class="form-label">Vencimiento</label>
+                                            <input type="text" class="form-control form-placeholders" id="cc-expiration"
+                                                placeholder="" required="">
+                                            <div class="invalid-feedback">
+                                                Fecha de vencimiento requerida
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-2">
+                                            <label for="cc-cvv" class="form-label">CVV</label>
+                                            <input type="text" class="form-control form-placeholders" id="cc-cvv"
+                                                placeholder="" required="">
+                                            <div class="invalid-feedback">
+                                                Código de seguridad requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
                             <!--INFORMACIÓN DE CONTACTO-->
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-    
+
                                     <!--BOTÓN DE INFORMACIÓN DE CONTACTO-->
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
                                         aria-controls="panelsStayOpen-collapseTwo" id="">
                                         Información de Contacto
                                     </button>
-    
+
                                 </h2>
                                 <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
                                     aria-labelledby="panelsStayOpen-headingTwo">
                                     <div id="contactContainer">
                                         <ul class="list-group list-group-flush" id="contactList">
-    
+
                                             <!--NOMBRE CONTENEDOR-->
                                             <li class="list-group-item">
                                                 Nombre(s):<span id="name">Walbertho Efrain</span>
                                             </li>
-    
+
                                             <!--APELLIDO CONTENEDOR-->
                                             <li class="list-group-item">
                                                 Apellidos:<span id="lastname">Montero Cervantes</span>
                                             </li>
-    
+
                                             <!--No. TELEFONO CONTENEDOR-->
                                             <li class="list-group-item">
                                                 Número de telefóno:<span id="phone">44-3492-1685</span>
@@ -125,74 +194,77 @@
                                     </div>
                                 </div>
                             </div>
-    
+
                             <!--DIRECCIÓN DE ENVÍO-->
                             <div class="accordion-item">
                                 <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-    
+
                                     <!--BOTÓN DE DIRECCIÓN DE ENVÍO-->
                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                         data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
                                         aria-controls="panelsStayOpen-collapseThree" id="">
-                                        Dirección de Envío
+                                        Datos de Envío
                                     </button>
-    
+
                                 </h2>
                                 <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
                                     aria-labelledby="panelsStayOpen-headingThree">
                                     <div id="adressContainer">
                                         <ul class="list-group list-group-flush" id="adressList">
-    
+
                                             <!--CALLE CONTENEDOR-->
                                             <li class="list-group-item">
                                                 Calle:<span id="street">Av. Fuentes de las Rosas</span>
                                             </li>
-    
+
                                             <!--COLONIA CONTENEDOR-->
                                             <li class="list-group-item">
                                                 Colonia:<span id="nbh">Fuentes de Morelia</span>
                                             </li>
-    
+
                                             <!--HORA DE ENVÍO CONTENEDOR-->
                                             <li class="list-group-item">
                                                 Hora de Envio:<span id="sendHour">10:56 P.M.</span>
                                             </li>
-    
+
                                             <!--INDICACIONES ESPECIALES CONTENEDOR-->
                                             <li class="list-group-item">
                                                 Indicaciones Especiales:<span id="ei">Frente a una dispensadora de agua
                                                     potable Manantiales, casa naranja con portones negros.</span>
                                             </li>
                                         </ul>
+                                        <div class="p-3">
+                                            <div class="h4">TIPO DE ENVÍO</div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault1">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                    Envío standard:
+                                                </label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault2" checked>
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                    Envío express:
+                                                </label>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-    
-                        <!--SECCIÓN DE ENVÍOS-->
-                        <div class="p-3">
-                            <div class="h4">TIPO DE ENVÍO</div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                                <label class="form-check-label" for="flexRadioDefault1">
-                                    Envío standard:
-                                </label>
-                            </div>
-        
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                                    checked>
-                                <label class="form-check-label" for="flexRadioDefault2">
-                                    Envío express:
-                                </label>
+
+                            <div id="botton">
+
                             </div>
                         </div>
                     </div>
                 </div>
-    
-                
-    
-    
+
+
+
+
             </div>
         </div>
     </div>
