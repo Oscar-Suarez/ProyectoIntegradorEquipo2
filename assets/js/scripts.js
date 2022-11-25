@@ -57,39 +57,7 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
                         </span>
                         Log in
                         </a>
-                    </li>
-
-
-                    <li>
-                        <a class="dropdown-item" href="./user-page.html">
-                        <span class="material-symbols-outlined">
-                        account_circle
-                        </span>
-                        Mi Cuenta
-                        </a>
-                    </li>
-
-                    <li>
-                        <a class="dropdown-item" href="./my-orders.html">
-                        <span class="material-symbols-outlined">
-                        package
-                        </span>
-                        Mis Pedidos
-                        </a>
-                    </li>
-
-                    <li id="CloseSesion">
-                            <h3 id="flush-headingThree">
-                                <button type="button" class="btn btn-danger m-3">
-                                    <p>
-                                    <span class="material-symbols-outlined">
-                                    logout
-                                    </span>
-                                    Cerrar Sesión
-                                    </p>
-                                </button>
-                            </h3>
-                    </li>
+                    </li>      
 
 
             </ul>
@@ -158,8 +126,60 @@ var attributions = `
 <a href="https://www.flaticon.com/free-icons/facebook" title="facebook icons">Facebook icons created by Pixel perfect - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/instagram" title="instagram icons">Instagram icons created by Pixel perfect - Flaticon</a>
 <a href="https://www.flaticon.com/free-icons/twitter" title="twitter icons">Twitter icons created by Pixel perfect - Flaticon</a>
-
 `;
+
+function runLateralBar() {
+    let code = `
+    <ul>
+    <a href="./user-page.html">
+        <li>
+            <span class="material-symbols-outlined">
+                account_circle
+            </span>
+            <h>Mi Cuenta</h>
+            
+        </li>
+    </a>
+    <a href="#">
+        <li>
+            <span class="material-symbols-outlined">
+                history
+            </span>
+            <h>Historial</h>
+        </li>
+    </a>
+    <a href="./my-orders.html">
+        <li>
+            <span class="material-symbols-outlined">
+                package
+            </span>
+            <h>Mis Pedidos</h>
+        </li>
+    </a>
+    <a href="#">
+        <li>
+            <span class="material-symbols-outlined">
+                star
+            </span>
+            <h>Lista de Deseos</h>
+        </li>
+    </a>
+
+    <a href="https://walle.mx" id="CloseSesion" >
+        <li id="CloseButton"  >
+            <span class="material-symbols-outlined">
+            logout
+            </span>
+            <h>Cerrar Sesión</h>
+                
+        </li>
+    </a>
+
+</ul>
+`;
+    let lateralBar = document.getElementById("LateralBar");
+    lateralBar.innerHTML = code;
+}
 
 
 runNavBar(); //Corremos la funcion para que se agregue.
@@ -168,5 +188,5 @@ var openMenu = false;
 var togglerMenu = document.getElementById("togglerMenu");
 console.log(togglerMenu);
 togglerMenu.addEventListener("click", animation);
-
+runLateralBar();
 

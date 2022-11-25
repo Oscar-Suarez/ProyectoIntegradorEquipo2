@@ -12,7 +12,7 @@ var order = `<div class="row m-1 mb-3" id="Order">
             ${"XX Lager"}
         </div>
         <div class="BuyAgain">
-            <button class="btn btn-primary">
+            <button class="boton">
                 Agregar al Carrito
             </button>
         </div>
@@ -30,7 +30,7 @@ var order = `<div class="row m-1 mb-3" id="Order">
             ${"XX Light"}
         </div>
         <div class="BuyAgain">
-            <button class="btn btn-primary">
+            <button class="boton">
                 Agregar al Carrito
             </button>
         </div>

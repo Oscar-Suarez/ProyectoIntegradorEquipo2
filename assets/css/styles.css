@@ -22,10 +22,13 @@
     --height-navbar: 70px;
     --height-navfooter: 90px;
     --shadow-before: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
-    --shadow-after :0px 0px 10px 2px rgba(0, 0, 0, 0.4);
+    --shadow-after :0px 0px 10px 1px rgba(0, 0, 0, 0.25);
 }
+
+
+
 body {
-    Background-color: var(--colorBG);
+    Background: -webkit-linear-gradient(-120deg, var(--colorBG) 10%, var(--colorBG) 90%);
     /*rgb(245, 226, 175);*/
     min-height: 100vh;
     display: flex;
@@ -33,11 +36,11 @@ body {
 }
 
 
-
 .btn-danger:hover {
     outline: 4px solid rgba(156, 13, 2, 0.5);
     outline-offset: 0px;
 }
+
 
 
 /*######################################################################
@@ -121,11 +124,11 @@ body {
             border-radius: 10px;
             box-shadow: var(--shadow-before);
             width: 250px;
-            transition: 0.3s;
         }
 
         .dropdown-menu.show:hover {
-            box-shadow: var(--shadow-after);;
+            box-shadow: var(--shadow-after);
+            transition: 0.5s;
         }
         .dropdown-menu li {
             margin: -5px;
@@ -141,39 +144,22 @@ body {
             border-radius: 10px;
         }
     
-        #CloseSesion {
-            border-radius: 0px 0px 10px 10px;
-            transition: 0.4s;
-            text-align: center;
-        }
-        #CloseSesion button{
-            height: 50px;
-            font-weight: 500;
-            font-size: 18px;
-        }
-        #CloseSesion button p  {
-            position: relative;
-            top: -9px;
-        }
-    
-    
-    
-     
+
     
         /* CSS DE LOS ICONOS (FONT) MATERIAL DESIGN */
         .material-symbols-outlined {
             font-variation-settings:
             'FILL' 0,
             'wght' 500,
-            'GRAD' 800,
+            'GRAD' 600,
             'opsz' 18
         }
         .material-symbols-outlined:hover {
             font-variation-settings:
             'FILL' 1,
             'wght' 800,
-            'GRAD' 800,
-            'opsz' 18
+            'GRAD' 600,
+            'opsz' 40
         }
     
         @media (min-width: 992px){
@@ -425,6 +411,20 @@ body {
 #######################################################################*/
 
 @media {
+
+    div#page-content {
+        display: grid;
+        grid-template-areas: "LateralBar Contenido";
+        grid-template-columns: 225px 1fr;
+    }
+    
+    div#Contents {
+        grid-area: Contenido;
+        padding-left: 5%;
+        padding-right: 5%;
+        transition: 0.4s;
+    }
+
     div#LateralBar {
         position: fixed;
         top: 0;
@@ -435,6 +435,7 @@ body {
         background-color: var(--color4); 
         transition: 0.25s;
         padding-top: 80px;
+        z-index: 9;
     }
     div#LateralBar ul {
         padding-left: 0;
@@ -461,10 +462,7 @@ body {
         background-color: var(--color5);
         border-radius: 10px;
     }
-    div#LateralBar a:link {
-        background-color: var(--color6);
-        border-radius: 10px;
-    }
+
 
 
     div#LateralBar span {
@@ -473,8 +471,41 @@ body {
         font-size: 35px;
     }
 
+    a#CloseSesion {
+        height: 70px;
+        position: fixed;
+        bottom: 10px;
+        padding: 10px;
+        width: 225px;
 
-    @media (max-width: 992px) {
+    }
+    #CloseSesion li#CloseButton {
+        background-color: var(--color3);
+        border-radius: 10px;
+        color: white;
+        height: 60px;
+
+    }
+
+    #CloseSesion li#CloseButton:hover {
+        background-color: var(--color2);
+        outline: 10px solid var(--color4);
+        border-radius: 10px;
+        color: white;
+
+    }
+
+
+
+
+    @media (max-width: 1200px) {
+        div#page-content {
+            grid-template-columns: 70px 1fr;
+        }
+        div#Contents {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
         div#LateralBar {
             width: 70px;
         }
@@ -491,32 +522,114 @@ body {
            padding-left: 0;
             font-size: 35px;
         }
+
+        a#CloseSesion {
+            height: auto;
+            position: fixed;
+            bottom: 0px;
+            padding: 0px;
+            width: 70px;
+    
+        }
+        #CloseSesion li#CloseButton {
+            background-color: var(--color3);
+            border-radius: 0px;
+            color: white;
+            height: 60px;
+        }
+    
+        #CloseSesion li#CloseButton:hover {
+            background-color: var(--color2);
+            border-radius: 100px;
+            color: white;
+        }
+
         @media (max-width: 576px) {
 
             div#LateralBar {
                 width: 50px;
             }
         }
+    
     }
+    
+    @media (max-width: 576px) {
+        div#LateralBar {
+            display: none;
+        }
+    
+        div#page-content {
+            grid-template-columns: 0px 1fr;
+        }
+    
+        div#Contents {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    
+    
+    }
+
+    
 }
 
 /*######################################################################
                         CSS de MyAccount
 #######################################################################*/
 @media { /*My Account*/
-    
-    div#page-content {
-        display: grid;
-        grid-template-areas: "LateralBar Contenido";
-        grid-template-columns: 225px 1fr;
-    }
-
-    div#Contents {
+    div.ma#Contents {
         grid-area: Contenido;
-        padding-left: 10%;
-        padding-right: 10%;
+        padding-left: 15%;
+        padding-right: 15%;
         transition: 0.4s;
     }
+    @media (max-width: 992px) {
+        div#page-content {
+            grid-template-columns: 70px 1fr;
+        }
+        div.ma#Contents {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        div#LateralBar h {
+            display: none;
+        }
+
+        div#LateralBar span {
+           padding-left: 0;
+            font-size: 35px;
+        }
+        @media (max-width: 576px) {
+
+            div#LateralBar {
+                width: 50px;
+            }
+        }
+    
+    }
+    
+    @media (max-width: 576px) {
+        div#LateralBar {
+            display: none;
+        }
+    
+        div#page-content {
+            grid-template-columns: 0px 1fr;
+        }
+    
+        div#Contents {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    
+    
+    }
+
+    
+
+    
+    
 
     div#BannerMyAccount {
         height: 80px;
@@ -528,28 +641,7 @@ body {
         margin-left: 10px;
         font-weight: 600;
     }
-    @media (max-width: 992px) {
-        div#page-content {
-            grid-template-columns: 70px 1fr;
-        }
-        div#Contents {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-
-    }
-
-    @media (max-width: 576px) {
-        div#page-content {
-            grid-template-columns: 50px 1fr;
-        }
-
-        div#Contents {
-            padding-left: 10px;
-            padding-right: 10px;
-        }
-
-    }
+    
     
     div#InfoAccount,
     div#Order {
@@ -588,10 +680,7 @@ body {
     }
 
     div#UserPhoto:hover {
-        top: -80px;
-        height: 160px;
-        width: 160px;
-        box-shadow: var(--shadow-after);
+        transform: scale(1.1);
     }
 
     div#e-Mail div {
@@ -739,8 +828,7 @@ body {
         margin-left: 5px;
         font-weight: 600;
     }
-    }
-
+}
 
 /*######################################################################
                         CSS de LOGIN PAGE
@@ -780,34 +868,18 @@ body {
     
     
     .boton-crear, .boton {
-        size: "50" min="10" max="100";
-        background-color: rgb(221, 123, 44);
-        border: none;
+        background-color: var(--color4);
+        border: 0;
         color: white;
-        width : 100%;
-        max-width: 300px;
-        height : 50px;
+        width: auto;
+        padding: 10px 15px 10px 15px;
         border-radius: 10px;
-        margin-bottom: 10px;
-        font-family: 'Montserrat', sans-serif; 
+        height : auto;
     }
 
     .boton-crear:hover, .boton:hover {
         outline: 4px solid #ff84006e;
     }
-
-    .boton-inicio {
-        size : "50" min="10" max="100";
-        background-color: rgb(221, 123, 44);
-        border: none;
-        color: white;
-        width : 350px;
-        height : 50px;
-        border-radius: 10px;
-        font-family: 'Montserrat', sans-serif; 
-        margin-bottom: 10px;
-    }
-
     
     .vinculo-login-signup {
         text-decoration:none;
@@ -832,107 +904,127 @@ body {
 #######################################################################*/
 
 @media {
+    
+    div.orderContainer {
+        height: 400px;
+        overflow:scroll;
+        z-index: 8;
+        
 
-#principalContainer {
-        font-family: 'Montserrat', sans-serif;
+    }
+    @media (max-width: 992px) {
+        div.orderContainer {
+            height: auto;
+            overflow: hidden;
+        }
     }
 
-    /*Botón de login*/
-    #loginbtn {
-        background-color: rgb(240, 185, 90);
-        color: rgb(58, 13, 21);
-        font-weight: bold;
-        transition: .3s ease all;
-        border-radius: 5px;
-        padding: 10px;
+    div.card {
+        background-color: var(--color5);
+        box-shadow: var(--shadow-before);
         border-radius: 10px;
-        margin: 50px 10px 40px 10px;
-        align-content: center;
+        border: 0;
+        transition: 0.3s;
     }
 
 
-    /*COLUMNA DE USUARIO*/
-    #user-column,
-    li {
-        list-style: none;
-        font-family: 'Ubuntu', sans-serif;
-        font-weight: bold;
-        color: rgb(43, 0, 8);
-    }
+      
+    div.card:hover {
+        transform: scale(1.02); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+      }
 
-    #user-column,
-    ul {
-        padding: 15px 0px 15px 8px;
 
-    }
-
-    .accordion-item {
-        background-color: rgb(245, 235, 202);
+    div.card img {
+        position: relative;
+        left:12px;
     }
 
 
-    /*Estilos de botones de columna de usuario*/
-    #btn {
-        background-color: rgb(240, 185, 90);
-        box-shadow: 0px 0px 5px 3px rgb(240, 185, 90);
-        border-radius: 5px;
-        color: rgb(58, 13, 21);
-        font-weight: bold;
+    div.card-body {
+        padding-left: 0px;
+        z-index: 9;
+    }
+    div.card-body span.mx-1 {
+        font-weight: 700;
+        
     }
 
+    @media (max-width: 576px) {
+        div.card img {
 
-    /*COLUMNA DE ORDEN*/
-    /* Scroll personalizado */
-    .orderContainer {
-        /* Aquí están las propiedades del contenedor para poder instalar una scrollbar*/
-        width: 500px;
-        height: 200px;
-        margin: 10px auto;
-        padding: 20px;
-        overflow: auto;
-
-        border-radius: 4px;
-    }
-
-    .order::-webkit-scrollbar {
-        width: 7px;
-    }
-
-    .order::-webkit-scrollbar-thumb {
-        background: #ff9d00;
-        border-radius: 5px;
-    }
-
-    #productcard1 {
-        background-color: rgb(245, 235, 202);
-
-    }
-
-    #productcard2 {
-        background-color: rgb(245, 235, 202);
-
+            max-width: 100px;
+            left: 0;
+            right: 0;
+        } 
+        div.card-body {
+            padding-left: 16px;
+        }
     }
 
     /*Estilos del contenedor del total*/
-    #totalContainer {
-        background-color: rgb(240, 185, 90);
-        box-shadow: var(--shadow-after);
-        border-radius: 5px;
-        font-family: 'Montserrat', sans-serif;
-        color: rgb(58, 13, 21);
+
+    
+    .list-group-item {
+        background-color: transparent;
+        font-weight: 600;
     }
-
-    #shippingText {
-
-        font-family: 'Montserrat', sans-serif;
-        color: rgb(58, 13, 21);
-        margin: 30px 0px 10px 15px;
+    .list-group-item span {
+        font-weight: 400;
+        margin-left: 5px;
     }
+}
 
-    #orderText {
-        font-family: 'Montserrat', sans-serif;
-        color: rgb(58, 13, 21);
-        margin: 30px 0px 0px 15px;
-    }
 
+/*######################################################################
+                        ESTILOS PAGINA PRODUCTOS
+#######################################################################*/
+@media {
+
+
+    
+}
+
+
+/*######################################################################
+                        ESTILOS FAQ
+#######################################################################*/
+@media {
+
+    
+    
+}
+
+
+/*######################################################################
+                        ESTILOS PRODUCT PAGE
+#######################################################################*/
+@media {
+
+    
+    
+}
+
+/*######################################################################
+                        ESTILOS ABOUT US PAGE
+#######################################################################*/
+@media {
+
+    
+    
+}
+
+/*######################################################################
+                        ESTILOS TERMINOS Y CONDICIONES
+#######################################################################*/
+@media {
+
+}
+
+/*######################################################################
+                        ESTILOS FAQ
+#######################################################################*/
+@media {
+
+    
+    
 }
