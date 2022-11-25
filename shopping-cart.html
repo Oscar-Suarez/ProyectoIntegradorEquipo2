@@ -56,18 +56,56 @@
                             <button class="accordion-button" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
                                 aria-controls="panelsStayOpen-collapseOne" id="btn">
-                                USUARIO
+                                FORMAS DE PAGO
                             </button>
 
                         </h2>
                         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
                             aria-labelledby="panelsStayOpen-headingOne">
-                            <ul id="UserList">
-                                <!--EMAIL CONTENEDOR-->
-                                <li id="email">Correo electrónico: </li>
-                                <!--USERNAME CONTENEDOR-->
-                                <li id="username">Nombre de usuario: </li>
-                            </ul>
+                            <div class="my-3">
+                                <div class="form-check">
+                                    <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked=""
+                                        required="">
+                                    <label class="form-check-label" for="credit">Tarjeta de crédito/débito</label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input id="paypal" name="paymentMethod" type="radio" class="form-check-input"
+                                        required="">
+                                    <label class="form-check-label" for="paypal">PayPal</label>
+                                </div>
+                            </div>
+                            <div class="row gy-3">
+                                <div class="col-md-6">
+                                <label for="cc-name" class="form-label">Nombre en la tarjeta</label>
+                                <input type="text" class="form-control" id="cc-name" placeholder="" required="">
+                                <small class="text-muted">Nombre completo como se muestra en la tarjeta</small>
+                                <div class="invalid-feedback">
+                                Se requiere el nombre en la tarjeta
+                                </div>
+                                </div>
+                                <div class="col-md-6">
+                                <label for="cc-number" class="form-label">Número de tarjeta de crédito</label>
+                                <input type="text" class="form-control" id="cc-number" placeholder="" required="">
+                                <div class="invalid-feedback">
+                                Se requiere número de tarjeta de crédito
+                                </div>
+                                </div>
+                                <div class="col-md-3">
+                                <label for="cc-expiration" class="form-label">Vencimiento</label>
+                                <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
+                                <div class="invalid-feedback">
+                                Fecha de vencimiento requerida
+                                </div>
+                                </div>
+                                <div class="col-md-3">
+                                <label for="cc-cvv" class="form-label">CVV</label>
+                                <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
+                                <div class="invalid-feedback">
+                                Código de seguridad requerido
+                                </div>
+                                </div>
+                                </div>
                         </div>
                     </div>
 
@@ -203,7 +241,7 @@
                         <h6>Total:</h6>
                     </div>
                 </div>
-                <button type="button" class="btn btn-primary btn-lg" id="loginbtn"><a href="./shopping-cart - formas de pago.html">Continuar a pago</a></button>
+                <button type="button" class="btn btn-primary btn-lg" id="loginbtn"><a href="">Pagar</a></button> <!--Lo dejé como etiqueta a para linkearlo con una página que diga pago exitoso-->
             </div>
 
 
