@@ -1113,4 +1113,7 @@ div.spacer {
 #######################################################################*/
 @media {
 
+    div#terms-nd-conditions p {
+        margin-bottom: 30px;
+    }
 }
