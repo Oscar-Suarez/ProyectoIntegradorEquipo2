@@ -277,10 +277,10 @@ function runLateralBar(element) { //Función para agregar la LateralBar
     //3.5-. Boton de Modo Oscuro
     let buttonDarkMode = document.querySelector("#button-container"); // Obtenemos el boton del HTML
     if (buttonDarkMode != null) {   // Verificamos que exista.
-        setTimeout(() => {
-            if (statusDarkMode){    // Si el Modo Oscuro está activado (statusDarkMode == true)
-                buttonDarkMode.classList.add("on-dark-mode"); //Definimos el estado del boton.
-            }}, 100);
+        
+        if (statusDarkMode){    // Si el Modo Oscuro está activado (statusDarkMode == true)
+            buttonDarkMode.classList.add("on-dark-mode"); //Definimos el estado del boton.
+        }
 
         buttonDarkMode.addEventListener("click", () => {        // Cuando demos click en el boton
             buttonDarkMode.classList.toggle("on-dark-mode");    // Quitamos o Agregamos la clase para cambiar el estado del boton.
