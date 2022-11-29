@@ -18,17 +18,18 @@
     --color4: rgb(221, 123, 44);
     --color5: rgb(240, 185, 78);
     --color6:rgb(245, 235, 202);
-    --colorBG: rgb(226, 221, 206);  
+    --colorBG: rgb(226, 221, 206);
+    --font-color: black;  
     --height-navbar: 60px;
     --shadow-before: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
     --shadow-after :0px 0px 10px 1px rgba(0, 0, 0, 0.25);
-    --lateral-bar-width: 200px;
+    --lateral-bar-width: 210px;
 }
 
 
 
 body {
-
+    color: var(--font-color);
     Background: -webkit-linear-gradient(-120deg, var(--colorBG) 10%, var(--colorBG) 90%);
     /*;*/
     min-height: 100vh;
@@ -68,7 +69,7 @@ div#accordion {
     height: auto;
     border-radius: 10px;
     box-shadow: var(--shadow-before);
-    transition: 0.3s;
+    transition: 0.2s;
     max-width: 1000px;
 }
 
@@ -165,7 +166,7 @@ div.spacer {
             /* PROPIEDADES DE LA SOMBRA DE LA NAVBAR */
             -webkit-box-shadow: var(--shadow-before);
             box-shadow: var(--shadow-before);
-            transition: 0.3s;
+            transition: 0.2s;
         }
         #navbar:hover {
             /* PROPIEDADES DE LA SOMBRA->NAVBAR CUANDO EL USUARIO
@@ -231,7 +232,7 @@ div.spacer {
 
         .dropdown-menu.show:hover {
             box-shadow: var(--shadow-after);
-            transition: 0.5s;
+            transition: 0.2s;
         }
         .dropdown-menu li {
             position: relative;
@@ -336,7 +337,7 @@ div.spacer {
                 /* PROPIEDADES DE LA SOMBRA DE LA NAVBAR */
                 -webkit-box-shadow: var(--shadow-before);
                 box-shadow: var(--shadow-before);
-                transition: 0.5s;
+                transition: 0.2s;
             }
             #navbar:hover, .change#nanbar:hover {
                 /* PROPIEDADES DE LA SOMBRA->NAVBAR CUANDO EL USUARIO
@@ -377,7 +378,7 @@ div.spacer {
             #menuDesplegable {
                 display: none;
                 grid-area: menuDesplegable;
-                transition: 0.3s;
+                transition: 0.2s;
             }
             .change#menuDesplegable {
                 display: block;
@@ -399,7 +400,7 @@ div.spacer {
                 height: calc(var(--height-navbar) * 0.1);
                 background-color: var(--color1);
                 margin: calc(var(--height-navbar) * 0.06);
-                transition: 0.4s;
+                transition: 0.2s;
                 border-radius: 2px;
             }
     
@@ -433,7 +434,7 @@ div.spacer {
                 font-size: calc(var(--height-navbar) * 0.8);
                 padding-right: 15px ;
                 color: var(--color1);
-                transition: 0.3s;
+                transition: 0.2s;
             }
             #shoppingCartIcon:hover {
                 color: var(--color3);
@@ -475,7 +476,7 @@ div.spacer {
                 font-weight: 450;
                 text-decoration: none;
                 color: var(--color1);
-                transition: color .3s;  
+                transition: 0.2s;  
             }
             #menuDesplegable li {
                 margin: -20px;
@@ -521,7 +522,7 @@ div.spacer {
         grid-area: Contenido;
         padding-left: 5%;
         padding-right: 5%;
-        transition: 0.3s;
+        transition: 0.2s;
     }
 
     div#LateralBar {
@@ -532,7 +533,7 @@ div.spacer {
         height: 100%;
         grid-area: LateralBar;
         background-color: var(--color4); 
-        transition: 0.25s;
+        transition: 0.2s;
         padding-top: calc(var(--height-navbar) + 10px);
         z-index: 9;
     }
@@ -556,7 +557,7 @@ div.spacer {
         list-style-type: none;
         font-size: 18px;
         font-weight: 500;
-        transition: 0.3s;
+        transition: 0.2s;
     }
     div#LateralBar li:hover {
         background-color: var(--color5);
@@ -569,6 +570,50 @@ div.spacer {
         margin: 5px;
         padding-left: 5%;
         font-size: 30px;
+    }
+
+    li#modo-oscuro h {
+        padding-left: 10%;
+    }
+
+    button#button-container {
+        height: 50%;
+        width: 25%;
+        background-color: var(--color6);
+        margin-left: 7px;
+        border-radius: 20px;
+        border: 1px solid var(--color3);  
+        transition: 0.2s;
+        padding: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button#button-container:hover {
+        background-color: rgb(255, 56, 56);
+    }
+    button.on-dark-mode#button-container {
+        background-color: var(--color6);
+    }
+
+    button.on-dark-mode#button-container:hover {
+        background-color: rgb(47, 255, 95);
+    }
+
+
+    button#button-container div#button-slider {
+        background-color: var(--font-color);
+        height: 20px;
+        width: 20px;
+        border-radius: 50px;
+        transform: translate(-60%);
+        transition: 0.2s;
+    }
+
+    button.on-dark-mode#button-container div#button-slider {
+        background-color: var(--font-color);
+        transform: translate(60%);
     }
 
     a#CloseSesion {
@@ -602,6 +647,12 @@ div.spacer {
 
 
     @media (max-width: 1200px) {
+        button#button-container {
+            height: 50%;
+            width: 70%;
+            margin-left: 0;
+        }
+
         div#page-content {
             grid-template-columns: 70px 1fr;
         }
@@ -684,7 +735,7 @@ div.spacer {
         grid-area: Contenido;
         padding-left: 15%;
         padding-right: 15%;
-        transition: 0.4s;
+        transition: 0.2s;
     }
     @media (max-width: 992px) {
         div#page-content {
@@ -751,7 +802,7 @@ div.spacer {
 
         -webkit-box-shadow: var(--shadow-before);
         box-shadow: var(--shadow-before);
-        transition: 0.3s;
+        transition: 0.2s;
     }
 
     div#InfoAccount:hover,
@@ -778,7 +829,7 @@ div.spacer {
         background-size: 100%;
         border-radius: 100px;
         box-shadow: var(--shadow-before);
-        transition: 0.3s;
+        transition: 0.2s;
     }
 
     div#UserPhoto:hover {
@@ -934,7 +985,7 @@ div.spacer {
         border-radius: 10px;
         box-shadow: var(--shadow-before);
         padding: 10px;
-        transition: 0.3s;
+        transition: 0.2s;
     }
 
     .form-placeholders:hover {
@@ -982,7 +1033,7 @@ div.spacer {
         box-shadow: var(--shadow-before);
         border-radius: 10px;
         border: 0;
-        transition: 0.3s;
+        transition: 0.2s;
     }
 
 
@@ -1052,7 +1103,7 @@ div.spacer {
         background-size: 100%;
         border-radius: 100px;
         box-shadow: var(--shadow-before);
-        transition: 0.3s;
+        transition: 0.2s;
     }
 
     div.shopping-cart-page#UserPhoto2:hover {
@@ -1063,7 +1114,7 @@ div.spacer {
         
         background-color: transparent;
         font-weight: 600;
-        color: var(--color1);
+        color: var(--font-color);
     }
     .list-group-item span {
         font-weight: 400;
