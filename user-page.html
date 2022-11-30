@@ -10,6 +10,10 @@
     <link href="./assets/css/styles.css" rel="stylesheet"> <!--Own CSS-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> <!--Material Icons by Google-->
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
     <title>Mi Cuenta - Balxhe</title>
     </head>
     
@@ -17,46 +21,9 @@
         <div id="navbar"></div>
         <!--Con JS se agregará la NavBar-->
         <div id="page-content">
-            <div id="LateralBar">
-                <ul>
-                    <a href="./user-page.html">
-                        <li>
-                            <span class="material-symbols-outlined">
-                                account_circle
-                            </span>
-                            <h>Mi Cuenta</h>
-                            
-                        </li>
-                    </a>
-                    <a href="#">
-                        <li>
-                            <span class="material-symbols-outlined">
-                                history
-                            </span>
-                            <h>Historial</h>
-                        </li>
-                    </a>
-                    <a href="./my-orders.html">
-                        <li>
-                            <span class="material-symbols-outlined">
-                                package
-                            </span>
-                            <h>Mis Pedidos</h>
-                        </li>
-                    </a>
-                    <a href="#">
-                        <li>
-                            <span class="material-symbols-outlined">
-                                star
-                            </span>
-                            <h>Lista de Deseos</h>
-                        </li>
-                    </a>
-                </ul>
+            <div id="LateralBar"></div>
 
-            </div>
-
-            <div class="container-fluid" id="Contents">
+            <div class="container-fluid ma" id="Contents">
                 <div class="row">
                     <div class="col mt-2">
                         <!--User Data-->
@@ -69,7 +36,7 @@
             
                             <div class="text-center mt-3">
                                 <h4 id="UserName">
-                                    <b>Walbertho Montero</b>
+                                    Walbertho Montero
                                 </h4>
                                 <!--#################################################################-->
                                 <div class="card-profile-stats d-flex justify-content-center mt-md-2">
@@ -95,14 +62,19 @@
             
                                 <div class="accordion-item ">
                                     <h2 class="accordion-header" id="flush-headingOne">
-                                        <button class="accordion-button collapsed " type="button" data-bs-toggle="collapse"
-                                            data-bs-target="#flush-collapseOne" aria-expanded="false"
-                                            aria-controls="flush-collapseOne">
+                                        <button class="accordion-button collapsed "
+                                                type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#flush-collapseOne"
+                                                aria-expanded="false"
+                                                aria-controls="flush-collapseOne">
                                             Mis Datos
                                         </button>
                                     </h2>
-                                    <div id="flush-collapseOne" class="accordion-collapse collapse"
-                                        aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                    <div id="flush-collapseOne"
+                                         class="accordion-collapse collapse"
+                                         aria-labelledby="flush-headingOne" 
+                                         data-bs-parent="#accordionFlushExample">
                                         <div class="accordion-body m-2">
 
                                             <form id="UserData">
