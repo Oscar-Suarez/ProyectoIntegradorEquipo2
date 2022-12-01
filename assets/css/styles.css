@@ -908,7 +908,7 @@ div.spacer {
         font-weight: 500;
     }
     
-    div#OrderList {
+    div.OrderList {
         height: auto;
     }
     
@@ -916,8 +916,8 @@ div.spacer {
         height: 150px;
         display: grid;
         grid-template-areas: "Image Tittle BuyAgain"
-            "Image Info   Price"
-            "Image Info   Price";
+                             "Image Info   Price"
+                             "Image Info   Price";
         grid-template-rows: min-content 1fr 1fr;
         grid-template-columns: min-content auto max-content;
         border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
@@ -966,6 +966,12 @@ div.spacer {
         position: relative;
         align-items: flex-end;
         margin-bottom: 10px;
+    }
+
+    div.Price ul {
+        list-style-type: none;
+        margin-left: 0px;
+        padding-left: 0px;
     }
     
     div.Price span {
