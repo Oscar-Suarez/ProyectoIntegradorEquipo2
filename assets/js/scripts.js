@@ -9,10 +9,11 @@ function darkMode(mode) { //Función para cambiar el tema del sitio Web
         '--color5': 'rgb(240, 185, 78)',
         '--color6': 'rgb(245, 235, 202)',
         '--colorBG':'rgb(226, 221, 206)',
-
+        '--font-color': 'black',
         '--shadow-before': '0px 0px 5px 1px rgba(0, 0, 0, 0.1)',
         '--shadow-after': '0px 0px 10px 1px rgba(0, 0, 0, 0.25)'
-        },   
+        },
+
         dark: {
         '--color2': 'rgb(58,13,21)',
         '--color3': 'rgb(97, 10, 27)',
@@ -21,14 +22,14 @@ function darkMode(mode) { //Función para cambiar el tema del sitio Web
         '--color6': 'rgb(240, 185, 78)',
         '--color1': 'rgb(35, 35, 35)',
         '--colorBG':'rgb(60, 60, 60)',
-
+        '--font-color': 'white',
         '--shadow-before': '0px 0px 5px 1px rgba(0, 0, 0, 0.5)',
         '--shadow-after': '0px 0px 10px 1px rgba(0, 0, 0, 1)'
 
     }};                         // Objeto que contiene las variables de :root
 
     let root = document.querySelector(":root"); //Obtenemos el elemento :root
-    let theme = mode ? "dark" : "light";    //Si la variable mode es true --> dark, false --> light
+    let theme = mode ? "dark" : "light";    //Si la variable mode es true --> theme = dark, false --> theme = light
     for (const [key, value] of Object.entries(globalColors[theme])){ // Definimos un ciclo for para iterar sobre el objeto
                                                                      // globalColors[theme]
         root.style.setProperty(key, value); //Cambiamos las propiedades en :root contenidas en globalColors[theme].
@@ -125,7 +126,7 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                 </span>
             </a>
         </div>
-        <div class="container" id="menuDesplegable">
+        <div class="container-fluid mt-4 p-3" id="menuDesplegable">
             <ul>
                 <li>
                     <a href="./index.html">
@@ -143,13 +144,36 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                         <span class="material-symbols-outlined"  id="menuDesplegableIcons">
                             account_circle
                         </span>
-                        Account</a></li>
+                        Account</a>
+                </li>
+                <li>
+                    <a href="./signup.html">
+                    <span class="material-symbols-outlined">
+                        person_add
+                    </span>
+                    Sign Up
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="./login.html">
+                    <span class="material-symbols-outlined">
+                        login
+                    </span>
+                    Log in
+                    </a>
+                </li>     
+            </ul>
+            <hr>
+            <ul>
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./products.html">Productos</a></li>
                 <li><a href="./about-us.html">¿Quienes somos?</a> </li>
                 <li><a href="./FAQ.html">FAQ</a></li>
-        
-                <ul>
+            
+            </ul>
+            <hr>
         </div>
   
   `; //Variable que almacena el codigo HTML de la Barra de Navegación

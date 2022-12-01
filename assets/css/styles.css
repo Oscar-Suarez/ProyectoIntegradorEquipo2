@@ -29,17 +29,16 @@
 
 
 body {
-    color: var(--font-color);
-    Background: -webkit-linear-gradient(-120deg, var(--colorBG) 10%, var(--colorBG) 90%);
-    /*;*/
+    background-color: var(--colorBG);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: 'Ubuntu', sans-serif;
 }
 
-.titulo {
-    font-family: 'Ubuntu', sans-serif; 
+.titulo, #titulo {
+    font-family: 'Montserrat', sans-serif; 
+    color: var(--font-color);
 
  }
 
@@ -80,16 +79,13 @@ div#accordion:hover {
 div.spacer {
     height: 100%;
     width: 100%;
-    background-color: var(--color1);
+    background-color: var(--color5);
     margin: auto;
     clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
     position: relative;
     top: -10px;
     transform: scale(100%, 20%);
-    color: black;
-
-
-
+    color: var(--color5);
 }
 
 
@@ -347,7 +343,7 @@ div.spacer {
             }
             .change#navbar {
                 /* DESPLIEGUE DEL MENU COLAPSABLE */
-                height: 380px;
+                height: fit-content;
             }
     
         /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR
@@ -640,7 +636,6 @@ div.spacer {
         outline: 10px solid var(--color4);
         border-radius: 10px;
         color: white;
-
     }
 
 
@@ -950,6 +945,7 @@ div.spacer {
         font-size: 13px;
         word-wrap: break-word;
         overflow-wrap: break-word;
+        overflow: hidden;
     }
     
     div.Price {
@@ -969,7 +965,7 @@ div.spacer {
 /*######################################################################
                         CSS de LOGIN PAGE
 #######################################################################*/
-@media {/* LOGIN PAGE*/
+@media { /* LOGIN PAGE*/
 
     .center {
         margin: auto;
@@ -1000,7 +996,7 @@ div.spacer {
 /*######################################################################
                         CSS de SIGN UP PAGE
 #######################################################################*/
-@media {/* SIGN UP PAGE*/
+@media { /* SIGN UP PAGE*/
 
      div#padre {
         width: 500px;
@@ -1070,6 +1066,28 @@ div.spacer {
         div.card-body {
             padding-left: 16px;
         }
+    }
+
+    div#precio-cantidad h{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        
+        width: 100%;
+    }
+    div#precio-cantidad span{
+        margin-left: 10px;
+        font-weight: 600;
+    }
+    div#desglosePrecios div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    div#desglosePrecios span{
+        margin-left: 20px;
+        font-weight: 600;
     }
 
     /*Estilos del contenedor del total*/
@@ -1163,8 +1181,14 @@ div.spacer {
                         ESTILOS TERMINOS Y CONDICIONES
 #######################################################################*/
 @media {
+    div#terms-nd-conditions {
+        color: var(--font-color);
+    }
+    div#terms-nd-conditions h5 {
+        margin-top: 50px;
+    }
 
     div#terms-nd-conditions p {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 }
