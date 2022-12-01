@@ -59,7 +59,7 @@ body {
 .vinculo-login-signup {
     text-decoration:none;
     font-family: 'Montserrat', sans-serif; 
-    color: black;
+    color: var(--font-color);
 }
 
 div#accordion {
@@ -343,7 +343,7 @@ div.spacer {
             }
             .change#navbar {
                 /* DESPLIEGUE DEL MENU COLAPSABLE */
-                height: fit-content;
+                height: 500px;
             }
     
         /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR
@@ -556,7 +556,7 @@ div.spacer {
         transition: 0.2s;
     }
     div#LateralBar li:hover {
-        background-color: rgb( var(--color5) );
+        background-color: rgb( var(--color6) );
         border-radius: 10px;
     }
 
@@ -702,7 +702,7 @@ div.spacer {
     
     }
     
-    @media (max-width: 576px) {
+    @media (max-width: 767px) {
         div#LateralBar {
             display: none;
         }
@@ -722,10 +722,9 @@ div.spacer {
     
 }
 
-/*######################################################################
-                        CSS de MyAccount
-#######################################################################*/
-@media { /*My Account*/
+
+/* DISTRIBUCIÓN PAGINAS PRIVADAS */
+@media { 
     div.ma#Contents {
         grid-area: Contenido;
         padding-left: 15%;
@@ -758,7 +757,7 @@ div.spacer {
     
     }
     
-    @media (max-width: 576px) {
+    @media (max-width: 767px) {
         div#LateralBar {
             display: none;
         }
@@ -774,7 +773,12 @@ div.spacer {
     
     
     }
+}
 
+/*######################################################################
+                        CSS de MyAccount
+#######################################################################*/
+@media { /*My Account*/
 
 
     div#BannerMyAccount {
@@ -857,7 +861,7 @@ div.spacer {
         font-size: 15px;
     }
 
-    #UserData label {
+    .UserData#MyAccountPage label {
         font-size: 15px;
         font-weight: 500;
         margin-left: 5px;
@@ -876,7 +880,11 @@ div.spacer {
 #######################################################################*/
 @media { /*My Orders*/
     
-    
+    div#Order {
+        border-radius: 10px;
+        overflow: hidden;
+
+    }
     div#OrderDate {
         display: flex;
         align-items: center;
@@ -884,6 +892,7 @@ div.spacer {
         font-size: 15px;
         font-weight: 500;
         padding: 10px;
+        background-color: rgb(var(--color5));
     }
     
     div#TotalPrice {
@@ -891,6 +900,7 @@ div.spacer {
         display: flex;
         align-items: center;
         justify-content: right;
+        background-color: rgb(var(--color5));
     }
     
     div#TotalPrice span#TotalPrice {
@@ -917,6 +927,7 @@ div.spacer {
     
     div.Image {
         grid-area: Image;
+        
     }
     
     div.Image img {
@@ -924,6 +935,7 @@ div.spacer {
         height: 70px;
         border: 0.5px solid rgba(0, 0, 0, 0.2);
         border-radius: 5px;
+        background-color: rgb(var(--colorBG));
         box-shadow: var(--shadow-before);
     }
     
@@ -991,6 +1003,8 @@ div.spacer {
     .form-placeholders:focus{
         outline: 4px solid #ff84006e;
     }
+
+    
 }
 
 /*######################################################################
@@ -1001,6 +1015,9 @@ div.spacer {
      div#padre {
         width: 500px;
      }
+     form#UserData label {
+        color: var(--font-color);
+    }
 
 }
 
@@ -1132,7 +1149,6 @@ div.spacer {
         
         background-color: transparent;
         font-weight: 600;
-        color: var(--font-color);
     }
     .list-group-item span {
         font-weight: 400;
@@ -1174,10 +1190,6 @@ div.spacer {
                         ESTILOS ABOUT US PAGE
 #######################################################################*/
 @media {  
-
-    /*##################################################################### 
-                        PÁGINA ABOUT US 
-######################################################################*/
 
 .texto {
     font-size: 1.2rem;
@@ -1240,12 +1252,7 @@ div.spacer {
 ############## TARJETAS ####################
 ###########################################
 */
-.subtitle {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
+
 .ourPresentationGrid {
     display: grid; 
     height: 100%;
