@@ -2,26 +2,26 @@
 function darkMode(mode) { //Función para cambiar el tema del sitio Web
     const globalColors = {
         light: {
-        '--color1': 'rgb(58,13,21)',
-        '--color2': 'rgb(97, 10, 27)',
-        '--color3': 'rgb(156, 13, 2)',
-        '--color4': 'rgb(221, 123, 44)',
-        '--color5': 'rgb(240, 185, 78)',
-        '--color6': 'rgb(245, 235, 202)',
-        '--colorBG':'rgb(226, 221, 206)',
+        '--color1': '58,13,21',
+        '--color2': '97, 10, 27',
+        '--color3': '156, 13, 2',
+        '--color4': '221, 123, 44',
+        '--color5': '240, 185, 78',
+        '--color6': '245, 235, 202',
+        '--colorBG':'226, 221, 206',
         '--font-color': 'black',
         '--shadow-before': '0px 0px 5px 1px rgba(0, 0, 0, 0.1)',
         '--shadow-after': '0px 0px 10px 1px rgba(0, 0, 0, 0.25)'
         },
 
         dark: {
-        '--color2': 'rgb(58,13,21)',
-        '--color3': 'rgb(97, 10, 27)',
-        '--color4': 'rgb(194, 13, 0)',
-        '--color5': 'rgb(221, 123, 44)',
-        '--color6': 'rgb(240, 185, 78)',
-        '--color1': 'rgb(35, 35, 35)',
-        '--colorBG':'rgb(60, 60, 60)',
+        '--color2': '58,13,21',
+        '--color3': '97, 10, 27',
+        '--color4': '194, 13, 0',
+        '--color5': '221, 123, 44',
+        '--color6': '240, 185, 78',
+        '--color1': '35, 35, 35',
+        '--colorBG':'60, 60, 60',
         '--font-color': 'white',
         '--shadow-before': '0px 0px 5px 1px rgba(0, 0, 0, 0.5)',
         '--shadow-after': '0px 0px 10px 1px rgba(0, 0, 0, 1)'
