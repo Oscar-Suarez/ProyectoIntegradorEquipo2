@@ -12,13 +12,13 @@
 /* font-family: 'Montserrat', sans-serif;  */
 
 :root {
-    --color1: rgb(58,13,21);
-    --color2: rgb(97, 10, 27);
-    --color3: rgb(156, 13, 2);
-    --color4: rgb(221, 123, 44);
-    --color5: rgb(240, 185, 78);
-    --color6:rgb(245, 235, 202);
-    --colorBG: rgb(226, 221, 206);
+    --color1:  none;
+    --color2:  none;
+    --color3:  none;
+    --color4:  none;
+    --color5:  none;
+    --color6:  none;
+    --colorBG: none;
     --font-color: black;  
     --height-navbar: 60px;
     --shadow-before: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
@@ -29,7 +29,7 @@
 
 
 body {
-    background-color: var(--colorBG);
+    background-color: rgb( var(--colorBG) );
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -43,7 +43,7 @@ body {
  }
 
  .boton {
-    background-color: var(--color4);
+    background-color: rgb( var(--color4) );
     border: 0;
     color: white;
     width: auto;
@@ -79,13 +79,13 @@ div#accordion:hover {
 div.spacer {
     height: 100%;
     width: 100%;
-    background-color: var(--color5);
+    background-color: rgb( var(--color5) );
     margin: auto;
     clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
     position: relative;
     top: -10px;
     transform: scale(100%, 20%);
-    color: var(--color5);
+    color: rgb( var(--color5) );
 }
 
 
@@ -106,18 +106,18 @@ div.spacer {
     }
 
     .accordion-item {
-        background-color: var(--color6);
+        background-color: rgb( var(--color6) );
         
     }
 
     .accordion-button.collapsed {
-        background-color: var(--color5);
-        color: var(--color1);
+        background-color: rgb( var(--color5) );
+        color: rgb( var(--color1) );
     }
 
     .accordion-button:not(.collapsed) {
-        background-color: var(--color5);
-        color: var(--color1);
+        background-color: rgb( var(--color5) );
+        color: rgb( var(--color1) );
     }
 
     button.accordion-button {
@@ -126,7 +126,7 @@ div.spacer {
     }
 
     .btn-danger:hover {
-        outline: 4px solid rgba(156, 13, 2, 0.5);
+        outline: 4px solid rgba( var(--color3), 0.5);
         outline-offset: 0px;
     }
 }
@@ -150,7 +150,7 @@ div.spacer {
         height: var(--height-navbar);
     
         /* ESTILO DE LA NAVBAR */
-        background-color: var(--color5);
+        background-color: rgb( var(--color5) );
         -webkit-border-radius: 0px 0px 15px 15px;
         border-radius: 0px 0px 15px 15px;
     }
@@ -203,7 +203,7 @@ div.spacer {
         #menuText a, #menuIcons a{
             font-size: 20px;   
             text-decoration: none;      /* eliminar el underline del link */
-            color: var(--color1);   
+            color: rgb( var(--color1) );   
             margin-left: 5px;     /* espaciado entre los elementos elementos */
             margin-right: 5px;    /* espaciado entre los elementos elementos */
             font-weight: 400;
@@ -220,7 +220,7 @@ div.spacer {
         }
     
         .dropdown-menu.show {
-            background-color: var(--color4);
+            background-color: rgb( var(--color4) );
             border-radius: 10px;
             box-shadow: var(--shadow-before);
             width: 250px;
@@ -243,12 +243,12 @@ div.spacer {
         }
 
         .dropdown-menu li:hover {
-            background-color: var(--color5);
+            background-color: rgb( var(--color5) );
         }
 
         .dropdown-menu a:focus:hover {
             transform: translate(-4px, 0px);
-            background-color: var(--color6);
+            background-color: rgb( var(--color6) );
             border-radius: 10px;
         }
     
@@ -394,7 +394,7 @@ div.spacer {
             .bar1, .bar2, .bar3 {
                 width: calc(var(--height-navbar) * 0.5);
                 height: calc(var(--height-navbar) * 0.1);
-                background-color: var(--color1);
+                background-color: rgb( var(--color1) );
                 margin: calc(var(--height-navbar) * 0.06);
                 transition: 0.2s;
                 border-radius: 2px;
@@ -402,7 +402,7 @@ div.spacer {
     
             .change .bar1 {
                 transform: translate(0, 10px) rotate(315deg);
-                background-color: var(--color3);
+                background-color: rgb( var(--color3) );
             }
     
             .change .bar2 {
@@ -411,7 +411,7 @@ div.spacer {
     
             .change .bar3 {
                 transform: translate(0px, -10px) rotate(-315deg);
-                background-color: var(--color3);
+                background-color: rgb( var(--color3) );
             }
     
             /* LOGO EN NAVBAR MODO MOBILE */
@@ -429,11 +429,11 @@ div.spacer {
                 transform: translateY(-50%);
                 font-size: calc(var(--height-navbar) * 0.8);
                 padding-right: 15px ;
-                color: var(--color1);
+                color: rgb( var(--color1) );
                 transition: 0.2s;
             }
             #shoppingCartIcon:hover {
-                color: var(--color3);
+                color: rgb( var(--color3) );
             }
     
             /* DESAPARECER ELEMENTOS QUE NO ENTRAN EN LA NAVBAR MOBILE */
@@ -451,13 +451,13 @@ div.spacer {
                 width: 70%;
                 height: 45px;
                 border-radius: 10px;
-                border: 2px solid var(--color1);
+                border: 2px solid rgb( var(--color1) );
                 margin-top: 10px;
                 margin-bottom: 30px;
             }
             input.searchInput:focus {
-                border: 2px solid var(--color3);
-                outline: 4px solid rgba(97, 19, 27, 0.5);
+                border: 2px solid rgb( var(--color3) );
+                outline: 4px solid rgba(var(--color2), 0.5);
                 outline-offset: 0px;
             }
             button.searchInput {
@@ -471,7 +471,7 @@ div.spacer {
                 font-size: 23px;
                 font-weight: 450;
                 text-decoration: none;
-                color: var(--color1);
+                color: rgb( var(--color1) );
                 transition: 0.2s;  
             }
             #menuDesplegable li {
@@ -479,7 +479,7 @@ div.spacer {
                 position: relative;
             }
             #menuDesplegable a:hover {
-                color: var(--color3);
+                color: rgb( var(--color3) );
             }
     
             /* CSS DE LOS ICONOS (FONT) MATERIAL DESIGN */
@@ -528,7 +528,7 @@ div.spacer {
         width: var(--lateral-bar-width);
         height: 100%;
         grid-area: LateralBar;
-        background-color: var(--color4); 
+        background-color: rgba( var(--color5), 80% ); 
         transition: 0.2s;
         padding-top: calc(var(--height-navbar) + 10px);
         z-index: 9;
@@ -539,7 +539,7 @@ div.spacer {
 
     div#LateralBar a {
         text-decoration: none;
-        color: var(--color1);
+        color: rgb( var(--color1) );
         
     }
     div#LateralBar li {
@@ -556,7 +556,7 @@ div.spacer {
         transition: 0.2s;
     }
     div#LateralBar li:hover {
-        background-color: var(--color5);
+        background-color: rgb( var(--color5) );
         border-radius: 10px;
     }
 
@@ -575,10 +575,10 @@ div.spacer {
     button#button-container {
         height: 50%;
         width: 25%;
-        background-color: var(--color6);
+        background-color: rgb( var(--color6) );
         margin-left: 7px;
         border-radius: 20px;
-        border: 1px solid var(--color3);  
+        border: 1px solid rgb( var(--color3) );  
         transition: 0.2s;
         padding: auto;
         display: flex;
@@ -590,7 +590,7 @@ div.spacer {
         background-color: rgb(255, 56, 56);
     }
     button.on-dark-mode#button-container {
-        background-color: var(--color6);
+        background-color: rgb( var(--color6) );
     }
 
     button.on-dark-mode#button-container:hover {
@@ -621,7 +621,7 @@ div.spacer {
 
     }
     #CloseSesion li#CloseButton {
-        background-color: var(--color3);
+        background-color: rgb( var(--color3) );
         position: relative;
         margin: auto ;
         border-radius: 10px;
@@ -632,8 +632,8 @@ div.spacer {
     }
 
     #CloseSesion li#CloseButton:hover {
-        background-color: var(--color2);
-        outline: 10px solid var(--color4);
+        background-color: rgb( var(--color2) );
+        outline: 10px solid rgb( var(--color4) );
         border-radius: 10px;
         color: white;
     }
@@ -681,14 +681,14 @@ div.spacer {
     
         }
         #CloseSesion li#CloseButton {
-            background-color: var(--color3);
+            background-color: rgb( var(--color3) );
             border-radius: 0px;
             color: white;
             height: 60px;
         }
     
         #CloseSesion li#CloseButton:hover {
-            background-color: var(--color2);
+            background-color: rgb( var(--color2) );
             border-radius: 100px;
             color: white;
         }
@@ -790,7 +790,7 @@ div.spacer {
     
     div#InfoAccount,
     div#Order {
-        background-color: var(--color6);
+        background-color: rgb( var(--color6) );
 
         height: auto;
         border-radius: 10px;
@@ -866,7 +866,7 @@ div.spacer {
 
     div#botton {
         height: 20px;
-        background-color: var(--color5);
+        background-color: rgb( var(--color5) );
         border-radius: 0px 0px 10px 10px;
     }
 }
@@ -977,7 +977,7 @@ div.spacer {
     .form-placeholders {
         width : 100%;
         height : auto;
-        border: 1px solid var(--color1);
+        border: 1px solid rgb( var(--color1) );
         border-radius: 10px;
         box-shadow: var(--shadow-before);
         padding: 10px;
@@ -1025,7 +1025,7 @@ div.spacer {
     }
 
     div.card {
-        background-color: var(--color5);
+        background-color: rgb( var(--color5) );
         box-shadow: var(--shadow-before);
         border-radius: 10px;
         border: 0;
@@ -1042,7 +1042,7 @@ div.spacer {
     div.card img {
         position: relative;
         left:12px;
-        background-color: var(--colorBG);
+        background-color: rgb( var(--colorBG) );
         border-radius: 5px;
     }
 
@@ -1174,6 +1174,234 @@ div.spacer {
                         ESTILOS ABOUT US PAGE
 #######################################################################*/
 @media {  
+
+    /*##################################################################### 
+                        PÁGINA ABOUT US 
+######################################################################*/
+
+.texto {
+    font-size: 1.2rem;
+    color: #f0f0f0;
+    text-justify: inter-character;
+}
+
+
+.contenedorMision {
+    background-image: url(/assets/img/amigosCervezaPrincipal.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode:multiply;
+    background-color: rgba(0, 0, 0, 30%);
+    padding: 50px;
+    border-radius: 20px;
+    margin-top: 20px;
+    box-shadow: var(--shadow-before);
+    transition: 0.3s;
+}
+.contenedorMision:hover {
+    box-shadow: var(--shadow-after);
+}
+
+.contenedorVision {
+    background-image: url(/assets/img/amigosCervezaSecundario.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode:multiply;
+    background-color: rgba(0, 0, 0, 30%);
+    padding: 50px;
+    border-radius: 20px;
+    margin-top: 50px;
+    box-shadow: var(--shadow-before);
+    transition: 0.3s;
+}
+.contenedorVision:hover {
+    box-shadow: var(--shadow-after);
+}
+
+.contenedorCompromiso {
+    background-image: url(/assets/img/catedralMorelia.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-blend-mode:multiply;
+    background-color: rgba(0, 0, 0, 30%);
+    padding: 50px;
+    border-radius: 20px;
+    margin-top: 50px;
+    box-shadow: var(--shadow-before);
+    transition: 0.3s;
+}
+.contenedorCompromiso:hover {
+    box-shadow: var(--shadow-after);
+}
+
+
+
+/*###########################################
+############## TARJETAS ####################
+###########################################
+*/
+.subtitle {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.ourPresentationGrid {
+    display: grid; 
+    height: 100%;
+    max-width: 100%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+}
+
+.ourPreImg{
+    position: relative;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--shadow-before);
+    transition: 0.3s;
+}
+
+.ourPreImg:hover{
+    transform: scale(1.1);
+    box-shadow: var(--shadow-after);
+}
+
+.ourPreImg a {
+    text-decoration: none;
+    color: rgb( 255, 255 ,255 );
+    font-size: 18px;
+}
+
+
+.usImg {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    object-position: top;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+.ourPIHover {
+    position: absolute;
+    background: rgba(var(--color2), 0.7);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transform: translateX(100%);
+    cursor: pointer;
+    transition: transform .2s ease-in-out;
+    border-radius: 10px;
+}
+
+@media (max-width: 992px) {
+    .ourPresentationGrid {
+        grid-template-columns: 1fr;
+    }
+    .ourPresentationGrid article {
+        position: relative;
+        display: flex;
+        justify-content: space-around;
+        margin: auto;
+    }
+}
+
+.ourPreImg:hover .ourPIHover {
+    transform: translate(0%);
+}
+
+.titleUs {
+    font-size: 15px;
+}
+/*###########################################
+############## ABOUT US RESPONSIVE ####################
+###########################################
+*/
+#container2{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+/* mobiles */
+
+@media (min-width: 0px) and (max-width: 575.98px){
+.texto {
+    font-size: 12px;
+    
+}
+
+.title {
+    margin-top: 20px;
+}
+
+
+
+.contenedorMision {
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+    width: 95%;
+}
+
+.contenedorVision {
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+    width: 95%;
+}
+
+.contenedorCompromiso {
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+    width: 95%;
+}
+.ourPresentationGrid {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+}
+
+
+
+
+/* tablets */
+/* @media (min-width: 575.99px) and (max-width: 767.99px) */
+@media (min-width: 575.99px) and (max-width: 836.99px){
+    .ourPresentationGrid {
+        display: grid;
+        height: 100%;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}
+
+/* Tercer corte*/
+/* @media (min-width:768px) and (max-width: 992px) */
+@media (min-width:837px) and (max-width: 1120px){
+    .ourPresentationGrid {
+        display: grid;
+        height: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+}
     
 }
 
