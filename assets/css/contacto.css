@@ -2,63 +2,85 @@ body {
     background-color: rgb(245, 235, 202);
 }
 
-.link1{
+#banner{
+    border-radius: 10px;
+}
+
+#ban{
+   /* width: 1000px; Esto es prueba para jugar con el tamaño del carrusel*/
+    padding-top: 3px;
+    width: auto;
+}
+
+
+.link1{ /*Codigo para cambiar de color Inicio/Contacto*/
     color:white;
     text-decoration: none;
 }
-.link{
+.link{ /*Codigo para cambiar de color el avisos de privacidad*/
     color:white;
     text-decoration: none;
 }
-.link:hover{
+.link:hover{ 
     color:red;
 }
-p{
-    font-family: Ubuntu;
+p{ /*cambiar la fuente del parrafo*/
+    font-family: Ubuntu,sans-serif;
     font-size: large;
+    color: white;
+    /*position: relative; Prueba de position para saber como se va moviendo el texto*/
 }
 
-.icono {
-    padding-top: 10px;
+.icono { /*Código para darle formato a los iconos de tel, email, ubicación*/
+    padding-top: 50px;
     position: relative;
     width: 70px;
     left: 150px;
-
+    transition: 0.5s 0.5s;
 }
-.telo{
+.icono:hover{
+    width: 90px;
+}
+#teli{
     position: relative;
     width: 70px;
-    left: 150px;
+    left: 140px ;
 }
-#box {
+.telo{ /*Código para darle formato a los iconos de tel, email, ubicación*/
+    position: relative;
+    width: 70px;
+    left: 120px;
+}
+#box { /*Código para darle formato a los iconos de tel, email, ubicación*/
     background-color: rgb(240, 185,78 );
     border: solid 1px;
     border-radius: 5px;
     box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1) ;
+    margin-top: 50px;
 }
 
-input[type=text] {
-    font-family: Ubuntu;
+input[type=text] { /*Código para darle formato a la caja de contacto*/
+    font-family: Ubuntu,sans-serif;
     width: 100%;
     margin: 10px 5px;
     border:1px solid;
     border-radius: 5px;
 }
-input[type=email] {
-    font-family: Ubuntu;
+input[type=email] { /*Código para darle formato a la caja de comentarios* (seccion email)*/
+    font-family: Ubuntu,sans-serif;
     width: 100%;
     margin: 10px 5px;
     border:1px solid;
     border-radius: 5px;
 }
-#comentario{
-    font-family: Ubuntu;
+#comentario{ /*Código para darle formato a la caja de comentarios*/
+    font-family: Ubuntu,sans-serif;
     padding: 10px 5px;
     margin: 10px 5px;
     border-radius: 5px;
     box-sizing: border-box;
 }
-input[type=submit] {
+input[type=submit] { /*Código para darle formato al boton de submit*/
     width: 100px;
     margin: 10px 5px;
     border:1px solid;
@@ -68,9 +90,39 @@ input[type=submit] {
     cursor:pointer;
 
 }
-/*position: relative;
-left: 595px;
-  padding: 100;
-    margin-left: 550px;
-    width: 100px;
-*/
+/*Código para darle formato a los errores que aparecen en la caja de comentarios*/
+.todoserrores{
+    color:red;
+    font-size: small;
+    font-family:Ubuntu,sans-serif;
+}
+
+#email{
+    background-color: rgb(245, 235,202 );
+
+}
+
+#nombre {
+    background-color:rgb(245, 235,202 );
+}
+
+#numero{
+    background-color: rgb(245, 235,202 );
+}
+#comentario {
+    background-color: rgb(245, 235,202 );
+}
+
+/*Media queries para la seccion de texto dentro de la imagen del carrusel*/
+@media (max-width: 520px){
+#parrafu{
+   flex-direction: column;
+}
+}
+@media(max-width:  820px) {
+    #parrafi{
+        display: none;
+    }
+}
+
+
