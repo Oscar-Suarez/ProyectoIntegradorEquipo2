@@ -8,7 +8,7 @@ var datos = {
                 nombre: "Lager",
                 img: "./assets/img/productos/lager.webp",
                 descripcion: "Se trata de una bebida tipo pale lager, que produce muy poca y blanca espuma. Es de cuerpo ligero a medio.",
-                cantidad: 10,
+                cantidad: 20,
                 precioUnitario: 25
             },
             2 : {
@@ -26,7 +26,7 @@ var datos = {
                 precioUnitario: 80
             }
         },
-        total: (10*25) + (3*75) + (2*80)
+        total: (20*25) + (3*75) + (2*80)
     },
 
     2: {

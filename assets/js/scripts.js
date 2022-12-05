@@ -10,8 +10,8 @@ function darkMode(mode) { //Función para cambiar el tema del sitio Web
         '--color6': '245, 235, 202',
         '--colorBG':'226, 221, 206',
         '--font-color': 'black',
-        '--shadow-before': '0px 0px 5px 1px rgba(0, 0, 0, 0.1)',
-        '--shadow-after': '0px 0px 10px 1px rgba(0, 0, 0, 0.25)'
+        '--shadow-before': '0px 0px 5px 2px rgba(0, 0, 0, 0.25)',
+        '--shadow-after': '0px 0px 10px 3px rgba(0, 0, 0, 0.5)'
         },
 
         dark: {
@@ -29,11 +29,14 @@ function darkMode(mode) { //Función para cambiar el tema del sitio Web
     }};                         // Objeto que contiene las variables de :root
 
     let root = document.querySelector(":root"); //Obtenemos el elemento :root
-    let theme = mode ? "dark" : "light";    //Si la variable mode es true --> theme = dark, false --> theme = light
+    let theme = mode ? "dark" : "light"; 
+       //Si la variable mode es true --> theme = dark, false --> theme = light
+
     for (const [key, value] of Object.entries(globalColors[theme])){ // Definimos un ciclo for para iterar sobre el objeto
-                                                                     // globalColors[theme]
+        console.log(key, value);                                                     // globalColors[theme]
         root.style.setProperty(key, value); //Cambiamos las propiedades en :root contenidas en globalColors[theme].
     }
+
     document.cookie = "statusDarkMode = " + mode + ";path=/"; //Guardamos el estado del DarkMode en una cookie.
 
 }
@@ -289,7 +292,7 @@ function runLateralBar(element) { //Función para agregar la LateralBar
     preventRefreshButton();                             // Previene que se refresque la pagina al hacer click en el buscador de la NavBar
     var openMenu = false;                                       // La NavBar Colapsable esta cerrada 
 
-    //2.5-. Para obetner estos elementos primero se debe agregar la NavBar, ya que estan contenidos en ella.
+    //2.5-. Para obtener estos elementos primero se debe agregar la NavBar, ya que estan contenidos en ella.
     var togglerMenu = document.getElementById("togglerMenu");   // Obtenemos el botton de la NavBar Colapsable
     togglerMenu.addEventListener("click", animation);           // En caso de click, se corre la funcion animation 
 
@@ -313,13 +316,4 @@ function runLateralBar(element) { //Función para agregar la LateralBar
     });
 
     }
-
-
-
-
-
-
-
-
-
 
