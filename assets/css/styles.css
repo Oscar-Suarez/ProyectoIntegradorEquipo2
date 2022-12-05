@@ -459,5 +459,34 @@ body {
     margin: 30px 0px 0px 15px;
 }
 
+/*/////////////////////////////////////////////////////////////////////
+//////////////////////PRODUCTOS///////////////////////////////////////
+////////////////////////////////////////////////////////////////////*/
+
+div.productos {
+    margin: 10px 20px;
+    float: left;
+    width: 300px;
+    
+}
+
+div.productos imagenprod {
+    width: 100%;
+    height: auto;
+    text-align: center;
+
+}
+
+div.productos {
+    border: 1px solid;
+
+}
+
+div.descripcionprod {
+    text-align: center;
+    padding: 10px;
+}
+
+
 
 
