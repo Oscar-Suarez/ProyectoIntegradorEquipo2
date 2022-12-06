@@ -83,7 +83,7 @@ function runNavBar(element) { //Función para agregar la NavBar a todos los arch
             <nav>
                 <a href="./index.html">Inicio</a>
                 <a href="./products.html">Productos</a>
-                <a href="./about-us.html">¿Quienes somos?</a>
+                <a href="./about-us.html">¿Quiénes somos?</a>
                 <a href="./FAQ.html">FAQ</a>
             </nav>
         </div>
@@ -332,7 +332,7 @@ function runFooter(element2) { //Función para agregar el footer a todos los arc
                     <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-muted">Inicio</a></li>
                     <li class="nav-item"><a href="./about-us.html" class="nav-link px-2 text-muted">Sobre nosotros</a></li>
                     <li class="nav-item"><a href="./FAQ.html" class="nav-link px-2 text-muted">FAQs</a></li>
-                    <li class="nav-item"><a href="./terms-conditions.html" class="nav-link px-2 text-muted">Terminos y condiciones</a></li>
+                    <li class="nav-item"><a href="./terms-conditions.html" class="nav-link px-2 text-muted">Términos y condiciones</a></li>
                 </ul>
                 <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" id="listSM">
                     <li class="ms-3"><a class="text-muted" href="" id="logoFB"><img src="./assets/img/Facebook - Negative.png" ></a></li>
