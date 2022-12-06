@@ -3,31 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.85">
 
     <link rel="icon" type="image/x-icon" href="./assets/img/LogoBalxhe.png"> <!--FavIcon-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> <!--Bootstrap 5-->
     <link href="./assets/css/styles.css" rel="stylesheet"> <!--Own CSS-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> <!--Material Icons by Google-->
+    <link rel="stylesheet" href="./assets/css/contacto.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
 
     <title>Sobre Nosotros - Balxhe</title>
 </head>
 <body>
     <div id="navbar"></div> <!--Con JS se agregará la NavBar-->
     
-    <main>
-        <div class="container" id="quienesSomos">
-            <h1 class="title">¿Quienes somos?</h1>
-        </div>
-    </main>
+    
+    <div class="container" id="quienesSomos">
+        <h1 class="titulo text-center mt-5">¿Quienes somos?</h1>
+        <div class="spacer mt-3" style="max-width: 60%;">&#9632;</div>
+    </div>
+   
 
     <!--NUESTRA MISIÓN-->
     <div class="contenedorMision container">
         <div class="lineaMision row" id="lineaMision">
-            <div class="columnaMision col" id="columnaMision">
-                <h2 class="subtitulo">Nuestra Mision</h2>
+            <div class="columnaMision col-xs-12 col-lg-6" id="columnaMision">
+                <div class="h2 titulo center " style="color: white;">Nuestra Mision</div>
             </div>
-            <div class="textoCompromiso col" id="texto">
+            <div class="textoCompromiso col-xs-12 col-lg-6" id="texto">
                 <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius dolores reprehenderit maiores eaque at voluptatem dolor modi eum quas ex iure praesentium ratione tempore pariatur ab, cupiditate quaerat doloribus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam iusto ipsam impedit quod atque eveniet ipsa reiciendis illo, officia alias perferendis, blanditiis earum explicabo labore voluptatum? Atque ab quae unde.</p>
             </div>
         </div>
@@ -36,10 +41,10 @@
     <!--NUESTRA VISIÓN-->
     <div class="contenedorVision container">
         <div class="lineaVision row" id="lineaVision">
-            <div class="columnaVision col" id="columnaVision">
-                <h2 class="subtitulo">Nuestra Vision</h2>
+            <div class="columnaVision col-xs-12 col-lg-6" id="columnaVision">
+                <div class="h2 titulo center" style="color: white;">Nuestra Vision</div>
             </div>
-            <div class="textoCompromiso col" id="texto">
+            <div class="textoCompromiso col-xs-12 col-lg-6" id="texto">
                 <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius dolores reprehenderit maiores eaque at voluptatem dolor modi eum quas ex iure praesentium ratione tempore pariatur ab, cupiditate quaerat doloribus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam iusto ipsam impedit quod atque eveniet ipsa reiciendis illo, officia alias perferendis, blanditiis earum explicabo labore voluptatum? Atque ab quae unde.</p>
             </div>
         </div>
@@ -48,10 +53,10 @@
     <!--NUESTRO COMPROMISO CON MORELIA-->
     <div class="contenedorCompromiso container">
         <div class="lineaCompromiso row" id="lineaComrpo">
-            <div class="columnaCompromiso col" id="columnaCompro">
-                <h2 class="subtitulo">Nuestro compromiso con Morelia</h2>
+            <div class="columnaCompromiso col-xs-12 col-lg-6" id="columnaCompro">
+                <div class="h2 titulo center"style="color: white;">Nuestro compromiso con Morelia</div>
             </div>
-            <div class="textoCompromiso col" id="texto">
+            <div class="textoCompromiso col-xs-12 col-lg-6" id="texto">
                 <p class="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem eius dolores reprehenderit maiores eaque at voluptatem dolor modi eum quas ex iure praesentium ratione tempore pariatur ab, cupiditate quaerat doloribus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam iusto ipsam impedit quod atque eveniet ipsa reiciendis illo, officia alias perferendis, blanditiis earum explicabo labore voluptatum? Atque ab quae unde.</p>
             </div>
         </div>
@@ -73,40 +78,41 @@
 
     <!--TARJETA CON NUESTRAS REDES-->
     <section class="ourPresentation container">
-        <div class="container">
-            <h2 class="subtitle">Un poco más sobre Nosotros</h2>
-            <div class="ourPresentationGrid">
+        <div class="container" id="container2">
+            <div class="h2 titulo text-center mt-5">Un poco más sobre Nosotros</div>
+            <div class="spacer " style="max-width: 80%;">&#9632;</div>
+            <div class="ourPresentationGrid mt-4">
                 
                 <article class="ourPreImg">
-                    <img src="/assets/img/aleDev.jpg" class="usImg">
+                    <img src="./assets/img/aleDev.jpg" class="usImg">
                     <div class="ourPIHover">
                         <h2 class="titleUs"><i><a href="https://www.linkedin.com/in/alejandra-perez-perez-b42841253/" target="_blank">Alejandra Pérez</a></i></h2>
                     </div>
                 </article>
 
                 <article class="ourPreImg">
-                    <img src="/assets/img/clarizaDev.jpg" class="usImg">
+                    <img src="./assets/img/clarizaDev.jpg" class="usImg">
                     <div class="ourPIHover">
                         <h2 class="titleUs"><i><a href="www.linkedin.com/in/clarizacorrea" target="_blank">Clariza Correa</a></i></h2>
                     </div>
                 </article>
 
                 <article class="ourPreImg">
-                    <img src="/assets/img/oscarDev.jpg" class="usImg">
+                    <img src="./assets/img/oscarDev.jpg" class="usImg">
                     <div class="ourPIHover">
                         <h2 class="titleUs"><i><a href="https://www.linkedin.com/in/oscar-m-suarez-r/" target="_blank">Oscar Suárez</a></i></h2>
                     </div>
                 </article>
                 
                 <article class="ourPreImg">
-                    <img src="/assets/img/saulDev.jpg" class="usImg">
+                    <img src="./assets/img/saulDev.jpg" class="usImg">
                     <div class="ourPIHover">
                         <h2 class="titleUs"><i><a href="https://www.linkedin.com/in/dar%C3%ADo-garay-3080351b7/" target="_blank">Saúl Garay</a></i></h2>
                     </div>
                 </article>
 
                 <article class="ourPreImg">
-                    <img src="/assets/img/hectorDev2.jpg" class="usImg">
+                    <img src="./assets/img/hectorDev2.jpg" class="usImg">
                     <div class="ourPIHover">
                         <h2 class="titleUs"><i><a href="https://www.linkedin.com/in/hector-garcés-b7767b253/" target="_blank">Hector Garcés</a></i></h2>
                         <i class="far fa-file-alt usIcon"></i>
@@ -114,7 +120,7 @@
                 </article>
 
                 <article class="ourPreImg">
-                    <img src="/assets/img/walleDev.jpg" class="usImg">
+                    <img src="./assets/img/walleDev.jpg" class="usImg">
                     <div class="ourPIHover">
                         <h2 class="titleUs"><i><a href="https://www.linkedin.com/in/walbertho-efrain-montero-cervantes-545037253/" target="_blank">Walbertho Montero</a></i></h2>
                         <i class="far fa-file-alt usIcon"></i>
@@ -122,7 +128,7 @@
                 </article>
 
                 <article class="ourPreImg">
-                    <img src="/assets/img/davidDev.jpg" class="usImg">
+                    <img src="./assets/img/davidDev.jpg" class="usImg">
                     <div class="ourPIHover">
                         <h2 class="titleUs"><i><a href="https://www.linkedin.com/in/david-salguero-olvera-1a86501b0/">David Salguero</a></i></h2>
                         <i class="far fa-file-alt usIcon"></i>
@@ -130,7 +136,7 @@
                 </article>
 
                 <article class="ourPreImg">
-                    <img src="/assets/img/imagenMomentanea.png" class="usImg">
+                    <img src="./assets/img/stevenDev.jpg" class="usImg">
                     <div class="ourPIHover">
                         <h2 class="titleUs"><i><a href="https://www.linkedin.com/in/steven-isaac-tlatenchi-jimenez-390839253/">Steven Isaac</a></i></h2>
                         <i class="far fa-file-alt usIcon"></i>
@@ -141,8 +147,104 @@
     </section>
 
 
+    <!--Banner-->
+    <div class="container mt-5" id="ban">
+        <!--Clase container de bootstrap-->
+        <div class="row" id="vaners">
+            <div class="col-12-lg col-md-12 col-sm-12">
+                <!--colums y responsividad-->
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <!--Imagen del banner-->
+                        <img src="https://thumbs.dreamstime.com/b/espuma-de-la-cerveza-oscura-con-las-burbujas-7742692.jpg"
+                            class="d-block w-100" alt="..." id="banner">
+                        <!--Texto dentro del banner-->
+                        <div class="carousel-caption d-md-block" id="parrafu">
+                            <div class="row" id="textobanner">
+                                <h4><a href="./index.html" class="link1">Inicio</a> / <a href="#contas" class="link1">Contactanos</a></h4>
+                            </div>
+                            <div class="container" id="parrafi">
+                                <div class="prueba2" id="informa">
+                                    <p><b>¿Preguntas sobre la cerveza, la empresa o el sitio web? Cuéntanos tus
+                                            grandes ideas,
+                                            lo que te molesta o lo que te encanta de Balxhe.
+                                        </b></p>
+                                    <p><b>Solo utilizaremos sus datos de acuerdo con nuestra <a href="#"
+                                                class="link">política
+                                                de privacidad.</a></b></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Iconos-->
+    <div class="container" id="contas">
+        <!--Icono teléfono-->
+        <div class="row align-items-start">
+            <div class="col-lg-4 col-sm-12 col-md-3">
+                <img src="./assets/img/tel.png" class="icono" id="tel">
+                <h6 class="telo" id="teli">245787489</h6>
+            </div>
+            <!--Icono Email-->
+            <div class="col-lg-4 col-sm-12 col-md-3">
+                <img src="./assets/img/email.png" class="icono" id="mail">
+                <h6 class="telo">balxhe@balxhe.com</h6>
+            </div>
+            <!--Icono Dirreccion-->
+            <div class="col-lg-4 col-sm-12 col-md-3">
+                <img src="./assets/img/ubicacion.png" class="icono" id="ubi">
+                <h6 class="telo">Morelia/Michoacán</h6>
+            </div>
+        </div>
+    </div>
+
+    <!--Formulario de contacto-->
+    <div class="container mb-5" id="box">
+        <div class="row">
+            <div class="col-12-lg col-md-12 col-sm-12">
+                <form id="form">
+                    <div class="todoserrores" id="error"></div>
+                    <div class="formcontrol">
+                        <label>Nombre Completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo" class="form-placeholders">
+
+                    </div>
+
+                    <label>Teléfono</label>
+                    <div class="todoserrores" id="error2"></div>
+                    <div class="formcontrol">
+                        <input type="text" id="numero" name="numero" placeholder="Teléfono (+52)" class="form-placeholders">
 
 
+                        <label>Email</label>
+                        <div class="todoserrores" id="error3"></div>
+                        <div class="formcontrol">
+                            <input type="email" id="email" name="email" placeholder="Correo Electrónico" class="form-placeholders">
+
+                        </div>
+
+                        <label>Comentario</label>
+                        <div class="todoserrores" id="error4"></div>
+                        <div class="formcontrol">
+                            <input type="text" id="comentario" name="comentario" placeholder="Comentario" class="form-placeholders">
+                            <div class="error">
+                            </div>
+                        </div>
+                        <div class="col-12-lg col-md-12 col-sm-12">
+                            <input type="submit" value="Enviar" class="boton">
+                        </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--Scrips-->
+    <script src="/assets/js/formulario.js"></script>
     <script src="./assets/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
 </body>
 </html>

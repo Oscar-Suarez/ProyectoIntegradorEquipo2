@@ -12,406 +12,1245 @@
 /* font-family: 'Montserrat', sans-serif;  */
 
 :root {
-    --color1: rgb(58,13,21);
-    --color2: rgb(97, 10, 27);
-    --color3: rgb(156, 13, 2);
-    --color4: rgb(221, 123, 44);
-    --color5: rgb(240, 185, 78);
-    --colorBG:rgb(245, 235, 202);  
+    --color1:  none;
+    --color2:  none;
+    --color3:  none;
+    --color4:  none;
+    --color5:  none;
+    --color6:  none;
+    --colorBG: none;
+    --font-color: black;  
+    --height-navbar: 60px;
+    --shadow-before: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
+    --shadow-after :0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+    --lateral-bar-width: 210px;
+}
 
-    --height-navbar: 70px;
-}
+
+
 body {
-    background-color: var(--colorBG);
+    background-color: rgb( var(--colorBG) );
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Ubuntu', sans-serif;
 }
+
+.titulo, #titulo {
+    font-family: 'Montserrat', sans-serif; 
+    color: var(--font-color);
+
+ }
+
+ .boton {
+    background-color: rgb( var(--color4) );
+    border: 0;
+    color: white;
+    width: auto;
+    padding: 10px 15px 10px 15px;
+    border-radius: 10px;
+    height : auto;
+}
+
+.boton:hover {
+    outline: 4px solid #ff84006e;
+}
+
+.vinculo-login-signup {
+    text-decoration:none;
+    font-family: 'Montserrat', sans-serif; 
+    color: var(--font-color);
+}
+
+div#accordion {
+    padding: 0;
+    overflow: hidden;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow-before);
+    transition: 0.2s;
+    max-width: 1000px;
+}
+
+div#accordion:hover {
+    box-shadow: var(--shadow-after);
+}
+
+div.spacer {
+    height: 100%;
+    width: 100%;
+    background-color: rgb( var(--color5) );
+    margin: auto;
+    clip-path: polygon(50% 0, 100% 50%, 50% 100%, 0 50%);
+    position: relative;
+    top: -10px;
+    transform: scale(100%, 20%);
+    color: rgb( var(--color5) );
+}
+
+
+/*______________________________________________________________________
+########################################################################
+                        CSS over Bootstrap 5
+######################################################################*/
+
+@media {
+    .h1, .h2, .h3, h1, h2, h3  {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 600;
+    }
+
+    .h4, .h5, .h6 ,h4 ,h5, h6 {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 500;
+    }
+
+    .accordion-item {
+        background-color: rgb( var(--color6) );
+        
+    }
+
+    .accordion-button.collapsed {
+        background-color: rgb( var(--color5) );
+        color: rgb( var(--color1) );
+    }
+
+    .accordion-button:not(.collapsed) {
+        background-color: rgb( var(--color5) );
+        color: rgb( var(--color1) );
+    }
+
+    button.accordion-button {
+        font-size: 18px;
+        font-weight: 550;
+    }
+
+    .btn-danger:hover {
+        outline: 4px solid rgba( var(--color3), 0.5);
+        outline-offset: 0px;
+    }
+}
+
+
 /*######################################################################
                         CSS DE LA NAVBAR
 #######################################################################*/
 
-#navbar {
-    /*ESTBLECE LA POSICIÓN DE LA NAVBAR PEGADA ARRIBA*/
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    line-height: var(--height-navbar);
-    z-index: 10;
-    /* DIMESIONES DE LA NAVBAR */
-    width: auto; 
-    height: var(--height-navbar);
-    /* ESTILO DE LA NAVBAR */
-    background-color: var(--color5);
-    -webkit-border-radius: 0px 0px 15px 15px;
-    border-radius: 0px 0px 15px 15px;
-}
-@media (min-width: 768px) /* NAVBAR --> DESKTOP & TABLETS */ {
-    /* CSS PARA TODA LA NAVBAR EN GENERAL */
-    #navbar  {
-        /* PROPIEDADES DE LA SOMBRA DE LA NAVBAR */
-        -webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1); 
-        box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
-        transition: 0.5s;
-    }
-    #navbar:hover {
-        /* PROPIEDADES DE LA SOMBRA->NAVBAR CUANDO EL USUARIO
-            COLOCA EL CURSON ENCIMA DE LA NAVBAR */
-        -webkit-box-shadow: 0px 0px 10px 5px rgba(58, 13, 21, 0.5);
-        box-shadow: 0px 0px 10px 5px rgba(58, 13, 21,0.5);
-    }
-
-    /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR 
-    PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
-    #logo {   
-        float: left;      /* alinear horizontalmente los divs hijos dentro del div padre */
-        height: 100%;     /* ocupar el 100% de espacio vertical del div padre */
-    }
-    #navbar1 {
-        float: left;      /* alinear horizontalmente los divs hijos dentro del div padre */
-        height: 100%;     /* ocupar el 100% de espacio vertical del div padre */
-        text-align: center; 
-    }
-    #menuIcons {
-        float: left;      /* alinear horizontalmente los divs hijos dentro del div padre */
-        height: 100%;     /* ocupar el 100% de espacio vertical del div padre */
-        text-align: right;    /* alinear el texto a la derecha del div*/
-        padding-right: 10px;  /* espaciado del borde derecho*/
-    }
-    #menuDesplegable, #menuMobile {
-        display: none;
-    }
-
-    /* ESTILO DE LOS ELEMENTOS DE LA NAVBAR */
-    #navbar1 a, #menuIcons a{
-        font-size: 20px;   
-        text-decoration: none;      /* eliminar el underline del link */
-        color: var(--color1);   
-        margin-left: 5px;     /* espaciado entre los elementos elementos */
-        margin-right: 5px;    /* espaciado entre los elementos elementos */
-        font-weight: 600;
-    }
-
-    #menuIcons span {
-        position: relative;
-        top: 10px;
-        font-size: 35px;
-    }
-    /* CSS DE LOS ICONOS (FONT) MATERIAL DESIGN */
-    .material-symbols-outlined {
-        font-variation-settings:
-        'FILL' 0,
-        'wght' 500,
-        'GRAD' 800,
-        'opsz' 18
-    }
-    .material-symbols-outlined:hover {
-        font-variation-settings:
-        'FILL' 1,
-        'wght' 800,
-        'GRAD' 800,
-        'opsz' 18
-    }
-
-    @media (min-width: 992px){
-
-        /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR 
-            PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
-        #logo {   
-            width: 25%;       /* porcentaje del espacio horizontal que ocupan del div padre */
-        }
-        #navbar1 {
-            width: 50%;       /* porcentaje del espacio horizontal que ocupan del div padre */
-        }
-        #menuIcons {
-             width: 25%;       /* porcentaje del espacio horizontal que ocupan del div padre */
-        }
-    
-        #logoNavBar {
-            position: absolute;
-            top:0;
-            left: 10px;
-            height: 50px;
-            margin-top: 10px;
-        }
-    
-        #logoMobileNavBar {
-            display: none;
-        }
-    }
-    
-    @media (max-width: 991px) and (min-width: 768px){
-    
-        /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR 
-            PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
-        #logo {   
-            width: 10%;       /* porcentaje del espacio horizontal que ocupan del div padre */
-    
-        }
-        #navbar1 {
-            width: 65%;       /* porcentaje del espacio horizontal que ocupan del div padre */
-    
-        }
-        #menuIcons {
-             width: 25%;       /* porcentaje del espacio horizontal que ocupan del div padre */
-        }
-    
-        #logoNavBar {
-            display: none;
-        }
-    
-        #logoMobileNavBar {
-            position: absolute;
-            top:0;
-            left: 25px;
-            height: 50px;
-            margin-top: 10px;
-        }
-    }
-}
-@media (max-width: 767px) /* NAVBAR --> MOBILE */ {
-    :root {
-        --height-navbar: 60px;
-    }
-
-    #navbar  {
-        height: var(--height-navbar);
+@media { /*NavBar*/
+    #navbar {
         /*ESTBLECE LA POSICIÓN DE LA NAVBAR PEGADA ARRIBA*/
-        display: grid;
-        grid-auto-columns: 33.33%;
-        grid-template-areas: 
-        "menuDesplegable logo shoppingCart"
-        "menuMobile menuMobile menuMobile";
-        /* PROPIEDADES DE LA SOMBRA DE LA NAVBAR */
-        -webkit-box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.2);
-        box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.2);
-        transition: 0.5s;
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        line-height: var(--height-navbar);
+        z-index: 10;
+    
+        /* DIMESIONES DE LA NAVBAR */
+     
+        height: var(--height-navbar);
+    
+        /* ESTILO DE LA NAVBAR */
+        background-color: rgb( var(--color5) );
+        -webkit-border-radius: 0px 0px 15px 15px;
+        border-radius: 0px 0px 15px 15px;
     }
     
-    #navbar:hover, .change#nanbar:hover {
-        /* PROPIEDADES DE LA SOMBRA->NAVBAR CUANDO EL USUARIO
-        COLOCA EL CURSON ENCIMA DE LA NAVBAR EN MODO MOBILE */
-        -webkit-box-shadow: 0px 0px 4px 5px rgba(0, 0, 0, 0.5);
-        box-shadow: 0px 0px 6px 5px rgba(0, 0, 0, 0.5);
-    }
-
-    .change#navbar {
-        /* DESPLIEGUE DEL MENU COLAPSABLE */
-        height: 380px;
-    }
-
-    /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR
+    @media (min-width: 768px) /* NAVBAR --> DESKTOP & TABLETS */ {
+        
+        /* CSS PARA TODA LA NAVBAR EN GENERAL */
+        #navbar  {
+            /* PROPIEDADES DE LA SOMBRA DE LA NAVBAR */
+            -webkit-box-shadow: var(--shadow-before);
+            box-shadow: var(--shadow-before);
+            transition: 0.2s;
+        }
+        #navbar:hover {
+            /* PROPIEDADES DE LA SOMBRA->NAVBAR CUANDO EL USUARIO
+                COLOCA EL CURSON ENCIMA DE LA NAVBAR */
+            -webkit-box-shadow: var(--shadow-after);
+            box-shadow: var(--shadow-after);
+        }
+    
+        /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR 
         PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
-    #menuDesplegable {
-        grid-area: menuDesplegable;
-        height: var(--height-navbar);
-        text-align: left;
-    }
-    #logo {   
-        grid-area: logo;      /* alinear horizontalmente los divs hijos dentro del div padre */
-        height: var(--height-navbar);     /* ocupar el 100% de espacio vertical del div padre */
-        text-align: center;
-        align-items: center;
-    }
-    #menuIcons {
-        grid-area: shoppingCart;      /* alinear horizontalmente los divs hijos dentro del div padre */
-        height: var(--height-navbar);     /* ocupar el 100% de espacio vertical del div padre */
-    }
-    #shoppingCartContainer {
-        display: inherit;
-        height: var(--height-navbar);
-        text-align: right;
-    }
-    #navbar1 {
-        display: none;
-    }
-    #menuMobile {
-        display: none;
-        grid-area: menuMobile;
-        transition: 0.3s;
-    }
-    .change#menuMobile {
-        display: block;
-        text-align: left;
-        width: 100%;
-    }
-    /* ESTILO DE LOS ELEMENTOS DE LA NAVBAR */
-    #togglerMenu {
-        height: var(--height-navbar);
-        background-color: transparent;
-        border: 0px;
-        padding-left: 10px;
+        #logo {   
+            float: left;      /* alinear horizontalmente los divs hijos dentro del div padre */
+            height: 100%;     /* ocupar el 100% de espacio vertical del div padre */
+        }
+        #menuText {
+            float: left;      /* alinear horizontalmente los divs hijos dentro del div padre */
+            height: 100%;     /* ocupar el 100% de espacio vertical del div padre */
+            text-align: center; 
+        }
+        #menuIcons {
+            float: left;      /* alinear horizontalmente los divs hijos dentro del div padre */
+            height: 100%;     /* ocupar el 100% de espacio vertical del div padre */
+            text-align: right;    /* alinear el texto a la derecha del div*/
+            padding-right: 10px;  /* espaciado del borde derecho*/
+        }
+        #menuDesplegable, #botonMenuDesplegable {
+            display: none;
+        }
+    
+        /* ESTILO DE LOS ELEMENTOS DE LA NAVBAR */
 
-    }
-    #logoMobileNavBar {
-        position: relative;
-        align-items: center;
-        text-align: center;
-        height: 45px;
-
-    }
-    #shoppingCartIcon {
-        position: relative;
-        top: 10px;
-        font-size: 40px;
-        padding-right: 5px ;
-        color: var(--color1);
-        transition: 0.3s;
-    }
-    #shoppingCartIcon:hover {
-        color: var(--color3);
-    }
-    #mobileNavbarIconOut, #logoNavBar  {
-        display: none;
-    }
-    span#menuMobileIcons {
-        position: relative;
-        top: 7px;
-        font-size: 30px;
-    }
-    input.searchInput {
-        width: 70%;
-        height: 45px;
-        border-radius: 10px;
-        border: 2px solid var(--color1);
-        margin-top: 10px;
-        margin-bottom: 30px;
-    }
-    input.searchInput:focus {
-        border: 2px solid var(--color3);
-        outline: 4px solid rgba(97, 19, 27, 0.5);
-        outline-offset: 0px;
-    }
-    button.searchInput {
-        width: 20%;
-        height: 50px;
-        background-color: transparent;
-        border: 0;
-    }
-    #menuMobile ul, #menuMobile a {
-        list-style-type: none;
-        font-size: 23px;
-        font-weight: 600;
-        text-decoration: none;
-        color: var(--color1);
-        transition: color .5s;  
-    }
-    #menuMobile li {
-        margin: -20px;
-        margin-left: -20px;
-        position: relative;
-        align-items: center;
-    }
-    #menuMobile a:hover {
-        color: var(--color3);
-    }
-    /* CSS DE LOS ICONOS (FONT) MATERIAL DESIGN */
-    .material-symbols-outlined {
-        font-variation-settings:
-        'FILL' 0,
-        'wght' 600,
-        'GRAD' 800,
-        'opsz' 30
-    }
-    .material-symbols-outlined:hover {
-        font-variation-settings:
-        'FILL' 1,
-        'wght' 600,
-        'GRAD' 400,
-        'opsz' 98
+        img#logoNavBar {
+            height: calc(var(--height-navbar) - 10px);
+            padding-left: 10px;
+            
         }
 
-    .bar1,
-    .bar2,
-    .bar3 {
-        width: 30px;
-        height: 5px;
-        background-color: var(--color1);
-        margin: 5px 0;
-        transition: 0.4s;
-        border-radius: 2px;
-    }
+        #menuText a, #menuIcons a{
+            font-size: 20px;   
+            text-decoration: none;      /* eliminar el underline del link */
+            color: rgb( var(--color1) );   
+            margin-left: 5px;     /* espaciado entre los elementos elementos */
+            margin-right: 5px;    /* espaciado entre los elementos elementos */
+            font-weight: 400;
+        }
+    
+        #menuIcons span {
+            --font-size-icons-navbar: calc(var(--height-navbar) * 0.65);
+            margin: 0;
+            position: relative;
+            top: 50%;
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            font-size: var(--font-size-icons-navbar);
+        }
+    
+        .dropdown-menu.show {
+            background-color: rgb( var(--color4) );
+            border-radius: 10px;
+            box-shadow: var(--shadow-before);
+            width: 250px;
+        }
 
-    .change .bar1 {
-        transform: translate(0, 10px) rotate(315deg);
-        background-color: var(--color3);
-    }
+        .dropdown-menu.show:hover {
+            box-shadow: var(--shadow-after);
+            transition: 0.2s;
+        }
+        .dropdown-menu li {
+            position: relative;
+            margin: auto;
+            border-radius: 5px;
+        }
 
-    .change .bar2 {
-        opacity: 0;
-    }
+        .dropdown-item span.material-symbols-outlined{
+            position: relative !important;
+            top: 24px !important;
+            margin-right: 5px !important;
+        }
 
-    .change .bar3 {
-        transform: translate(0px, -10px) rotate(-315deg);
-        background-color: var(--color3);
+        .dropdown-menu li:hover {
+            background-color: rgb( var(--color5) );
+        }
+
+        .dropdown-menu a:focus:hover {
+            transform: translate(-4px, 0px);
+            background-color: rgb( var(--color6) );
+            border-radius: 10px;
+        }
+    
+    
+        /* CSS DE LOS ICONOS (FONT) MATERIAL DESIGN */
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 500,
+            'GRAD' 600,
+            'opsz' 18
+        }
+        .material-symbols-outlined:hover {
+            font-variation-settings:
+            'FILL' 1,
+            'wght' 800,
+            'GRAD' 600,
+            'opsz' 40
+        }
+    
+        @media (min-width: 992px){
+    
+            /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR 
+                PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
+            #logo {   
+                width: 25%;       /* porcentaje del espacio horizontal que ocupan del div padre */
+            }
+            #menuText {
+                width: 50%;       /* porcentaje del espacio horizontal que ocupan del div padre */
+            }
+            #menuIcons {
+                 width: 25%;       /* porcentaje del espacio horizontal que ocupan del div padre */
+            }
+            
+            #logoMobileNavBar {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 991px) and (min-width: 768px){
+        
+            /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR 
+                PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
+            #logo {   
+                width: 10%;       /* porcentaje del espacio horizontal que ocupan del div padre */
+        
+            }
+            #menuText {
+                width: 65%;       /* porcentaje del espacio horizontal que ocupan del div padre */
+        
+            }
+            #menuIcons {
+                 width: 25%;       /* porcentaje del espacio horizontal que ocupan del div padre */
+            }
+        
+            #logoNavBar {
+                display: none;
+            }
+        
+            #logoMobileNavBar {
+                position: relative;
+                margin: auto;
+                left: 25px;
+                height: calc(var(--height-navbar) - 10px);
+            }
+        }
     }
     
+    @media (max-width: 767px) /* NAVBAR --> MOBILE */ {
+    
+        /* COMPORTAMIENTO Y ESTILO DE LA NAVBAR MOBILE */
+            #navbar  {
+                height: var(--height-navbar);
+    
+                /* ESTBLECE LA DISTRIBUCIÓN DE LA NAVBAR */
+                display: grid;
+                grid-auto-columns: 33.333%; 
+                grid-template-areas: 
+                "botonMenuDesplegable           logo            shoppingCart"
+                "menuDesplegable            menuDesplegable     menuDesplegable";
+                
+                /* PROPIEDADES DE LA SOMBRA DE LA NAVBAR */
+                -webkit-box-shadow: var(--shadow-before);
+                box-shadow: var(--shadow-before);
+                transition: 0.2s;
+            }
+            #navbar:hover, .change#nanbar:hover {
+                /* PROPIEDADES DE LA SOMBRA->NAVBAR CUANDO EL USUARIO
+                COLOCA EL CURSON ENCIMA DE LA NAVBAR EN MODO MOBILE */
+                -webkit-box-shadow: var(--shadow-after);
+                box-shadow: var(--shadow-after);
+            }
+            .change#navbar {
+                /* DESPLIEGUE DEL MENU COLAPSABLE */
+                height: 500px;
+            }
+    
+        /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR
+            PD: ESTÁN ACOMODADOS EN ORDEN DE APARICIÓN.*/
+            #botonMenuDesplegable {
+                grid-area: botonMenuDesplegable;
+                height: var(--height-navbar);
+                text-align: left;
+            }
+            #logo {   
+                grid-area: logo;      
+                height: var(--height-navbar);
+                text-align: center;
+                align-items: center;
+            }
+            #menuIcons {
+                grid-area: shoppingCart; 
+                height: var(--height-navbar);
+            }
+            #shoppingCartContainer {
+                display: inherit;
+                height: var(--height-navbar);
+                text-align: right;
+            }
+            #menuText {
+                display: none;
+            }
+            #menuDesplegable {
+                display: none;
+                grid-area: menuDesplegable;
+                transition: 0.2s;
+            }
+            .change#menuDesplegable {
+                display: block;
+                text-align: left;
+                width: 100%;
+            }
+    
+        /* ESTILO DE LOS ELEMENTOS DE LA NAVBAR */
+            /*ELEMENTOS BOTON-MENU DESPLEGABLE */
+            #togglerMenu {
+                height: var(--height-navbar);
+                background-color: transparent;
+                border: 0px;
+                padding-left: 20px;
+    
+            }
+            .bar1, .bar2, .bar3 {
+                width: calc(var(--height-navbar) * 0.5);
+                height: calc(var(--height-navbar) * 0.1);
+                background-color: rgb( var(--color1) );
+                margin: calc(var(--height-navbar) * 0.06);
+                transition: 0.2s;
+                border-radius: 2px;
+            }
+    
+            .change .bar1 {
+                transform: translate(0, 10px) rotate(315deg);
+                background-color: rgb( var(--color3) );
+            }
+    
+            .change .bar2 {
+                opacity: 0;
+            }
+    
+            .change .bar3 {
+                transform: translate(0px, -10px) rotate(-315deg);
+                background-color: rgb( var(--color3) );
+            }
+    
+            /* LOGO EN NAVBAR MODO MOBILE */
+            #logoMobileNavBar {
+                height: calc(var(--height-navbar) - 8px);
+
+            }
+    
+            /* ICONO DEL CARRITO DE COMPRAS */
+            #shoppingCartIcon {
+                margin: 0;
+                position: relative;
+                top: 50%;
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+                font-size: calc(var(--height-navbar) * 0.8);
+                padding-right: 15px ;
+                color: rgb( var(--color1) );
+                transition: 0.2s;
+            }
+            #shoppingCartIcon:hover {
+                color: rgb( var(--color3) );
+            }
+    
+            /* DESAPARECER ELEMENTOS QUE NO ENTRAN EN LA NAVBAR MOBILE */
+            #mobileNavbarIconOut, #logoNavBar  {
+                display: none;
+            }
+    
+            /* ELEMENTOS DEL MENU DESPLEGABLE */
+            span#menuDesplegableIcons {
+                position: relative;
+                top: 7px;
+                font-size: 30px;
+            }
+            input.searchInput {
+                width: 70%;
+                height: 45px;
+                border-radius: 10px;
+                border: 2px solid rgb( var(--color1) );
+                margin-top: 10px;
+                margin-bottom: 30px;
+            }
+            input.searchInput:focus {
+                border: 2px solid rgb( var(--color3) );
+                outline: 4px solid rgba(var(--color2), 0.5);
+                outline-offset: 0px;
+            }
+            button.searchInput {
+                width: 20%;
+                height: 50px;
+                background-color: transparent;
+                border: 0;
+            }
+            #menuDesplegable ul, #menuDesplegable a {
+                list-style-type: none;
+                font-size: 23px;
+                font-weight: 450;
+                text-decoration: none;
+                color: rgb( var(--color1) );
+                transition: 0.2s;  
+            }
+            #menuDesplegable li {
+                margin: -20px;
+                position: relative;
+            }
+            #menuDesplegable a:hover {
+                color: rgb( var(--color3) );
+            }
+    
+            /* CSS DE LOS ICONOS (FONT) MATERIAL DESIGN */
+            .material-symbols-outlined {
+                font-variation-settings:
+                'FILL' 0,
+                'wght' 600,
+                'GRAD' 800,
+                'opsz' 30
+            }
+            .material-symbols-outlined:hover {
+                font-variation-settings:
+                'FILL' 1,
+                'wght' 600,
+                'GRAD' 400,
+                'opsz' 98
+                }
+        
+    }
 }
+
 /*######################################################################
-                        OTROS COMPONENTES....
+                        CSS DE LA LATERAL-BAR
 #######################################################################*/
 
+@media {
+
+    div#page-content {
+        display: grid;
+        grid-template-areas: "LateralBar Contenido";
+        grid-template-columns: var(--lateral-bar-width) 1fr;
+
+    }
+    
+    div#Contents {
+        grid-area: Contenido;
+        padding-left: 5%;
+        padding-right: 5%;
+        transition: 0.2s;
+    }
+
+    div#LateralBar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: var(--lateral-bar-width);
+        height: 100%;
+        grid-area: LateralBar;
+        background-color: rgba( var(--color5), 80% ); 
+        transition: 0.2s;
+        padding-top: calc(var(--height-navbar) + 10px);
+        z-index: 9;
+    }
+    div#LateralBar ul {
+        padding-left: 0px;
+    }
+
+    div#LateralBar a {
+        text-decoration: none;
+        color: rgb( var(--color1) );
+        
+    }
+    div#LateralBar li {
+        display: flex;
+        align-items: center;
+
+        
+        height: calc(var(--lateral-bar-width) / 4); 
 
 
-/*##################################################################### 
-                        PÁGINA ABOUT US 
-######################################################################*/
+        list-style-type: none;
+        font-size: 18px;
+        font-weight: 500;
+        transition: 0.2s;
+    }
+    div#LateralBar li:hover {
+        background-color: rgb( var(--color6) );
+        border-radius: 10px;
+    }
+
+
+
+    div#LateralBar span {
+        margin: 5px;
+        padding-left: 5%;
+        font-size: 30px;
+    }
+
+    li#modo-oscuro h {
+        padding-left: 10%;
+    }
+
+    button#button-container {
+        height: 50%;
+        width: 25%;
+        background-color: rgb( var(--color6) );
+        margin-left: 7px;
+        border-radius: 20px;
+        border: 1px solid rgb( var(--color3) );  
+        transition: 0.2s;
+        padding: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    button#button-container:hover {
+        background-color: rgb(255, 56, 56);
+    }
+    button.on-dark-mode#button-container {
+        background-color: rgb( var(--color6) );
+    }
+
+    button.on-dark-mode#button-container:hover {
+        background-color: rgb(47, 255, 95);
+    }
+
+
+    button#button-container div#button-slider {
+        background-color: var(--font-color);
+        height: 20px;
+        width: 20px;
+        border-radius: 50px;
+        transform: translate(-60%);
+        transition: 0.2s;
+    }
+
+    button.on-dark-mode#button-container div#button-slider {
+        background-color: var(--font-color);
+        transform: translate(60%);
+    }
+
+    a#CloseSesion {
+        height: 40px;
+        position: fixed;
+        bottom: 30px;
+        padding: 10px;
+        width: var(--lateral-bar-width);
+
+    }
+    #CloseSesion li#CloseButton {
+        background-color: rgb( var(--color3) );
+        position: relative;
+        margin: auto ;
+        border-radius: 10px;
+        color: white;
+        font-size: 18px;
+        height: 50px;
+
+    }
+
+    #CloseSesion li#CloseButton:hover {
+        background-color: rgb( var(--color2) );
+        outline: 10px solid rgb( var(--color4) );
+        border-radius: 10px;
+        color: white;
+    }
+
+
+
+
+    @media (max-width: 1200px) {
+        button#button-container {
+            height: 50%;
+            width: 70%;
+            margin-left: 0;
+        }
+
+        div#page-content {
+            grid-template-columns: 70px 1fr;
+        }
+        div#Contents {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        div#LateralBar {
+            width: 70px;
+        }
+
+        div#LateralBar li{
+            justify-content: center;
+        }
+
+        div#LateralBar h {
+            display: none;
+        }
+
+        div#LateralBar span {
+           padding-left: 0;
+            font-size: 35px;
+        }
+
+        a#CloseSesion {
+            height: auto;
+            position: fixed;
+            bottom: 0px;
+            padding: 0px;
+            width: 70px;
+    
+        }
+        #CloseSesion li#CloseButton {
+            background-color: rgb( var(--color3) );
+            border-radius: 0px;
+            color: white;
+            height: 60px;
+        }
+    
+        #CloseSesion li#CloseButton:hover {
+            background-color: rgb( var(--color2) );
+            border-radius: 100px;
+            color: white;
+        }
+
+        @media (max-width: 576px) {
+
+            div#LateralBar {
+                width: 50px;
+            }
+        }
+    
+    }
+    
+    @media (max-width: 767px) {
+        div#LateralBar {
+            display: none;
+        }
+    
+        div#page-content {
+            grid-template-columns: 0px 1fr;
+        }
+    
+        div#Contents {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    
+    
+    }
+
+    
+}
+
+
+/* DISTRIBUCIÓN PAGINAS PRIVADAS */
+@media { 
+    div.ma#Contents {
+        grid-area: Contenido;
+        padding-left: 15%;
+        padding-right: 15%;
+        transition: 0.2s;
+    }
+    @media (max-width: 992px) {
+        div#page-content {
+            grid-template-columns: 70px 1fr;
+        }
+        div.ma#Contents {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        div#LateralBar h {
+            display: none;
+        }
+
+        div#LateralBar span {
+           padding-left: 0;
+            font-size: 35px;
+        }
+        @media (max-width: 576px) {
+
+            div#LateralBar {
+                width: 50px;
+            }
+        }
+    
+    }
+    
+    @media (max-width: 767px) {
+        div#LateralBar {
+            display: none;
+        }
+    
+        div#page-content {
+            grid-template-columns: 0px 1fr;
+        }
+    
+        div#Contents {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+    
+    
+    }
+}
+
+/*######################################################################
+                        CSS de MyAccount
+#######################################################################*/
+@media { /*My Account*/
+
+
+    div#BannerMyAccount {
+        height: 80px;
+        display: flex;
+        align-items: flex-end;
+    }
+
+    div#BannerMyAccount h4 {
+        margin-left: 10px;
+    }
+    
+    
+    div#InfoAccount,
+    div#Order {
+        background-color: rgb( var(--color6) );
+
+        height: auto;
+        border-radius: 10px;
+
+        -webkit-box-shadow: var(--shadow-before);
+        box-shadow: var(--shadow-before);
+        transition: 0.2s;
+    }
+
+    div#InfoAccount:hover,
+    div#Order:hover {
+        -webkit-box-shadow: var(--shadow-after);
+        box-shadow: var(--shadow-after);
+    }
+
+    div#HeaderUserPhoto {
+        height: 85px;
+        display: flex;
+      
+        justify-content: center;
+
+    }
+
+    div#UserPhoto {
+        
+        position: relative;
+        top: -75px;
+        height: 150px;
+        width: 150px;
+        background-image: url("../img/wallePhoto.jpg");
+        background-size: 100%;
+        border-radius: 100px;
+        box-shadow: var(--shadow-before);
+        transition: 0.2s;
+    }
+
+    div#UserPhoto:hover {
+        transform: scale(1.1);
+    }
+
+    div#e-Mail div {
+        display: inline-flex;
+        margin: -2px;
+    }
+
+    
+    .card-profile-stats>div {
+        margin-right: 1rem;
+        padding: .875rem;
+        text-align: center;
+    }
+
+    .card-profile-stats>div:last-child {
+        margin-right: 0;
+    }
+
+    .card-profile-stats>div .heading {
+        font-size: 20px;
+        font-weight: bold;
+        display: block;
+    }
+
+    .card-profile-stats>div .description {
+        font-size: 15px;
+    }
+
+    .UserData#MyAccountPage label {
+        font-size: 15px;
+        font-weight: 500;
+        margin-left: 5px;
+        margin-bottom: 5px;
+    }
+
+    div#botton {
+        height: 20px;
+        background-color: rgb( var(--color5) );
+        border-radius: 0px 0px 10px 10px;
+    }
+}
+
+/*######################################################################
+                        CSS de My Orders
+#######################################################################*/
+@media { /*My Orders*/
+    
+    div#Order {
+        border-radius: 10px;
+        overflow: hidden;
+
+    }
+    div#OrderDate {
+        display: flex;
+        align-items: center;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+        font-size: 15px;
+        font-weight: 500;
+        padding: 10px;
+        background-color: rgb(var(--color5));
+    }
+    
+    div#TotalPrice {
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+        display: flex;
+        align-items: center;
+        justify-content: right;
+        background-color: rgb(var(--color5));
+    }
+    
+    div#TotalPrice span#TotalPrice {
+        margin-left: 5px;
+        font-weight: 500;
+    }
+    
+    div.OrderList {
+        height: auto;
+    }
+    
+    div.Product {
+        height: 150px;
+        display: grid;
+        grid-template-areas: "Image Tittle BuyAgain"
+                             "Image Info   Price"
+                             "Image Info   Price";
+        grid-template-rows: min-content 1fr 1fr;
+        grid-template-columns: min-content auto max-content;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
+        margin-top: 10px;
+    }
+    
+    
+    div.Image {
+        grid-area: Image;
+        
+    }
+    
+    div.Image img {
+        width: 70px;
+        height: 70px;
+        border: 0.5px solid rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+        background-color: rgb(var(--colorBG));
+        box-shadow: var(--shadow-before);
+    }
+    
+    div.Tittle {
+        grid-area: Tittle;
+        padding-left: 10px;
+        display: flex;
+        align-items: flex-end;
+    }
+    
+    div.BuyAgain {
+        grid-area: BuyAgain;
+    }
+    
+    div.Info {
+        grid-area: Info;
+        padding-left: 10px;
+        padding-right: 10px;
+        font-size: 13px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        overflow: hidden;
+    }
+    
+    div.Price {
+        grid-area: Price;
+        display: flex;
+        position: relative;
+        align-items: flex-end;
+        margin-bottom: 10px;
+    }
+
+    div.Price ul {
+        list-style-type: none;
+        margin-left: 0px;
+        padding-left: 0px;
+    }
+    
+    div.Price span {
+        margin-left: 5px;
+        font-weight: 600;
+    }
+}
+
+/*######################################################################
+                        CSS de LOGIN PAGE
+#######################################################################*/
+@media { /* LOGIN PAGE*/
+
+    .center {
+        margin: auto;
+        max-width: 400px;
+        padding: 10px;
+        text-align: center;
+        }
+
+    .form-placeholders {
+        width : 100%;
+        height : auto;
+        border: 1px solid rgb( var(--color1) );
+        border-radius: 10px;
+        box-shadow: var(--shadow-before);
+        padding: 10px;
+        transition: 0.2s;
+    }
+
+    .form-placeholders:hover {
+        box-shadow: var(--shadow-after);
+    }
+
+    .form-placeholders:focus{
+        outline: 4px solid #ff84006e;
+    }
+
+    
+}
+
+/*######################################################################
+                        CSS de SIGN UP PAGE
+#######################################################################*/
+@media { /* SIGN UP PAGE*/
+
+     div#padre {
+        width: 500px;
+     }
+     form#UserData label {
+        color: var(--font-color);
+    }
+
+}
+
+/*######################################################################
+                        ESTILOS CARRITO DE COMPRAS
+#######################################################################*/
+
+@media {
+    
+    div.orderContainer {
+        height: 400px;
+        overflow:scroll;
+        z-index: 8;
+        
+
+    }
+    @media (max-width: 992px) {
+        div.orderContainer {
+            height: auto;
+            overflow: hidden;
+        }
+    }
+
+    div.card {
+        background-color: rgb( var(--color5) );
+        box-shadow: var(--shadow-before);
+        border-radius: 10px;
+        border: 0;
+        transition: 0.2s;
+    }
+
+
+      
+    div.card:hover {
+        transform: scale(1.02); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+      }
+
+
+    div.card img {
+        position: relative;
+        left:12px;
+        background-color: rgb( var(--colorBG) );
+        border-radius: 5px;
+    }
+
+
+    div.card-body {
+        padding-left: 0px;
+        z-index: 9;
+    }
+    div.card-body span.mx-1 {
+        font-weight: 600;
+        
+    }
+
+    @media (max-width: 576px) {
+        div.card img {
+
+            max-width: 100px;
+            left: 0;
+            right: 0;
+        } 
+        div.card-body {
+            padding-left: 16px;
+        }
+    }
+
+    div#precio-cantidad h{
+        display: flex;
+        flex-direction: row;
+        justify-content: right;
+        
+        width: 100%;
+    }
+    div#precio-cantidad span{
+        margin-left: 10px;
+        font-weight: 600;
+    }
+    div#desglosePrecios div{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    div#desglosePrecios span{
+        margin-left: 20px;
+        font-weight: 600;
+    }
+
+    /*Estilos del contenedor del total*/
+
+    div#header {
+        display: flex;
+    }
+
+    div#HeaderUserPhoto2 {
+        width: min-content;
+        margin: 3%;
+    }
+    div#HeaderInfo {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-rows:55% 45%;
+    }
+
+    div.h4#UserName {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+
+    div.shopping-cart-page#UserPhoto2 {
+        position: relative;
+        height: 125px;
+        width: 125px;
+        background-image: url("../img/wallePhoto.jpg");
+        background-size: 100%;
+        border-radius: 100px;
+        box-shadow: var(--shadow-before);
+        transition: 0.2s;
+    }
+
+    div.shopping-cart-page#UserPhoto2:hover {
+        transform: scale(1.1);
+    }
+    
+    .list-group-item {
+        
+        background-color: transparent;
+        font-weight: 600;
+    }
+    .list-group-item span {
+        font-weight: 400;
+        margin-left: 5px;
+
+    }
+}
+
+
+/*######################################################################
+                        ESTILOS PAGINA PRODUCTOS
+#######################################################################*/
+@media {
+    
+}
+
+
+/*######################################################################
+                        ESTILOS FAQ
+#######################################################################*/
+@media { 
+    .FAQ-body {
+        padding: 20px;
+        font-style: oblique;
+        
+    }
+    
+}
+
+
+/*######################################################################
+                        ESTILOS PRODUCT PAGE
+#######################################################################*/
+@media {   
+    
+}
+
+/*######################################################################
+                        ESTILOS ABOUT US PAGE
+#######################################################################*/
+@media {  
 
 .texto {
     font-size: 1.2rem;
     color: #f0f0f0;
+    text-justify: inter-character;
 }
 
-.title {
-    margin-top: 50px;
-    text-align: center;
-}
-
-.subtitulo {
-    text-align: center;
-    font-size: 1.9rem;
-    color: #f0f0f0;
-}
 
 .contenedorMision {
     background-image: url(/assets/img/amigosCervezaPrincipal.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-blend-mode:multiply;
+    background-color: rgba(0, 0, 0, 30%);
     padding: 50px;
     border-radius: 20px;
-    margin-top: 100px;
+    margin-top: 20px;
+    box-shadow: var(--shadow-before);
+    transition: 0.3s;
+}
+.contenedorMision:hover {
+    box-shadow: var(--shadow-after);
 }
 
 .contenedorVision {
     background-image: url(/assets/img/amigosCervezaSecundario.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-blend-mode:multiply;
+    background-color: rgba(0, 0, 0, 30%);
     padding: 50px;
     border-radius: 20px;
     margin-top: 50px;
+    box-shadow: var(--shadow-before);
+    transition: 0.3s;
+}
+.contenedorVision:hover {
+    box-shadow: var(--shadow-after);
 }
 
 .contenedorCompromiso {
     background-image: url(/assets/img/catedralMorelia.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    background-blend-mode:multiply;
+    background-color: rgba(0, 0, 0, 30%);
     padding: 50px;
     border-radius: 20px;
     margin-top: 50px;
+    box-shadow: var(--shadow-before);
+    transition: 0.3s;
 }
-
-/*
-.contenedorPrueba {
-    background-image: url(/assets/catedralMorelia.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 50px;
-    border-radius: 20px;
-    margin-top: 50px;
-
+.contenedorCompromiso:hover {
+    box-shadow: var(--shadow-after);
 }
-
-.subtitulo {
-    text-align: center;
-}
-*/  
 
 
 
@@ -419,39 +1258,52 @@ body {
 ############## TARJETAS ####################
 ###########################################
 */
-.subtitle {
-    font-size: 2.5rem;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 50px;
-}
+
 .ourPresentationGrid {
-    display: grid;
+    display: grid; 
     height: 100%;
+    max-width: 100%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 40px;
     align-items: center;
+    justify-content: center;
 }
 
 .ourPreImg{
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
     overflow: hidden;
+    box-shadow: var(--shadow-before);
+    transition: 0.3s;
 }
 
+.ourPreImg:hover{
+    transform: scale(1.1);
+    box-shadow: var(--shadow-after);
+}
+
+.ourPreImg a {
+    text-decoration: none;
+    color: rgb( 255, 255 ,255 );
+    font-size: 18px;
+}
+
+
 .usImg {
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     object-position: top;
     cursor: pointer;
-    border-radius: 10%;
+    transition: 0.3s;
 }
+
 
 .ourPIHover {
     position: absolute;
-    background: #610a1b8c;
+    background: rgba(var(--color2), 0.7);
     top: 0;
     left: 0;
     width: 100%;
@@ -464,7 +1316,7 @@ body {
     transform: translateX(100%);
     cursor: pointer;
     transition: transform .2s ease-in-out;
-    border-radius: 10%;
+    border-radius: 10px;
 }
 
 @media (max-width: 992px) {
@@ -485,4 +1337,102 @@ body {
 
 .titleUs {
     font-size: 15px;
+}
+/*###########################################
+############## ABOUT US RESPONSIVE ####################
+###########################################
+*/
+#container2{
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+/* mobiles */
+
+@media (min-width: 0px) and (max-width: 575.98px){
+.texto {
+    font-size: 12px;
+    
+}
+
+.title {
+    margin-top: 20px;
+}
+
+
+
+.contenedorMision {
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+    width: 95%;
+}
+
+.contenedorVision {
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+    width: 95%;
+}
+
+.contenedorCompromiso {
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+    width: 95%;
+}
+.ourPresentationGrid {
+    display: grid;
+    height: 100%;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    align-items: center;
+}
+}
+
+
+
+
+/* tablets */
+/* @media (min-width: 575.99px) and (max-width: 767.99px) */
+@media (min-width: 575.99px) and (max-width: 836.99px){
+    .ourPresentationGrid {
+        display: grid;
+        height: 100%;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+    }
+}
+
+/* Tercer corte*/
+/* @media (min-width:768px) and (max-width: 992px) */
+@media (min-width:837px) and (max-width: 1120px){
+    .ourPresentationGrid {
+        display: grid;
+        height: 100%;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
+}
+
+
+
+    
+}
+
+/*######################################################################
+                        ESTILOS TERMINOS Y CONDICIONES
+#######################################################################*/
+@media {
+    div#terms-nd-conditions {
+        color: var(--font-color);
+    }
+    div#terms-nd-conditions h5 {
+        margin-top: 50px;
+    }
+
+    div#terms-nd-conditions p {
+        margin-bottom: 20px;
+    }
 }
