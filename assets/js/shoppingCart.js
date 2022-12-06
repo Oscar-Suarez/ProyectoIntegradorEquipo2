@@ -12,8 +12,12 @@ let code = `
                         <p class="card-text">La cerveza más mamadora lista para ser entregada
                             tan fria como el corazon del que se fue por cigarros.
                         </p>
-                        <p class="card-text">Precio:<span class="mx-1" id="precio">25</span><b>MXN.</b>
-                        </p>
+                        <div class="me-3" id="precio-cantidad">
+                            <div class="h6">
+                                <h>Precio: <span id="precioUnitario">$ 25.00 MXN</span></h>
+                                <h>Cantidad: <span id="cantidadUnidades">10 unidades</span></h>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -2,37 +2,41 @@
 function darkMode(mode) { //Función para cambiar el tema del sitio Web
     const globalColors = {
         light: {
-        '--color1': 'rgb(58,13,21)',
-        '--color2': 'rgb(97, 10, 27)',
-        '--color3': 'rgb(156, 13, 2)',
-        '--color4': 'rgb(221, 123, 44)',
-        '--color5': 'rgb(240, 185, 78)',
-        '--color6': 'rgb(245, 235, 202)',
-        '--colorBG':'rgb(226, 221, 206)',
+        '--color1': '58,13,21',
+        '--color2': '97, 10, 27',
+        '--color3': '156, 13, 2',
+        '--color4': '221, 123, 44',
+        '--color5': '240, 185, 78',
+        '--color6': '245, 235, 202',
+        '--colorBG':'226, 221, 206',
+        '--font-color': 'black',
+        '--shadow-before': '0px 0px 5px 2px rgba(0, 0, 0, 0.25)',
+        '--shadow-after': '0px 0px 10px 3px rgba(0, 0, 0, 0.5)'
+        },
 
-        '--shadow-before': '0px 0px 5px 1px rgba(0, 0, 0, 0.1)',
-        '--shadow-after': '0px 0px 10px 1px rgba(0, 0, 0, 0.25)'
-        },   
         dark: {
-        '--color2': 'rgb(58,13,21)',
-        '--color3': 'rgb(97, 10, 27)',
-        '--color4': 'rgb(194, 13, 0)',
-        '--color5': 'rgb(221, 123, 44)',
-        '--color6': 'rgb(240, 185, 78)',
-        '--color1': 'rgb(35, 35, 35)',
-        '--colorBG':'rgb(60, 60, 60)',
-
+        '--color2': '58,13,21',
+        '--color3': '97, 10, 27',
+        '--color4': '194, 13, 0',
+        '--color5': '221, 123, 44',
+        '--color6': '240, 185, 78',
+        '--color1': '35, 35, 35',
+        '--colorBG':'60, 60, 60',
+        '--font-color': 'white',
         '--shadow-before': '0px 0px 5px 1px rgba(0, 0, 0, 0.5)',
         '--shadow-after': '0px 0px 10px 1px rgba(0, 0, 0, 1)'
 
     }};                         // Objeto que contiene las variables de :root
 
     let root = document.querySelector(":root"); //Obtenemos el elemento :root
-    let theme = mode ? "dark" : "light";    //Si la variable mode es true --> dark, false --> light
+    let theme = mode ? "dark" : "light"; 
+       //Si la variable mode es true --> theme = dark, false --> theme = light
+
     for (const [key, value] of Object.entries(globalColors[theme])){ // Definimos un ciclo for para iterar sobre el objeto
-                                                                     // globalColors[theme]
+        console.log(key, value);                                                     // globalColors[theme]
         root.style.setProperty(key, value); //Cambiamos las propiedades en :root contenidas en globalColors[theme].
     }
+
     document.cookie = "statusDarkMode = " + mode + ";path=/"; //Guardamos el estado del DarkMode en una cookie.
 
 }
@@ -125,7 +129,7 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                 </span>
             </a>
         </div>
-        <div class="container" id="menuDesplegable">
+        <div class="container-fluid mt-4 p-3" id="menuDesplegable">
             <ul>
                 <li>
                     <a href="./index.html">
@@ -143,13 +147,36 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                         <span class="material-symbols-outlined"  id="menuDesplegableIcons">
                             account_circle
                         </span>
-                        Account</a></li>
+                        Account</a>
+                </li>
+                <li>
+                    <a href="./signup.html">
+                    <span class="material-symbols-outlined">
+                        person_add
+                    </span>
+                    Sign Up
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="./login.html">
+                    <span class="material-symbols-outlined">
+                        login
+                    </span>
+                    Log in
+                    </a>
+                </li>     
+            </ul>
+            <hr>
+            <ul>
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./products.html">Productos</a></li>
                 <li><a href="./about-us.html">¿Quienes somos?</a> </li>
                 <li><a href="./FAQ.html">FAQ</a></li>
-        
-                <ul>
+            
+            </ul>
+            <hr>
         </div>
   
   `; //Variable que almacena el codigo HTML de la Barra de Navegación
@@ -265,7 +292,7 @@ function runLateralBar(element) { //Función para agregar la LateralBar
     preventRefreshButton();                             // Previene que se refresque la pagina al hacer click en el buscador de la NavBar
     var openMenu = false;                                       // La NavBar Colapsable esta cerrada 
 
-    //2.5-. Para obetner estos elementos primero se debe agregar la NavBar, ya que estan contenidos en ella.
+    //2.5-. Para obtener estos elementos primero se debe agregar la NavBar, ya que estan contenidos en ella.
     var togglerMenu = document.getElementById("togglerMenu");   // Obtenemos el botton de la NavBar Colapsable
     togglerMenu.addEventListener("click", animation);           // En caso de click, se corre la funcion animation 
 
@@ -277,10 +304,10 @@ function runLateralBar(element) { //Función para agregar la LateralBar
     //3.5-. Boton de Modo Oscuro
     let buttonDarkMode = document.querySelector("#button-container"); // Obtenemos el boton del HTML
     if (buttonDarkMode != null) {   // Verificamos que exista.
-        setTimeout(() => {
-            if (statusDarkMode){    // Si el Modo Oscuro está activado (statusDarkMode == true)
-                buttonDarkMode.classList.add("on-dark-mode"); //Definimos el estado del boton.
-            }}, 100);
+        
+        if (statusDarkMode){    // Si el Modo Oscuro está activado (statusDarkMode == true)
+            buttonDarkMode.classList.add("on-dark-mode"); //Definimos el estado del boton.
+        }
 
         buttonDarkMode.addEventListener("click", () => {        // Cuando demos click en el boton
             buttonDarkMode.classList.toggle("on-dark-mode");    // Quitamos o Agregamos la clase para cambiar el estado del boton.
@@ -289,13 +316,4 @@ function runLateralBar(element) { //Función para agregar la LateralBar
     });
 
     }
-
-
-
-
-
-
-
-
-
 
