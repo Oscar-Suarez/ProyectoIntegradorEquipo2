@@ -1,34 +1,34 @@
+//Declaramos las variables que estarán tomando los valores del input que da el usuario
+var nombre= document.querySelector("#nombre");  //Accede al valor nombre
+var numero= document.querySelector("#numero"); //Accede al valor numer
+var email= document.querySelector("#email");//Accede al valor email
+var comentario = document.querySelector("#comentario");//Accede al valor comentario
+var error = document.querySelector("#error"); //Accede a la sección en donde se ingresará el error
+var error2 = document.querySelector("#error2");//Accede a la sección en donde se ingresará el error
+var error3 = document.querySelector("#error3");//Accede a la sección en donde se ingresará el error
+var error4 = document.querySelector("#error4");//Accede a la sección en donde se ingresará el error
+var form= document.querySelector("#form"); //Accede a toda la estructura del formulario
 
-var nombre= document.querySelector("#nombre");
-var numero= document.querySelector("#numero");
-var email= document.querySelector("#email");
-var comentario = document.querySelector("#comentario");
-var error = document.querySelector("#error");
-var error2 = document.querySelector("#error2");
-var error3 = document.querySelector("#error3");
-var error4 = document.querySelector("#error4");
-var form= document.querySelector("#form");
 
-
-
+//Código para evaluar los formularios
 form.addEventListener("submit", function(evt) {
-    evt.preventDefault();
+    evt.preventDefault(); //PreventDefault es para evitar que el evento ocurra si o si 
 console.log("Enviando formulario");
-var mensajeerror=[] ;
+var mensajeerror=[] ; //Variable global que usaremos para los condicionales
 
-if (nombre.value === null || nombre.value===""){
+if (nombre.value === null || nombre.value===""){ //Código para validar si el campo tiene algun caracter
     mensajeerror.push("Ingresa tu nombre");
     error.innerHTML= mensajeerror.join(",");
 }
-else if (numero.value === null || numero.value==="" || (!isnumero(numero.value))){
+else if (numero.value === null || numero.value==="" || (!isnumero(numero.value))){ //Código para validar el numero, tiene que ser un numero de 10 digitos
     mensajeerror.push("Ingresa tu número telefónico");
     error2.innerHTML= mensajeerror.join(",");
 }
  else if (!isEmail(email.value)){
-    mensajeerror.push("Ingresa un email válido");
+    mensajeerror.push("Ingresa un email válido");  //Código para evaluar si el email es uno valido
     error3.innerHTML= mensajeerror.join(",");
 }
-else if (comentario===null || comentario.value===""){
+else if (comentario===null || comentario.value===""){ //Código para validar si el cmapo de comentario tiene algún valor
     mensajeerror.push("Ingresa un comentario");
     error4.innerHTML= mensajeerror.join(",");
 }
@@ -36,13 +36,14 @@ else if (comentario===null || comentario.value===""){
     
     
 });
+//Expresiones Regulares
 
-function isEmail(email) {
+function isEmail(email) { //Expresion regular para el correo
     return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
       email
     );
   }
-function isnumero(numero) {
+function isnumero(numero) { //Expresion regular para el teléfono
     return /^\d{10,10}$/.test(
     numero
     );
