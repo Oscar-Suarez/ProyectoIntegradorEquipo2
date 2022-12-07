@@ -120,16 +120,40 @@ function runNavBar(){ //Función para agregar la NavBar a todos los archivos .HT
                         <span class="material-symbols-outlined"  id="menuDesplegableIcons">
                             account_circle
                         </span>
-                        Account</a></li>
+                        Account</a>
+                </li>
+                <li>
+                    <a href="./signup.html">
+                    <span class="material-symbols-outlined">
+                        person_add
+                    </span>
+                    Sign Up
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="./login.html">
+                    <span class="material-symbols-outlined">
+                        login
+                    </span>
+                    Log in
+                    </a>
+                </li>     
+            </ul>
+            <hr>
+            <ul>
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./products.html">Productos</a></li>
                 <li><a href="./about-us.html">¿Quienes somos?</a> </li>
                 <li><a href="./FAQ.html">FAQ</a></li>
-        
-                <ul>
+            
+            </ul>
+            <hr>
         </div>
   
-  `;
+  `; //Variable que almacena el codigo HTML de la Barra de Navegación
+    element.innerHTML = code; //Insertamos el codigo en el HTML
 
 }
 
@@ -149,7 +173,7 @@ function animation() {
 
 function  preventRefreshButton () {
   document.getElementById("inputBuscador").addEventListener("click", function(event){
-    event.preventDefault()
+    event.preventDefault() //Prevenir que al dar click se refresque automaticamente la pagina
   });
 
 }
