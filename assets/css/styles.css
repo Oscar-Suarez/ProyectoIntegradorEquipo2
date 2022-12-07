@@ -22,7 +22,7 @@
     --font-color: black;  
     --height-navbar: 60px;
     --shadow-before: 0px 0px 5px 1px rgba(0, 0, 0, 0.1);
-    --shadow-after :0px 0px 10px 2px rgba(0, 0, 0, 0.5);
+    --shadow-after :0px 0px 10px 1px rgba(0, 0, 0, 0.25);
     --lateral-bar-width: 210px;
 }
 
