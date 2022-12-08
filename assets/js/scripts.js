@@ -59,7 +59,7 @@ function getCookie(cname) { //Funcion para obtener el valor de un parametro (cna
 }
 
 function runNavBar(element){ //Función para agregar la NavBar a todos los archivos .HTML
-    let code = `  
+    const code = `  
     <div id="botonMenuDesplegable">
             <button id="togglerMenu">
                 <div class="animatedButton">
@@ -207,7 +207,7 @@ function preventRefreshButton () {
 }
 
 function runLateralBar(element) { //Función para agregar la LateralBar 
-    let code = `
+    const code = `
     <ul>
     <a href="./user-page.html">
         <li>
