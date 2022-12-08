@@ -464,21 +464,21 @@ body {
 ////////////////////////////////////////////////////////////////////*/
 
 div.productos {
-    margin: 10px 20px;
+    margin: 20px 20px;
     float: left;
     width: 300px;
     
 }
 
 div.productos imagenprod {
-    width: 100%;
+    width: 50%;
     height: auto;
     text-align: center;
 
 }
 
 div.productos {
-    border: 1px solid;
+    
 
 }
 
@@ -486,6 +486,9 @@ div.descripcionprod {
     text-align: center;
     padding: 10px;
 }
+
+
+
 
 
 
