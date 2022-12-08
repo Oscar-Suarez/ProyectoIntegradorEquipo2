@@ -1,11 +1,12 @@
 let items = document.querySelectorAll('#carouselMultiple .carousel-item')
 
-items.forEach((el) => {
-    const minPerSlide = 4
-    let next = el.nextElementSibling
-    for (var i = 1; i < items.length; i++) {
-        if (!next) {
 
+items.forEach((el) => {
+    
+    var slides = items.length;
+    let next = el.nextElementSibling;
+    for (var i = 1; i < slides; i++) {
+        if (!next) {
             next = items[0]
         }
         let cloneChild = next.cloneNode(true)
@@ -13,3 +14,9 @@ items.forEach((el) => {
         next = next.nextElementSibling
     }
 })
+
+document.querySelector('#carouselMultiple').onresize = (event) => {
+    if(screen.width < 576){
+        console.log("yes");
+    }
+};

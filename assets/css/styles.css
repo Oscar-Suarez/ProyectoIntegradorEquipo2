@@ -926,6 +926,8 @@ div.spacer {
         font-weight: 650;
         color: #ffffff;
     }
+
+
     @media (max-width: 576px){
         div.info p{
             max-height: 100px;
@@ -933,20 +935,20 @@ div.spacer {
         }
     }
 
-
     /* CAROURSEL INFERIOR TOP VENTAS*/
     #carouselMultiple .carousel-item.active,
     #carouselMultiple .carousel-item-next,
     #carouselMultiple .carousel-item-prev {
         display: flex;
         opacity: 100%;
+
         transition: transform 0.1s ease-in-out;
 
     }
 
     #carouselMultiple .carousel-item-end,
     #carouselMultiple .carousel-item-start {
-        transform: translateX(0);
+
         opacity: 100%;
         transition: transform 0.1s ease-in-out;
 
@@ -1436,6 +1438,60 @@ div.spacer {
                         ESTILOS PRODUCT PAGE
 #######################################################################*/
 @media {   
+    div#products {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-basis: auto;
+        margin: auto;
+        justify-content: center;
+    
+        max-width: 95%;
+    }
+    
+    div.product {
+        margin:  20px;
+        padding: 20px;
+        width: 300px;
+        background-color: rgb(255, 196, 85);
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: var(--shadow-before);
+        transition: 0.3s;
+    }
+    div.product:hover {
+        transform: scale(1.05);
+        box-shadow: var(--shadow-after);
+    }
+
+    .imageProduct{
+        width: 100%;
+    }
+    
+    .imageProduct  img {
+    border-radius: 10px;
+    margin: auto;
+    width: 90%;
+    }
+    
+    
+    .descriptionProduct {
+        margin-top: 10px;
+    
+    }
+    
+    .nameProduct{
+        font-size: 18px;
+        font-weight: 600;
+    
+    }
+    
+    .priceProduct {
+        font-size: 20px;
+    }
+    
+    
+    
     
 }
 
