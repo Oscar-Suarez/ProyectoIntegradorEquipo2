@@ -46,7 +46,7 @@ body {
     background-color: rgb( var(--color4) );
     border: 0;
     color: white;
-    width: auto;
+    width: max-content;
     padding: 10px 15px 10px 15px;
     border-radius: 10px;
     height : auto;
@@ -88,6 +88,9 @@ div.spacer {
     color: rgb( var(--color5) );
 }
 
+.darkMode {
+    color: var(--font-color);
+}
 
 /*______________________________________________________________________
 ########################################################################
@@ -128,6 +131,9 @@ div.spacer {
     .btn-danger:hover {
         outline: 4px solid rgba( var(--color3), 0.5);
         outline-offset: 0px;
+    }
+    hr{
+        color: var(--font-color);
     }
 }
 
@@ -218,6 +224,45 @@ div.spacer {
             transform: translateY(-50%);
             font-size: var(--font-size-icons-navbar);
         }
+
+        #search.dropdown-menu.show {
+            background-color: rgb( var(--color4) );
+            border-radius: 10px;
+            box-shadow: var(--shadow-before);
+            width: 350px;
+        }
+
+        #search.dropdown-menu li {
+            position: relative;
+            margin: auto;
+            border-radius: 10px;
+            accent-color: black;
+        }
+        #search form:hover,
+        #search form:focus,
+        #search form:active{
+            background-color: rgb( var(--color4) );
+        }
+        #search input {
+            border-radius: 10px;
+            height: 50px;
+            border: 0;
+            width: 70%;
+        }
+        #search button {
+            height: 50px;
+            margin-left: 10px;
+            position: relative;
+            bottom: 2px;
+            background-color: rgb( var(--color3) );
+            border: 0;
+            border-radius: 10px;
+        }
+
+
+
+
+   
     
         .dropdown-menu.show {
             background-color: rgb( var(--color4) );
@@ -242,8 +287,11 @@ div.spacer {
             margin-right: 5px !important;
         }
 
-        .dropdown-menu li:hover {
+        li.dropdown-item :hover,
+        li.dropdown-item :focus,
+        li.dropdown-item :active {
             background-color: rgb( var(--color5) );
+            accent-color: black;
         }
 
         .dropdown-menu a:focus:hover {
@@ -251,6 +299,7 @@ div.spacer {
             background-color: rgb( var(--color6) );
             border-radius: 10px;
         }
+
     
     
         /* CSS DE LOS ICONOS (FONT) MATERIAL DESIGN */
@@ -343,7 +392,7 @@ div.spacer {
             }
             .change#navbar {
                 /* DESPLIEGUE DEL MENU COLAPSABLE */
-                height: 500px;
+                height: 400px;
             }
     
         /* ACOMODAR LOS 5 DIVs EN LOS QUE ESTA DIVIDIDA LA NAVBAR
@@ -612,6 +661,27 @@ div.spacer {
         transform: translate(60%);
     }
 
+    @media (max-width: 767px) {
+        li#modo-oscuro {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            
+        }
+         li#modo-oscuro h {
+        padding-left: 0%;
+        margin-right: 10px;
+        }
+
+    button#button-container {
+        max-width: 48px;
+        max-height: 25px;
+        transform: scale(1.1);
+    }
+
+
+    }
+
     a#CloseSesion {
         height: 40px;
         position: fixed;
@@ -774,6 +844,181 @@ div.spacer {
     
     }
 }
+
+/*######################################################################
+                        CSS DE ALERTA DE 18 AÑOS
+#######################################################################*/
+
+@media{
+
+
+    #alerta18{
+        background-color: rgb(0,0,0,0.75);
+        backdrop-filter: blur(10px);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    #alerta18 > div{
+        background-color: rgb(var(--color3));
+        padding: 30px;
+        padding-bottom: 20px;
+        max-width: 800px;
+        border-radius: 10px;
+        color: white;
+        font-size: 18px;
+        margin:10px;
+    }
+    
+    #alerta18 button {
+        width: 200px;
+        font-size: 20px;
+        font-weight: 600;
+        box-shadow: var(--shadow-before);
+        margin-right: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .fixed-bottom:not(.activo){
+        display: block;
+    }
+    
+    #alerta18.fixed-bottom.activo{
+        display: none;
+    }
+
+
+
+}
+/*######################################################################
+                        CSS DE INICIO
+#######################################################################*/
+@media {
+    /*BANNER SUPERIOR*/
+    .BeerImage{
+        height: 400px;
+        width: 100vw;
+        object-fit: cover;
+    }
+
+    div.info {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding:  0px 50px 20px 50px;
+        color: white;
+        background: linear-gradient(0deg, rgba(0,0,0,0.8) 10%, rgba(0,0,0,0));
+    }
+    div.info h1{
+        margin-top: auto;
+    }
+    div.info p{
+        font-size: 1.3rem;
+        font-weight: 300;
+        max-height: 200px;
+    }
+    div.info p > span {
+        font-weight: 650;
+        color: #ffffff;
+    }
+    @media (max-width: 576px){
+        div.info p{
+            max-height: 100px;
+            overflow: hidden;
+        }
+    }
+
+
+    /* CAROURSEL INFERIOR TOP VENTAS*/
+    #carouselMultiple .carousel-item.active,
+    #carouselMultiple .carousel-item-next,
+    #carouselMultiple .carousel-item-prev {
+        display: flex;
+        opacity: 100%;
+        transition: transform 0.1s ease-in-out;
+
+    }
+
+    #carouselMultiple .carousel-item-end,
+    #carouselMultiple .carousel-item-start {
+        transform: translateX(0);
+        opacity: 100%;
+        transition: transform 0.1s ease-in-out;
+
+    }
+
+    #carouselMultiple .carousel-item-end.active,
+    #carouselMultiple .carousel-item-next {
+        opacity: 0%;
+        transform: translateX(25%);
+    }
+
+    #carouselMultiple .carousel-item-start.active,
+    #carouselMultiple .carousel-item-prev {
+        opacity: 0%;
+        transform: translateX(-25%);
+    }
+    
+
+    
+
+
+    .elementBestSellers {
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 10px;
+        transform: scale(1);
+        transition: 0.3s;
+    }
+    
+    .elementBestSellers:hover {
+        transform: scale(1.05);
+    }
+
+    .BeerName#BestSellerItem {
+        position: absolute;
+        z-index: 1;
+        width: 250px;
+        height: fit-content;
+        padding: 10px;
+        bottom: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        background: linear-gradient(0deg, rgba(0,0,0,1),  rgba(0,0,0,0));
+        border-radius: 10px;
+    }
+
+    .BeerName#BestSellerItem > h4 {
+        color: white;
+        transform: scale(1);
+        transition: 0.3s;
+
+    }
+    .BeerName#BestSellerItem > h4:hover {
+        transform: scale(1.1);
+    }
+
+
+
+    .elementBestSellers img {
+        border-radius: 10px;
+        object-fit: cover;
+        width: 250px;
+        height: 250px;
+        box-shadow: var(--shadow-before);
+
+    }
+
+
+}
+
 
 /*######################################################################
                         CSS de MyAccount
@@ -1019,7 +1264,9 @@ div.spacer {
 @media { /* SIGN UP PAGE*/
 
      div#padre {
-        width: 500px;
+        width: 800px;
+
+        margin-bottom: 100px;
      }
      form#UserData label {
         color: var(--font-color);
@@ -1418,6 +1665,62 @@ div.spacer {
 
 
 
+#banner{
+    border-radius: 10px;
+    
+}
+
+#ban{
+   /* width: 1000px; Esto es prueba para jugar con el tamaño del carrusel*/
+    padding-top: 3px;
+    width: 70%;
+}
+
+
+#ban p{ /*cambiar la fuente del parrafo*/
+    font-family: Ubuntu,sans-serif;
+    font-size: large;
+    color: white;
+    /*position: relative; Prueba de position para saber como se va moviendo el texto*/
+}
+
+.icono {
+    width: 100px;
+    transform: scale(1);
+    mix-blend-mode:difference;
+    transition: 0.3s;
+}
+.icono:hover {
+
+    transform: scale(1.3);
+
+}
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#form-box { /*Código para darle formato a los iconos de tel, email, ubicación*/
+    background-color: rgb(var(--color5));
+    border-radius: 10px;
+    box-shadow: var(--shadow-before);
+
+    font-weight: 500;
+    padding: 20px;
+    transition: 0.3s;
+}
+
+#form-box:hover { /*Código para darle formato a los iconos de tel, email, ubicación*/
+    box-shadow: var(--shadow-after);
+
+}
+
+#form-box input {
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
     
 }
 
@@ -1434,5 +1737,54 @@ div.spacer {
 
     div#terms-nd-conditions p {
         margin-bottom: 20px;
+    }
+}
+
+/*######################################################################
+                        ESTILOS del FOOTER
+#######################################################################*/
+
+@media {
+    div#footer {
+        background-color: rgb( var(--color1) );
+    }
+
+    div#footer a {
+        text-decoration: none;
+    }
+}
+
+/*######################################################################
+                        ESTILOS del product page
+#######################################################################*/
+@media {
+    #productContainer {
+        padding: 20px;
+        margin: auto;
+    }
+    #imgContainer {
+        text-align: center;
+    }
+    #infoContainer{
+        margin: auto;
+        text-align: center;
+    }
+    #add2Cart{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    #add2Cart input {
+        width: 20%;
+        margin-right: 10px;
+    }
+    #add2Cart button {
+        background-color: green;
+    }
+    #productContainer img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        border-radius: 20px;
     }
 }

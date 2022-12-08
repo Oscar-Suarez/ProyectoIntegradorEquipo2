@@ -33,8 +33,7 @@ function darkMode(mode) { //Función para cambiar el tema del sitio Web
     let theme = mode ? "dark" : "light"; 
        //Si la variable mode es true --> theme = dark, false --> theme = light
 
-    for (const [key, value] of Object.entries(globalColors[theme])){ // Definimos un ciclo for para iterar sobre el objeto
-        console.log(key, value);                                                     // globalColors[theme]
+    for (const [key, value] of Object.entries(globalColors[theme])){ // Definimos un ciclo for para iterar sobre el objeto                                                   // globalColors[theme]
         root.style.setProperty(key, value); //Cambiamos las propiedades en :root contenidas en globalColors[theme].
     }
 
@@ -49,15 +48,40 @@ function getCookie(cname) { //Funcion para obtener el valor de un parametro (cna
     let ca = decodedCookie.split(';'); //La separamos cada "punto y coma"
     for (let i = 0; i < ca.length; i++) {
         let c = ca[i];
-        while (c.charAt(0) == '') { // mientras el primer caracter este vacio
+
+        while (c.charAt(0) == ' ') { // mientras el primer caracter este vacio
             c = c.substring(1);       // tomamos el resto de la cadena de texto 
+            
         }
 
         if (c.indexOf(name) == 0) { // comprobamos si ya llegamos a la posicion donde se encuentra el parametro que buscamos en la cookie.
+
             return c.substring(name.length, c.length); //Retornamos el valor del paremetro que buscamos como string
         }
-        return null;
     }
+    return null;
+}
+
+function animation() { //Función para anadir y quitar clases a ciertor elementos. Permite animarlos con CSS
+    togglerMenu.classList.toggle("change"); //Se agrega la clase .change para animar con CSS el boton del menu desplegable 
+    navbar.classList.toggle("change"); //Se agrega la clase .change para animar con CSS el despliegue de la NavBar
+
+    if (openMenu) { //Si el menu esta abierto (true) 
+        menuDesplegable.classList.toggle("change"); //Quita la clase .change para que cambie la NavBar
+        openMenu = !openMenu; //Cambie el estado de la variable a su contrario (true) --> (false)
+    } else { //Lo contrario
+        setTimeout(() => {
+            menuDesplegable.classList.toggle("change"); //Agrega la clase .change para que cambie la NavBar
+        }, 300); //Usamos SetTimeOut definir un tiempo de espera y que aparezca la NavBar Desplegada.
+        openMenu = !openMenu; //Cambie el estado de la variable a su contrario (false) --> (true)
+    }
+}
+
+function preventRefreshButton() {
+    document.getElementById("inputBuscador").addEventListener("click", function (event) {
+        event.preventDefault() //Prevenir que al dar click se refresque automaticamente la pagina
+    });
+
 }
 
 function runNavBar(element){ //Función para agregar la NavBar a todos los archivos .HTML
@@ -82,20 +106,30 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
         
         <div id=menuText>
             <nav>
-                <a href="./index.html">Inicio</a>
+               <a href="./index.html">Inicio</a>
                 <a href="./products.html">Productos</a>
                 <a href="./about-us.html">¿Quiénes somos?</a>
-                <a href="./FAQ.html">FAQ</a>
+                 <!--<a href="./FAQ.html">FAQ</a>-->
             </nav>
         </div>
         
         <div id="menuIcons">
-            <a href="#">
+            <a data-bs-toggle="dropdown" role="button" aria-expanded="false">
                 <span class="material-symbols-outlined" id="mobileNavbarIconOut">
                     search
                 </span>
             </a>
-            <a data-bs-toggle="dropdown" role="button" aria-expanded="false">
+            <ul class="dropdown-menu dropdown-menu-dark" id="search">
+                <li>
+                    <form class="dropdown-item">
+                        <input class="form-placeholders" type="text" placeholder="Buscar Productos..." name="search">
+                        <button class="btn btn-success " type="submit">Enviar</button>
+                    </form>
+                </li>
+            </ul>
+
+
+            <a data-bs-toggle="dropdown" role="button" aria-expanded="false" id="myAccountIcon">
                 <span class="material-symbols-outlined" id="mobileNavbarIconOut">
                     account_circle
                 </span>
@@ -106,7 +140,7 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                         <span class="material-symbols-outlined">
                             person_add
                         </span>
-                        Sign Up
+                        Crear Cuenta
                         </a>
                     </li>
 
@@ -116,12 +150,11 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                         <span class="material-symbols-outlined">
                             login
                         </span>
-                        Log in
+                        Iniciar Sesión
                         </a>
                     </li>      
-
-
             </ul>
+
             
 
         
@@ -145,13 +178,13 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                         </form>
                     </a>
                 </li>
-                <li><a href="./user-page.html">
+                <li><a href="./user-page.html" class="beforeLogIn">
                         <span class="material-symbols-outlined"  id="menuDesplegableIcons">
                             account_circle
                         </span>
                         Account</a>
                 </li>
-                <li>
+                <li class="afterLogInRemove">
                     <a href="./signup.html">
                     <span class="material-symbols-outlined">
                         person_add
@@ -161,7 +194,7 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                 </li>
 
 
-                <li>
+                <li class="afterLogInRemove">
                     <a href="./login.html">
                     <span class="material-symbols-outlined">
                         login
@@ -169,44 +202,29 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                     Log in
                     </a>
                 </li>     
+                
+                <li id="modo-oscuro" class="beforeLogIn">
+                    <h>Modo Oscuro</h>
+                        <button id="button-container">
+                            <div id="button-slider">
+                            
+                            </div>
+                        </button>
+                </li>   
+            
             </ul>
             <hr>
             <ul>
                 <li><a href="./index.html">Inicio</a></li>
                 <li><a href="./products.html">Productos</a></li>
                 <li><a href="./about-us.html">¿Quienes somos?</a> </li>
-                <li><a href="./FAQ.html">FAQ</a></li>
-            
+          
             </ul>
             <hr>
         </div>
   
   `; //Variable que almacena el codigo HTML de la Barra de Navegación
     element.innerHTML = code; //Insertamos el codigo en el HTML
-
-}
-
-
-
-function animation() { //Función para anadir y quitar clases a ciertor elementos. Permite animarlos con CSS
-    togglerMenu.classList.toggle("change"); //Se agrega la clase .change para animar con CSS el boton del menu desplegable 
-    navbar.classList.toggle("change"); //Se agrega la clase .change para animar con CSS el despliegue de la NavBar
-
-    if (openMenu) { //Si el menu esta abierto (true) 
-        menuDesplegable.classList.toggle("change"); //Quita la clase .change para que cambie la NavBar
-        openMenu = !openMenu; //Cambie el estado de la variable a su contrario (true) --> (false)
-    } else { //Lo contrario
-        setTimeout(() => {
-            menuDesplegable.classList.toggle("change"); //Agrega la clase .change para que cambie la NavBar
-        }, 300); //Usamos SetTimeOut definir un tiempo de espera y que aparezca la NavBar Desplegada.
-        openMenu = !openMenu; //Cambie el estado de la variable a su contrario (false) --> (true)
-    }
-}
-
-function preventRefreshButton() {
-    document.getElementById("inputBuscador").addEventListener("click", function (event) {
-        event.preventDefault() //Prevenir que al dar click se refresque automaticamente la pagina
-    });
 
 }
 
@@ -222,14 +240,14 @@ function runLateralBar(element) { //Función para agregar la LateralBar
             
         </li>
     </a>
-    <a href="#">
+    <!--<a href="#">
         <li>
             <span class="material-symbols-outlined">
                 history
             </span>
             <h>Historial</h>
         </li>
-    </a>
+    </a>-->
     <a href="./my-orders.html">
         <li>
             <span class="material-symbols-outlined">
@@ -238,14 +256,14 @@ function runLateralBar(element) { //Función para agregar la LateralBar
             <h>Mis Pedidos</h>
         </li>
     </a>
-    <a href="#">
+    <!--<a href="#">
         <li>
             <span class="material-symbols-outlined">
                 star
             </span>
             <h>Lista de Deseos</h>
         </li>
-    </a>
+    </a>-->
 
     <a>
         <li id="modo-oscuro">
@@ -258,7 +276,7 @@ function runLateralBar(element) { //Función para agregar la LateralBar
         </li>   
     </a>
 
-    <a href="https://walle.mx" id="CloseSesion" >
+    <a href="./index.html" id="CloseSesion" >
         <li id="CloseButton" >
             <span class="material-symbols-outlined">
             logout
@@ -276,19 +294,135 @@ function runLateralBar(element) { //Función para agregar la LateralBar
     }
 }
 
+function runFooter(element2) { //Función para agregar el footer a todos los archivos .HTML
+    let code2 = ` <footer class="text-center text-white">
+    <!-- Grid container -->
+    <div class="container">
+      <!-- Section: Links -->
+      <section class="mt-2 mb-5">
+        <!-- Grid row-->
+        <div class="row text-center d-flex justify-content-center pt-5">
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="./about-us.html" class="text-white">Sobre Nosotros</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
 
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="./products.html" class="text-white">Products</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="./FAQ.html" class="text-white">Preguntas Frecuentes</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="./terms-conditions.html" class="text-white">Terminos y Condiciones</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="./about-us.html#contactanos" class="text-white">Contactanos</a>
+            </h6>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row-->
+      </section>
+      <!-- Section: Links -->
+
+      <hr class="my-3" />
+
+      <div class="h5 mb-3">Redes Sociales de Balxhe</div>
+      <!-- Section: Social -->
+      <section class="text-center pb-4">
+        <a href="https://www.instagram.com/balxhemx/" class="text-white me-4">
+          <img src="./assets/img/Instagram_icon.webp" width="40px">
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=100088209083328" class="text-white me-4">
+          <img src="./assets/img/facebook_icon.png" width="40px">
+        </a>
+
+      </section>
+      <!-- Section: Social -->
+    </div>
+    <!-- Grid container -->
+
+
+  </footer>
+            
+      `; //Variable que almacena el codigo HTML del footer
+    element2.innerHTML = code2; //Insertamos el codigo en el HTML
+
+}
+
+function ageChecker (mode) {
+
+    if (!mode){ //Si modo es false --> se convierte en true y se ejecuta el codigo del IF
+
+        const code = `<div class="fixed-bottom" id="alerta18">
+        <div>
+          <h1>¿ERES MAYOR DE EDAD?</h1>
+          <hr>
+          <p>
+            Para ingresar a este sitio debes confirmar que tienes +18 años.
+          </p>
+          <p>
+            Al confirmar ser mayor de edad manifiestas tu conformidad con nuestros Términos y condiciones y nuestro Aviso de
+            Privacidad.
+          </p>
+          <button class="btn btn-success" id="ocutarDiv">Si</button>
+    
+          <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="text-decoration: none;">
+            <button class="btn btn-danger">NO</button>
+          </a>
+    
+        </div>
+      </div>`; //Guardamos el codigo del aviso en una variable
+
+        document.body.innerHTML += code; //añadimos el codigo al body
+
+        const botonAceptar = document.getElementById('ocutarDiv'); 
+        const aviso=document.getElementById('alerta18');//Jalamos los elementos que vamos a modificar
+
+        botonAceptar.addEventListener('click', ()=>{
+            aviso.classList.add('activo');
+            document.cookie = "isAdult = true;";
+        });
+    }
+}
 
 //Ejecución
 
 //0-. Definir la cookie.
 if (!document.cookie) { //Si la cookie no existe
-    document.cookie = "statusDarkMode = false;" //La creamos
-        + "path=/";
+    document.cookie = "statusDarkMode = false;";
+    document.cookie = "isAdult = false;";
+    document.cookie = "ActiveSesion = true;"
 }
 
+console.log()
 // 1-. Leemos la Cookie
 let statusDarkMode = getCookie("statusDarkMode") == "true" ? true : false; //Obtenemos el valor de la cookie en booleano.
-darkMode(statusDarkMode);   // Aplicamos el tema de acuerdo al valor en la cookie
+darkMode(statusDarkMode);  //Aplicamos el tema de acuerdo al valor en la cookie
+let isAdult = getCookie("isAdult") == "true" ? true : false; //Obtenemos el valor de la cookie en booleano.
+ageChecker(isAdult);
+let activeSesion = getCookie("ActiveSesion") == "true" ? true : false;
 
 // 2-. Corremos la NavBar
 const navBar = document.getElementById("navbar");   // Obtenemos el contenedor de la NavBar
@@ -296,56 +430,90 @@ runNavBar(navBar);                                  // Corremos la funcion para 
 preventRefreshButton();                             // Previene que se refresque la pagina al hacer click en el buscador de la NavBar
 var openMenu = false;                                       // La NavBar Colapsable esta cerrada
 
+
 //2.5-. Para obtener estos elementos primero se debe agregar la NavBar, ya que estan contenidos en ella.
 var togglerMenu = document.getElementById("togglerMenu");   // Obtenemos el botton de la NavBar Colapsable
 togglerMenu.addEventListener("click", animation);           // En caso de click, se corre la funcion animation 
 
 
-// 3-. Corremos la LateralBar
+// 3-. Verificamos si la sesion esta activa
+if (activeSesion){
+    const myAccountIcon = document.querySelector("#myAccountIcon");
+    myAccountIcon.removeAttribute("data-bs-toggle");
+    myAccountIcon.removeAttribute("role");
+    myAccountIcon.removeAttribute("aria-expanded");
+    myAccountIcon.setAttribute("href", "./user-page.html");
+    const FromMobileNav = document.querySelectorAll(".afterLogInRemove");
+    for (let element of FromMobileNav){
+        element.remove();
+    }
+
+} else {
+    const shopping_cart = document.querySelector("#shoppingCartContainer");
+    shopping_cart.setAttribute("href", "./login.html")
+
+    const FromMobileNav = document.querySelectorAll(".beforeLogIn");
+    for (let element of FromMobileNav){
+        element.remove();
+    }
+
+}
+
+
+
+
+// 4-. Corremos la LateralBar
 var lateralBar = document.getElementById("LateralBar");     // Obtenemos el contenedor de la LateralBar
 runLateralBar(lateralBar);                                  // Corremos la funcion para que se agregue.
 
-    //3.5-. Boton de Modo Oscuro
-    let buttonDarkMode = document.querySelector("#button-container"); // Obtenemos el boton del HTML
-    if (buttonDarkMode != null) {   // Verificamos que exista.
+    //4.5-. Boton de Modo Oscuro
+    let buttonDarkMode = document.querySelectorAll("#button-container"); // Obtenemos el boton del HTML
+    if (buttonDarkMode[0] != null) {   // Verificamos que exista.
         
         if (statusDarkMode){    // Si el Modo Oscuro está activado (statusDarkMode == true)
-            buttonDarkMode.classList.add("on-dark-mode"); //Definimos el estado del boton.
+            buttonDarkMode[0].classList.add("on-dark-mode"); //Definimos el estado del boton.
+            if (buttonDarkMode[1] != null){
+                buttonDarkMode[1].classList.add("on-dark-mode");
+            }
         }
 
-    buttonDarkMode.addEventListener("click", () => {        // Cuando demos click en el boton
-        buttonDarkMode.classList.toggle("on-dark-mode");    // Quitamos o Agregamos la clase para cambiar el estado del boton.
+        
+    buttonDarkMode[0].addEventListener("click", () => {        // Cuando demos click en el boton
+        buttonDarkMode[0].classList.toggle("on-dark-mode");    // Quitamos o Agregamos la clase para cambiar el estado del boton.
         statusDarkMode = !statusDarkMode;                   // Modificamos el estado del Modo Oscuro.
         darkMode(statusDarkMode);                           // Invocamos la funcion que cambiará el tema de la pagina 
     });
 
+    if (buttonDarkMode[1] != null) {
+        buttonDarkMode[1].addEventListener("click", () => {        // Cuando demos click en el boton
+            buttonDarkMode[1].classList.toggle("on-dark-mode");    // Quitamos o Agregamos la clase para cambiar el estado del boton.
+            statusDarkMode = !statusDarkMode;                   // Modificamos el estado del Modo Oscuro.
+            darkMode(statusDarkMode);                           // Invocamos la funcion que cambiará el tema de la pagina 
+        });
+    }
 }
 
 
-//SCRIPT PARA FOOTER
-function runFooter(element2) { //Función para agregar el footer a todos los archivos .HTML
-    let code2 = `
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footerCont">
-                <div class="col-md-4 d-flex align-items-center">
-                    <span class="mb-3 mb-md-0 text-muted" id="span"> © 2022 Balxhe, Inc</span>
-                </div>
-                <ul class="nav justify-content-center border-bottom pb-3 mb-3" id="listV">
-                    <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-muted">Inicio</a></li>
-                    <li class="nav-item"><a href="./about-us.html" class="nav-link px-2 text-muted">Sobre nosotros</a></li>
-                    <li class="nav-item"><a href="./FAQ.html" class="nav-link px-2 text-muted">FAQs</a></li>
-                    <li class="nav-item"><a href="./terms-conditions.html" class="nav-link px-2 text-muted">Términos y condiciones</a></li>
-                </ul>
-                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" id="listSM">
-                    <li class="ms-3"><a class="text-muted" href="" id="logoFB"><img src="./assets/img/Facebook - Negative.png" ></a></li>
-                    <li class="ms-3"><a class="text-muted" href="" id="logoIG"><img src="./assets/img/Instagram - Negative.png" ></a></li>
-                </ul>
-            </footer>
-      `; //Variable que almacena el codigo HTML del footer
-    element2.innerHTML = code2; //Insertamos el codigo en el HTML
 
+//5-. SCRIPT PARA FOOTER
+
+
+const footer = document.getElementById("footer"); // Obtenemos el contenedor del footer
+if (footer != null) {   //verificamos que el elemento exista en la pagina HTML
+    runFooter(footer);  // Corremos la funcion para que se agregue.                                
 }
 
-const footer = document.getElementById("footer");   // Obtenemos el contenedor del footer
-runFooter(footer);                                  // Corremos la funcion para que se agregue.
+
+//6-. Cerrar sesion.
+const closeSesion = document.querySelector("#CloseSesion");
+    if(closeSesion != null){
+    closeSesion.addEventListener("click", () => {
+        document.cookie = "statusDarkMode = false;";
+        document.cookie = "isAdult = false;";
+        document.cookie = "ActiveSesion = false;";
+    })
+}
+
+
 
 
