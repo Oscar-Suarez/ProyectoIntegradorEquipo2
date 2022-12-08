@@ -26,7 +26,8 @@ function darkMode(mode) { //Función para cambiar el tema del sitio Web
         '--shadow-before': '0px 0px 5px 1px rgba(0, 0, 0, 0.5)',
         '--shadow-after': '0px 0px 10px 1px rgba(0, 0, 0, 1)'
 
-    }};                         // Objeto que contiene las variables de :root
+        }
+    };                         // Objeto que contiene las variables de :root
 
     let root = document.querySelector(":root"); //Obtenemos el elemento :root
     let theme = mode ? "dark" : "light"; 
@@ -37,12 +38,13 @@ function darkMode(mode) { //Función para cambiar el tema del sitio Web
         root.style.setProperty(key, value); //Cambiamos las propiedades en :root contenidas en globalColors[theme].
     }
 
+
     document.cookie = "statusDarkMode = " + mode + ";path=/"; //Guardamos el estado del DarkMode en una cookie.
 
 }
 
 function getCookie(cname) { //Funcion para obtener el valor de un parametro (cname) dentro de la cookie
-    let name = cname + "="; 
+    let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie); //obtenemos la Cookie
     let ca = decodedCookie.split(';'); //La separamos cada "punto y coma"
     for (let i = 0; i < ca.length; i++) {
@@ -82,7 +84,7 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
             <nav>
                 <a href="./index.html">Inicio</a>
                 <a href="./products.html">Productos</a>
-                <a href="./about-us.html">¿Quienes somos?</a>
+                <a href="./about-us.html">¿Quiénes somos?</a>
                 <a href="./FAQ.html">FAQ</a>
             </nav>
         </div>
@@ -184,25 +186,27 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
 
 }
 
-function animation() { //Función para anadir y quitar clases a ciertor elementos. Permite animarlos con CSS
-  togglerMenu.classList.toggle("change"); //Se agrega la clase .change para animar con CSS el boton del menu desplegable 
-  navbar.classList.toggle("change"); //Se agrega la clase .change para animar con CSS el despliegue de la NavBar
 
-    if (openMenu){ //Si el menu esta abierto (true) 
+
+function animation() { //Función para anadir y quitar clases a ciertor elementos. Permite animarlos con CSS
+    togglerMenu.classList.toggle("change"); //Se agrega la clase .change para animar con CSS el boton del menu desplegable 
+    navbar.classList.toggle("change"); //Se agrega la clase .change para animar con CSS el despliegue de la NavBar
+
+    if (openMenu) { //Si el menu esta abierto (true) 
         menuDesplegable.classList.toggle("change"); //Quita la clase .change para que cambie la NavBar
         openMenu = !openMenu; //Cambie el estado de la variable a su contrario (true) --> (false)
     } else { //Lo contrario
-        setTimeout(() => { 
+        setTimeout(() => {
             menuDesplegable.classList.toggle("change"); //Agrega la clase .change para que cambie la NavBar
-            }, 300); //Usamos SetTimeOut definir un tiempo de espera y que aparezca la NavBar Desplegada.
-            openMenu = !openMenu; //Cambie el estado de la variable a su contrario (false) --> (true)
+        }, 300); //Usamos SetTimeOut definir un tiempo de espera y que aparezca la NavBar Desplegada.
+        openMenu = !openMenu; //Cambie el estado de la variable a su contrario (false) --> (true)
     }
 }
 
-function preventRefreshButton () {
-  document.getElementById("inputBuscador").addEventListener("click", function(event){
-    event.preventDefault() //Prevenir que al dar click se refresque automaticamente la pagina
-  });
+function preventRefreshButton() {
+    document.getElementById("inputBuscador").addEventListener("click", function (event) {
+        event.preventDefault() //Prevenir que al dar click se refresque automaticamente la pagina
+    });
 
 }
 
@@ -266,7 +270,7 @@ function runLateralBar(element) { //Función para agregar la LateralBar
 
 </ul>
 `;  //Variable que contiene el codigo de la Barra de Navegacion Lateral para Paginas Privadas
-    
+
     if (element != null) { //Verificamos que el elemento existá en el HTML
         element.innerHTML = code; //Si existe, se inserta el codigo.
     }
@@ -276,30 +280,30 @@ function runLateralBar(element) { //Función para agregar la LateralBar
 
 //Ejecución
 
-    //0-. Definir la cookie.
-    if(!document.cookie) { //Si la cookie no existe
-        document.cookie = "statusDarkMode = false;" //La creamos
-                        + "path=/";
-    }
+//0-. Definir la cookie.
+if (!document.cookie) { //Si la cookie no existe
+    document.cookie = "statusDarkMode = false;" //La creamos
+        + "path=/";
+}
 
-    // 1-. Leemos la Cookie
-    let statusDarkMode = getCookie("statusDarkMode") == "true" ? true : false; //Obtenemos el valor de la cookie en booleano.
-    darkMode(statusDarkMode);   // Aplicamos el tema de acuerdo al valor en la cookie
+// 1-. Leemos la Cookie
+let statusDarkMode = getCookie("statusDarkMode") == "true" ? true : false; //Obtenemos el valor de la cookie en booleano.
+darkMode(statusDarkMode);   // Aplicamos el tema de acuerdo al valor en la cookie
 
-    // 2-. Corremos la NavBar
-    const navBar = document.getElementById("navbar");   // Obtenemos el contenedor de la NavBar
-    runNavBar(navBar);                                  // Corremos la funcion para que se agregue.
-    preventRefreshButton();                             // Previene que se refresque la pagina al hacer click en el buscador de la NavBar
-    var openMenu = false;                                       // La NavBar Colapsable esta cerrada 
+// 2-. Corremos la NavBar
+const navBar = document.getElementById("navbar");   // Obtenemos el contenedor de la NavBar
+runNavBar(navBar);                                  // Corremos la funcion para que se agregue.
+preventRefreshButton();                             // Previene que se refresque la pagina al hacer click en el buscador de la NavBar
+var openMenu = false;                                       // La NavBar Colapsable esta cerrada
 
-    //2.5-. Para obtener estos elementos primero se debe agregar la NavBar, ya que estan contenidos en ella.
-    var togglerMenu = document.getElementById("togglerMenu");   // Obtenemos el botton de la NavBar Colapsable
-    togglerMenu.addEventListener("click", animation);           // En caso de click, se corre la funcion animation 
+//2.5-. Para obtener estos elementos primero se debe agregar la NavBar, ya que estan contenidos en ella.
+var togglerMenu = document.getElementById("togglerMenu");   // Obtenemos el botton de la NavBar Colapsable
+togglerMenu.addEventListener("click", animation);           // En caso de click, se corre la funcion animation 
 
 
-    // 3-. Corremos la LateralBar 
-    var lateralBar = document.getElementById("LateralBar");     // Obtenemos el contenedor de la LateralBar
-    runLateralBar(lateralBar);                                  // Corremos la funcion para que se agregue.
+// 3-. Corremos la LateralBar
+var lateralBar = document.getElementById("LateralBar");     // Obtenemos el contenedor de la LateralBar
+runLateralBar(lateralBar);                                  // Corremos la funcion para que se agregue.
 
     //3.5-. Boton de Modo Oscuro
     let buttonDarkMode = document.querySelector("#button-container"); // Obtenemos el boton del HTML
@@ -309,11 +313,39 @@ function runLateralBar(element) { //Función para agregar la LateralBar
             buttonDarkMode.classList.add("on-dark-mode"); //Definimos el estado del boton.
         }
 
-        buttonDarkMode.addEventListener("click", () => {        // Cuando demos click en el boton
-            buttonDarkMode.classList.toggle("on-dark-mode");    // Quitamos o Agregamos la clase para cambiar el estado del boton.
-            statusDarkMode = !statusDarkMode;                   // Modificamos el estado del Modo Oscuro.
-            darkMode(statusDarkMode);                           // Invocamos la funcion que cambiará el tema de la pagina 
+    buttonDarkMode.addEventListener("click", () => {        // Cuando demos click en el boton
+        buttonDarkMode.classList.toggle("on-dark-mode");    // Quitamos o Agregamos la clase para cambiar el estado del boton.
+        statusDarkMode = !statusDarkMode;                   // Modificamos el estado del Modo Oscuro.
+        darkMode(statusDarkMode);                           // Invocamos la funcion que cambiará el tema de la pagina 
     });
 
-    }
+}
+
+
+//SCRIPT PARA FOOTER
+function runFooter(element2) { //Función para agregar el footer a todos los archivos .HTML
+    let code2 = `
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footerCont">
+                <div class="col-md-4 d-flex align-items-center">
+                    <span class="mb-3 mb-md-0 text-muted" id="span"> © 2022 Balxhe, Inc</span>
+                </div>
+                <ul class="nav justify-content-center border-bottom pb-3 mb-3" id="listV">
+                    <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-muted">Inicio</a></li>
+                    <li class="nav-item"><a href="./about-us.html" class="nav-link px-2 text-muted">Sobre nosotros</a></li>
+                    <li class="nav-item"><a href="./FAQ.html" class="nav-link px-2 text-muted">FAQs</a></li>
+                    <li class="nav-item"><a href="./terms-conditions.html" class="nav-link px-2 text-muted">Términos y condiciones</a></li>
+                </ul>
+                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" id="listSM">
+                    <li class="ms-3"><a class="text-muted" href="" id="logoFB"><img src="./assets/img/Facebook - Negative.png" ></a></li>
+                    <li class="ms-3"><a class="text-muted" href="" id="logoIG"><img src="./assets/img/Instagram - Negative.png" ></a></li>
+                </ul>
+            </footer>
+      `; //Variable que almacena el codigo HTML del footer
+    element2.innerHTML = code2; //Insertamos el codigo en el HTML
+
+}
+
+const footer = document.getElementById("footer");   // Obtenemos el contenedor del footer
+runFooter(footer);                                  // Corremos la funcion para que se agregue.
+
 
