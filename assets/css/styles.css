@@ -972,7 +972,7 @@ div.spacer {
 
     .elementBestSellers {
         margin: auto;
-        margin-top: 20px;
+        margin-top: 10px;
         margin-bottom: 20px;
         padding: 10px;
         transform: scale(1);
@@ -1413,12 +1413,6 @@ div.spacer {
 }
 
 
-/*######################################################################
-                        ESTILOS PAGINA PRODUCTOS
-#######################################################################*/
-@media {
-    
-}
 
 
 /*######################################################################
@@ -1490,12 +1484,8 @@ div.spacer {
         font-size: 20px;
     }
 
-    .buttonprod {
-    border-radius: 10px;
-    margin: auto;
-    width: 90%;
-    background-color: rgb(221, 123, 44);
-
+    .buttonAddCart {
+        font-size: 20px;
     }
     
 
@@ -1822,12 +1812,20 @@ a {
 }
 
 /*######################################################################
-                        ESTILOS del product page
+                        ESTILOS del product esopecific page
 #######################################################################*/
 @media {
-    #productContainer {
+    #productPage {
         padding: 20px;
         margin: auto;
+        background-color: rgb( var(--color5) );
+        border-radius: 15px;
+        height: fit-content;
+        margin-top: 40px;
+        margin-bottom: 20px;
+        box-shadow: var(--shadow-before);
+    }
+
     }
     #imgContainer {
         text-align: center;
@@ -1848,11 +1846,31 @@ a {
     #add2Cart button {
         background-color: green;
     }
-    #productContainer img {
+    #imgContainer img {
         width: 100%;
         height: 500px;
         object-fit: cover;
         border-radius: 20px;
     }
->>>>>>> 61a586b4716cbb11ddf892dd0c95bea50ffd4449
-}
+
+    #carousel-own{
+        display: flex;
+        flex-direction: row;
+        overflow-y: hidden;
+        overflow-x: scroll;
+        
+    }
+
+    /* Demonstrate a "mostly customized" scrollbar
+     * (won't be visible otherwise if width/height is specified) */
+     #carousel-own::-webkit-scrollbar {
+      height: 12px;
+      background-color: rgba(var(--color1)); /* or add it to the track */
+      border-radius: 10px;
+    }
+    
+    /* Add a thumb */
+    #carousel-own::-webkit-scrollbar-thumb {
+      background: rgb( var(--color6) );
+      border-radius: 10px;
+    }
