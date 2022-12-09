@@ -40,9 +40,9 @@ body {
     font-family: 'Montserrat', sans-serif; 
     color: var(--font-color);
 
- }
+}
 
- .boton {
+.boton {
     background-color: rgb( var(--color4) );
     border: 0;
     color: white;
@@ -100,6 +100,7 @@ div.spacer {
         font-weight: 600;
     }
 
+
     .h4, .h5, .h6 ,h4 ,h5, h6 {
         font-family: 'Montserrat', sans-serif;
         font-weight: 500;
@@ -146,7 +147,7 @@ div.spacer {
         z-index: 10;
     
         /* DIMESIONES DE LA NAVBAR */
-     
+    
         height: var(--height-navbar);
     
         /* ESTILO DE LA NAVBAR */
@@ -280,7 +281,7 @@ div.spacer {
                 width: 50%;       /* porcentaje del espacio horizontal que ocupan del div padre */
             }
             #menuIcons {
-                 width: 25%;       /* porcentaje del espacio horizontal que ocupan del div padre */
+                width: 25%;       /* porcentaje del espacio horizontal que ocupan del div padre */
             }
             
             #logoMobileNavBar {
@@ -668,7 +669,7 @@ div.spacer {
         }
 
         div#LateralBar span {
-           padding-left: 0;
+            padding-left: 0;
             font-size: 35px;
         }
 
@@ -745,7 +746,7 @@ div.spacer {
         }
 
         div#LateralBar span {
-           padding-left: 0;
+            padding-left: 0;
             font-size: 35px;
         }
         @media (max-width: 576px) {
@@ -813,7 +814,7 @@ div.spacer {
     div#HeaderUserPhoto {
         height: 85px;
         display: flex;
-      
+    
         justify-content: center;
 
     }
@@ -916,8 +917,8 @@ div.spacer {
         height: 150px;
         display: grid;
         grid-template-areas: "Image Tittle BuyAgain"
-                             "Image Info   Price"
-                             "Image Info   Price";
+                            "Image Info   Price"
+                            "Image Info   Price";
         grid-template-rows: min-content 1fr 1fr;
         grid-template-columns: min-content auto max-content;
         border-bottom: 0.5px solid rgba(0, 0, 0, 0.2);
@@ -1018,10 +1019,10 @@ div.spacer {
 #######################################################################*/
 @media { /* SIGN UP PAGE*/
 
-     div#padre {
+    div#padre {
         width: 500px;
-     }
-     form#UserData label {
+    }
+    form#UserData label {
         color: var(--font-color);
     }
 
@@ -1056,10 +1057,10 @@ div.spacer {
     }
 
 
-      
+    
     div.card:hover {
         transform: scale(1.02); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
-      }
+    }
 
 
     div.card img {
