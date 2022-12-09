@@ -1489,6 +1489,14 @@ div.spacer {
     .priceProduct {
         font-size: 20px;
     }
+
+    .buttonprod {
+    border-radius: 10px;
+    margin: auto;
+    width: 90%;
+    background-color: rgb(221, 123, 44);
+
+    }
     
     
     
