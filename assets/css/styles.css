@@ -1690,6 +1690,9 @@ div.spacer {
     gap: 40px;
     align-items: center;
 }
+
+
+
 }
 
 
@@ -1742,7 +1745,7 @@ div.spacer {
 .icono {
     width: 100px;
     transform: scale(1);
-    mix-blend-mode:difference;
+    mix-blend-mode: difference;
     transition: 0.3s;
 }
 .icono:hover {
@@ -1775,6 +1778,12 @@ a {
     margin-top: 5px;
     margin-bottom: 10px;
 }
+.allErrors{
+    font-family: 'Ubuntu', sans-serif;
+    font-size: medium;
+    color:rgb(255, 0, 0);
+
+ }
 
     
 }
@@ -1826,7 +1835,7 @@ a {
         box-shadow: var(--shadow-before);
     }
 
-    }
+    
     #imgContainer {
         text-align: center;
     }
@@ -1874,3 +1883,4 @@ a {
       background: rgb( var(--color6) );
       border-radius: 10px;
     }
+}

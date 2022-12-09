@@ -1,24 +1,2 @@
 
-    
-    /*Código para darle formato a los errores que aparecen en la caja de comentarios*/
-    .todoserrores{
-        color:red;
-        font-size: small;
-        font-family:Ubuntu,sans-serif;
-    }
-
-
-
-    /*Media queries para la seccion de texto dentro de la imagen del carrusel*/
-    @media (max-width: 520px){
-    #parrafu{
-    flex-direction: column;
-    }
-    }
-    @media(max-width:  820px) {
-        #parrafi{
-            display: none;
-        }
-    }
-
 
