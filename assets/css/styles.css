@@ -1489,6 +1489,14 @@ div.spacer {
     .priceProduct {
         font-size: 20px;
     }
+
+    .buttonprod {
+    border-radius: 10px;
+    margin: auto;
+    width: 90%;
+    background-color: rgb(221, 123, 44);
+
+    }
     
 
     
@@ -1797,6 +1805,8 @@ a {
     }
 }
 
+
+
 /*######################################################################
                         ESTILOS del FOOTER
 #######################################################################*/
@@ -1844,4 +1854,5 @@ a {
         object-fit: cover;
         border-radius: 20px;
     }
+>>>>>>> 61a586b4716cbb11ddf892dd0c95bea50ffd4449
 }
