@@ -313,7 +313,7 @@ function runFooter(element2) { //Función para agregar el footer a todos los arc
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="./products.html" class="text-white">Products</a>
+              <a href="./products.html" class="text-white">Productos</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -329,7 +329,7 @@ function runFooter(element2) { //Función para agregar el footer a todos los arc
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="./terms-conditions.html" class="text-white">Terminos y Condiciones</a>
+              <a href="./terms-conditions.html" class="text-white">Términos y Condiciones</a>
             </h6>
           </div>
           <!-- Grid column -->
@@ -337,7 +337,7 @@ function runFooter(element2) { //Función para agregar el footer a todos los arc
           <!-- Grid column -->
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="./about-us.html#contactanos" class="text-white">Contactanos</a>
+              <a href="./about-us.html#contactanos" class="text-white">Contáctanos</a>
             </h6>
           </div>
           <!-- Grid column -->
