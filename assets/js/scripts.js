@@ -184,14 +184,21 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                         </span>
                         Account</a>
                 </li>
+                <li><a href="./user-page.html" class="beforeLogIn">
+                    <span class="material-symbols-outlined">
+                        package
+                    </span>
+                        Mis Pedidos</a>
+                </li>
                 <li class="afterLogInRemove">
                     <a href="./signup.html">
                     <span class="material-symbols-outlined">
                         person_add
                     </span>
-                    Sign Up
+                    Registrarse
                     </a>
                 </li>
+
 
 
                 <li class="afterLogInRemove">
@@ -199,7 +206,7 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                     <span class="material-symbols-outlined">
                         login
                     </span>
-                    Log in
+                    Iniciar Sesión
                     </a>
                 </li>     
                 
@@ -211,6 +218,13 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                             </div>
                         </button>
                 </li>   
+                    <li id="CloseButton" class="beforeLogIn">
+                        <span class="material-symbols-outlined">
+                        logout
+                        </span>
+                        <h>Cerrar Sesión</h>
+                            
+                    </li>
             
             </ul>
             <hr>
@@ -402,7 +416,7 @@ function ageChecker (mode) {
 
         botonAceptar.addEventListener('click', ()=>{
             aviso.classList.add('activo');
-            document.cookie = "isAdult = true;";
+            document.cookie = "isAdult = true;"; //guia
         });
     }
 }
@@ -412,8 +426,8 @@ function ageChecker (mode) {
 //0-. Definir la cookie.
 if (!document.cookie) { //Si la cookie no existe
     document.cookie = "statusDarkMode = false;";
-    document.cookie = "isAdult = false;";
-    document.cookie = "ActiveSesion = true;"
+    document.cookie = "isAdult = false;";  
+    document.cookie = "ActiveSesion = true;" 
 }
 
 console.log()
@@ -514,6 +528,8 @@ const closeSesion = document.querySelector("#CloseSesion");
     })
 }
 
+
+//Carrusel
 let items = document.querySelectorAll('#carouselMultiple .carousel-item')
 
 
