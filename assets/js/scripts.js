@@ -321,24 +321,27 @@ runLateralBar(lateralBar);                                  // Corremos la funci
 
 //SCRIPT PARA FOOTER
 function runFooter(element2) { //Función para agregar el footer a todos los archivos .HTML
-    let code2 = `
-            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footerCont">
-                <div class="col-md-4 d-flex align-items-center">
-                    <span class="mb-3 mb-md-0 text-muted" id="span"> © 2022 Balxhe, Inc</span>
-                </div>
-                <ul class="nav justify-content-center border-bottom pb-3 mb-3" id="listV">
-                    <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-muted">Inicio</a></li>
-                    <li class="nav-item"><a href="./about-us.html" class="nav-link px-2 text-muted">Sobre nosotros</a></li>
-                    <li class="nav-item"><a href="./FAQ.html" class="nav-link px-2 text-muted">FAQs</a></li>
-                    <li class="nav-item"><a href="./terms-conditions.html" class="nav-link px-2 text-muted">Términos y condiciones</a></li>
-                </ul>
-                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" id="listSM">
-                    <li class="ms-3"><a class="text-muted" href="" id="logoFB"><img src="./assets/img/Facebook - Negative.png" ></a></li>
-                    <li class="ms-3"><a class="text-muted" href="" id="logoIG"><img src="./assets/img/Instagram - Negative.png" ></a></li>
-                </ul>
-            </footer>
-      `; //Variable que almacena el codigo HTML del footer
-    element2.innerHTML = code2; //Insertamos el codigo en el HTML
+    if(element2!= null){
+        let code2 = `
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top" id="footerCont">
+            <div class="col-md-4 d-flex align-items-center">
+                <span class="mb-3 mb-md-0 text-muted" id="span"> © 2022 Balxhe, Inc</span>
+            </div>
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3" id="listV">
+                <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-muted">Inicio</a></li>
+                <li class="nav-item"><a href="./about-us.html" class="nav-link px-2 text-muted">Sobre nosotros</a></li>
+                <li class="nav-item"><a href="./FAQ.html" class="nav-link px-2 text-muted">FAQs</a></li>
+                <li class="nav-item"><a href="./terms-conditions.html" class="nav-link px-2 text-muted">Términos y condiciones</a></li>
+            </ul>
+            <ul class="nav col-md-4 justify-content-end list-unstyled d-flex" id="listSM">
+                <li class="ms-3"><a class="text-muted" href="" id="logoFB"><img src="./assets/img/Facebook - Negative.png" ></a></li>
+                <li class="ms-3"><a class="text-muted" href="" id="logoIG"><img src="./assets/img/Instagram - Negative.png" ></a></li>
+            </ul>
+        </footer>
+  `; //Variable que almacena el codigo HTML del footer
+element2.innerHTML = code2; //Insertamos el codigo en el HTML
+    }
+
 
 }
 
