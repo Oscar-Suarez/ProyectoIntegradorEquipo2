@@ -1,70 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=0.85">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=0.85">
+  <meta name="viewport" content="width=device-width, initial-scale=0.85">
 
-    <link rel="icon" type="image/x-icon" href="./assets/img/LogoBalxhe.png"> <!--FavIcon-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous"> <!--Bootstrap 5-->
-    <link href="./assets/css/styles.css" rel="stylesheet"> <!--Own CSS-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" /> <!--Material Icons by Google-->
+  <link rel="icon" type="image/x-icon" href="./assets/img/LogoBalxhe.png"> <!--FavIcon-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <!--Bootstrap 5-->
+  <link href="./assets/css/styles.css" rel="stylesheet"> <!--Own CSS-->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <!--Material Icons by Google-->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+    rel="stylesheet">
 
-    <link rel="stylesheet" href="./assets/css/inicio.css">
-
-    <title>Balxhe - Beer Store</title>
+  <title>Balxhe - Beer Store</title>
 </head>
+
 <body>
 
-    <div id="navbar">
-    </div> <!--Con JS se agregará la NavBar-->
-  
-  <!-- Inicia div Mayor de edad   -->
-  <div class="fixed-bottom" id="alerta18">
-    <p id="F18">¿ERES MAYOR DE EDAD?</p>
-    
-    <p>Para ingresar a este sitio debes confirmar que tienes +18 años.</p> <p>Al confirmar ser mayor de edad manifiestas tu conformidad con nuestros Términos y condiciones y nuestro Aviso de Privacidad.</p>
-    
-    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><button>NO</button></a>
-    <!-- <button id="eliminarDiv">SI</BUtton> -->
-      <button id="ocutarDiv">Si</button>
-      <br>   
-  </div>
+
+  <div id="navbar">
+  </div> <!--Con JS se agregará la NavBar-->
+
+
   <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <picture>
-          <source media="(max-width: 700px)" srcset="3.2.jpg">
-          <img class="image2" src="./assets/img/Imagenes baner/0.1.jpg" class="d-block w-100" alt="...">
+          <div class="info">
+            <h1 id="BeerName">Pacifico Suave</h1>
+            <p id="BeerInfo">Pacifico Suave, es una cerveza mexicana con un sabor único que invita a relajarse y
+              disfrutar
+              de cualquier momento donde quiera que estés. Aprovecha la <span>oferta 3x2</span> en la compra de
+              <span>más
+                de 10 unidades.</span></p>
+          </div>
+          <img class="BeerImage" src="./assets/img/Imagenes baner/0.1.jpg" class="d-block w-100" alt="...">
         </picture>
       </div>
 
       <div class="carousel-item">
         <picture>
-          <source media="(max-width: 700px)" srcset="0.2.png">
-          <img class="image2" src="./assets/img/Imagenes baner/0.5.png" class="d-block w-100" alt="...">
+          <div class="info">
+            <h1 id="BeerName">Heineken</h1>
+            <p id="BeerInfo">Heineken® es una cerveza única, y desde 1873 hasta la fecha conserva la misma calidad,
+              principios e ingredientes. A diferencia de cualquier otra cerveza en México, Heineken® se fermenta en el
+              fondo de tanques horizontales, lo que la hace mas clara, pura y durable.<span> 5% Alc</span>.</p>
+          </div>
+
+          <img class="BeerImage" src="./assets/img/Imagenes baner/0.5.png" class="d-block w-100" alt="...">
         </picture>
       </div>
       <div class="carousel-item">
         <picture>
-          <source media="(max-width: 700px)" srcset="0.1.png">
-          <img class="image2" src="./assets/img/Imagenes baner/0.6.png" class="d-block w-100" alt="...">
+          <div class="info">
+            <h1 id="BeerName">La Brü: Vienna Lager</h1>
+            <p id="BeerInfo">Una cerveza rojiza refrescante con un dulce toque de jengibre. Esta cerveza es un homenaje
+              a
+              los primeros cerveceros europeos que llegaron al nuevo mundo. Al no encontrar lúpulos tradicionales
+              empezaron a usar jengibre su lugar. En La le damos nueva vida a este estilo.</p>
+          </div>
+
+          <img class="BeerImage" src="./assets/img/Imagenes baner/cerveza-bru-.jpg" class="d-block w-100" alt="...">
         </picture>
       </div>
       <div class="carousel-item">
         <picture>
-          <source media="(max-width: 700px)" srcset="0.3.png">
-          <img class="image2" src="./assets/img/Imagenes baner/0.4.png" class="d-block w-100" alt="...">
+          <div class="info">
+            <h1 id="BeerName">ALLENDE, San Miguel de Allende</h1>
+            <p id="BeerInfo">Su botella refleja la identidad de San Miguel de Allende, para ello se usó el color
+              aprobado
+              por el pueblo, el detalle característico de los guardapolvos bicolores en las casas y la Parroquia de San
+              Miguel Arcángel como símbolo local. No te pierdas esta cerveza artesanal.</p>
+          </div>
+          <img class="BeerImage" src="./assets/img/Imagenes baner/cerveza-allende.jpg" class="d-block w-100" alt="...">
         </picture>
       </div>
       <div class="carousel-item">
         <picture>
-          <source media="(max-width: 700px)" srcset="0.4.png">
-          <img class="image2" src="./assets/img/Imagenes baner/0.8.png" class="d-block w-100" alt="...">
+          <div class="info">
+            <h1 id="BeerName">Negra Modelo</h1>
+            <p id="BeerInfo">Negra Modelo es una cerveza tipo lager de estilo Munich y color oscuro. Con 5.3% de nivel
+              de
+              alcohol, tiene un sabor más intenso y equilibrado, aroma a caramelo y malta tostada y un sabor con un
+              final
+              poco intenso por su selección de lúpulo. Modelo es la marca de cervezas mexicanas premium líder en el
+              país.
+            </p>
+          </div>
+
+          <img class="BeerImage" src="./assets/img/Imagenes baner/0.8.png" class="d-block w-100" alt="...">
         </picture>
       </div>
     </div>
@@ -77,123 +111,322 @@
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-<div class="container">
-  <!-- Termina div Mayor de edad  -->
-  <!--Inicia carrusel-->
 
-  <!--Se termina carrusel-->
-  <br>
-  <br>
-  <h2>Top ventas</h2>
-  <!-- Nuevo Carrusel 2 -->
-  <div id="carousel" class="carousel slide" data-interval="false">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="row">
-          <div class="col">
-            <div>
-              <a href="https://www.google.com/"><img src="./assets/img/Imagenes baner/2.1.png" class="imga">
-              </a>
+
+
+
+  <div class="container-fluid" style="padding: 5%;">
+
+    <div class=" ms-3 h1 darkMode">Top ventas</div>
+
+    <div id="carousel" class="carousel slide BestSellers" data-interval="false">
+      <div class="carousel-inner" id="carouselMultiple">
+        <div class="carousel-item active">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
             </div>
-          </div>
-          <div class="col">
-            <div>
-              <img src="./assets/img/Imagenes baner/2.2.jpg" alt="" class="imga">
-            </div>
-          </div>
-          <div class="col">
-            <div>
-              <img src="./assets/img/Imagenes baner/2.3.png" alt="" class="imga">
-            </div>
-          </div>
-          <div class="col">
-            <div>
-              <img src="./assets/img/Imagenes baner/2.4.jpg" alt="" class="imga">
-            </div>
+            <img src="./assets/img/Imagenes baner/2.1.png">
+          </a>
           </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <div class="row">
-          <div class="col">
-            <div class="text-center">
-              <img src="./assets/img/Imagenes baner/3.4.webp" alt="" class="imga">
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
             </div>
-          </div>
-          <div class="col">
-            <div class="text-center">
-              <img src="./assets/img/Imagenes baner/Grupo-Modelo-scaled.jpg" alt="" class="imga">
-            </div>
-          </div>
-          <div class="col">
-            <div class="text-center">
-              <img src="./assets/img/Imagenes baner/815QzzksMLL._AC_SL1500_.jpg" alt="" class="imga">
-            </div>
-          </div>
-          <div class="col">
-            <div class="text-center">
-              <img src="./assets/img/Imagenes baner/CBC02.jpg" alt="" class="imga">
-            </div>
+            <img src="./assets/img/Imagenes baner/2.2.jpg">
+          </a>
           </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <div class="row">
-          <div class="col">
-            <div class="text-center">
-              <img src="./assets/img/Imagenes baner/cerveza-estrella_galicia-distribucion_412219627_127612496_1706x960.jpg" alt=""
-                class="imga">
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
             </div>
-          </div>
-          <div class="col">
-            <div class="text-center">
-              <img src="./assets/img/Imagenes baner/freedom-reserve1-1024x641.jpg" alt="" class="imga">
-            </div>
-          </div>
-          <div class="col">
-            <div class="text-center">
-              <img src="./assets/img/Imagenes baner/poster-bud-light-area-51.jpg" alt="" class="imga">
-            </div>
-          </div>
-          <div class="col">
-            <div class="text-center">
-              <img src="./assets/img/Imagenes baner/No-estara-Budweiser-en-el-Super-Bowl-por-una-razon-muy-responsable..jpg" alt=""
-                class="imga">
-            </div>
+            <img src="./assets/img/Imagenes baner/2.3.png">
+          </a>
           </div>
         </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/2.4.jpg">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/3.4.webp">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/Grupo-Modelo-scaled.jpg">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/815QzzksMLL._AC_SL1500_.jpg">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/CBC02.jpg">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img
+              src="./assets/img/Imagenes baner/cerveza-estrella_galicia-distribucion_412219627_127612496_1706x960.jpg"
+              alt="">
+          </a>
+            </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/freedom-reserve1-1024x641.jpg" alt="">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/poster-bud-light-area-51.jpg" alt="">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img
+              src="./assets/img/Imagenes baner/No-estara-Budweiser-en-el-Super-Bowl-por-una-razon-muy-responsable..jpg"
+              alt="">
+          </a>
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+        <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
       </div>
+
+
     </div>
-    <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only"></span>
-    </a>
-    <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only"></span>
-    </a>
+    <hr>
+
+    <div class=" ms-3 h1 darkMode">Nuevos Productos</div>
+
+    <div id="carousel2" class="carousel slide NewProducts" data-interval="false">
+      <div class="carousel-inner" id="carouselMultiple">
+        <div class="carousel-item active">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/2.1.png">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/2.2.jpg">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/2.3.png">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/2.4.jpg">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/3.4.webp">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/Grupo-Modelo-scaled.jpg">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/815QzzksMLL._AC_SL1500_.jpg">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/CBC02.jpg">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img
+              src="./assets/img/Imagenes baner/cerveza-estrella_galicia-distribucion_412219627_127612496_1706x960.jpg"
+              alt="">
+          </a>
+            </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/freedom-reserve1-1024x641.jpg" alt="">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img src="./assets/img/Imagenes baner/poster-bud-light-area-51.jpg" alt="">
+          </a>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="elementBestSellers">
+            <a href="./product-page.html">
+            <div class="BeerName" id="BestSellerItem">
+              <h4 id="BeerName">BeerName</h4>
+            </div>
+            <img
+              src="./assets/img/Imagenes baner/No-estara-Budweiser-en-el-Super-Bowl-por-una-razon-muy-responsable..jpg"
+              alt="">
+          </a>
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+        <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only"></span>
+        </a>
+      </div>
+
+
+    </div>
   </div>
-  <!-- otro carrusel -->
-  <br>
-</div>
+
+
+
 
   <!--Div Footer-->
-<div id="footer"></div>
+  <div class="mt-5" id="footer"></div>
+  <!-- Inicia Sweetaler (Alerta) -->
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- <script src="/sweetAlert.js"></script>
+  Termina Sweetaler (Alerta)-->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <!-- Ultimas librerias -->
+  <script src="./assets/js/scripts.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"
+    integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V"
+    crossorigin="anonymous"></script>
 
-      <!-- Inicia Sweetaler (Alerta) -->
-      <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-      <script src="/sweetAlert.js"></script>
-      <!-- Termina Sweetaler (Alerta)-->
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-      <!-- Ultimas librerias -->
-    <script src="./assets/js/scripts.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
-
-
-<script src="/assets/js/eliminar.js"></script>
+  <script src="./assets/js/carusel.js"></script>
 </body>
+
 </html>
