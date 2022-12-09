@@ -5,7 +5,7 @@ var datos = {
         date: "12/06/2022",
         productos: {
             1 : {
-                nombre: "Lager",
+                nombre: "Lagartonaaaa",
                 img: "./assets/img/productos/lager.webp",
                 descripcion: "Se trata de una bebida tipo pale lager, que produce muy poca y blanca espuma. Es de cuerpo ligero a medio.",
                 cantidad: 20,
