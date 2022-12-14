@@ -1249,12 +1249,18 @@ div.spacer {
         transition: 0.2s;
     }
 
-    .form-placeholders:hover {
-        box-shadow: var(--shadow-after);
-    }
 
     .form-placeholders:focus{
         outline: 4px solid #ff84006e;
+    }
+
+    .form-placeholders.wrongInput {
+       border: 2px solid red !important;
+      }
+      
+      
+    .form-placeholders:valid {
+        border: 2px solid black;
     }
 
     
@@ -1266,7 +1272,7 @@ div.spacer {
 @media { /* SIGN UP PAGE*/
 
      div#padre {
-        width: 800px;
+        max-width: 800px;
 
         margin-bottom: 100px;
      }
