@@ -28,51 +28,57 @@
     <div id="navbar" ></div>
     <!--Con JS se agregará la NavBar-->
     <!--<img src="./assets//img/beer.jpeg" alt="Imagen cerveza" width="1920" height="30"> Agregar imagen cerveza-->
-    <div class="container mt-5" style="max-width: 600px;" id="padre">
+    <div class="container mt-5" id="padre">
 
         <h1 class="titulo text-center"> Crear cuenta </h1>
         <div class="spacer mb-4" style="max-width: 60%;">&#9632;</div>
 
         <form id="UserData" >
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <label for="Nombre">Nombre </label>
-                    <input class="form-placeholders" required placeholder="Nombre*" type="text" id="Nombre" />
+            <div class="row ">
+                <div class="col-lg-6 col-md-6 mb-2">
+                    <label for="name">Nombre (s) </label>
+                    <input class="form-placeholders" required placeholder="Nombre*" type="text" id="name" />
                 </div>
-                <br>
-                <div class="col-lg-6 col-md-6 mt-1">
-                    <label for="Apellido">Apellido </label>
-                    <input class="form-placeholders" required placeholder="Apellido*" type="text" id="Apellido" />
+                
+                <div class="col-lg-6 col-md-6 mb-2">
+                    <label for="lastName">Apellido (s) </label>
+                    <input class="form-placeholders" required placeholder="Apellido*" type="text" id="lastName" />
                 </div>
             </div>
 
             <div class="row">
-                <div class="col-12 mt-1">
+                <div class="col-lg-4 col-md-4 mb-2">
+                    <label for="username">Nombre de Usuario </label>
+                    <input class="form-placeholders" required placeholder="Nombre de Usuario*" type="text" id="username" />
+                </div>
+                <div class="col-lg-8 col-md-8 mb-2">
+                    <label for="email">Correo Electronico</label>
+                    <input class="form-placeholders" required placeholder="Correo electronico*" type="text"
+                        id="email" />
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-12 mb-2">
                     <label for="">Fecha de Nacimiento </label>
                     <input class="form-placeholders" required placeholder="fecha*" type="date" id="start"
                         name="trip-start" value="aaaa-mm-dd" min="1920-01-01" max="2004-12-31">
                 </div>
+                
             </div>
 
             <div class="row">
-                <div class="col-12 mt-1">
-                    <label for="">Correo Electronico</label>
-                    <input class="form-placeholders" required placeholder="Correo electronico*" type="text"
-                        id="correo" />
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg-6 col-md-6 mt-1">
-                    <label for="">Contraseña</label>
+                <div class="col-lg-6 col-md-6 mb-2">
+                    <label for="password1">Contraseña</label>
                     <input class="form-placeholders" required placeholder="Contraseña*" type="password"
-                        id="contraseña" />
+                        id="password1" />
                 </div>
                 <br>
-                <div class="col-lg-6 col-md-6 mt-1">
-                    <label for="">Repetir Contraseña</label>
+                <div class="col-lg-6 col-md-6 mb-2">
+                    <label for="password2">Repetir Contraseña</label>
                     <input class="form-placeholders" required placeholder="Confirmar contraseña*" type="password"
-                        id="confirmar-contraseña" />
+                        id="password2" />
                 </div>
             </div>
             <br>
@@ -94,7 +100,8 @@
 
       <!--Div Footer-->
 <div id="footer"></div>
-    <script src="./assets/js/scripts.js"></script>
+<script src="./assets/js/scripts.js"></script>
+<script src="./assets/js/formulario.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
         integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
         crossorigin="anonymous"></script>

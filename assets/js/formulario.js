@@ -1,194 +1,106 @@
-
-var nombre= document.querySelector("#nombre");
-var numero= document.querySelector("#numero");
-var email= document.querySelector("#email");
-var comentario = document.querySelector("#comentario");
-var error = document.querySelector("#error");
-var error2 = document.querySelector("#error2");
-var error3 = document.querySelector("#error3");
-var error4 = document.querySelector("#error4");
-var form= document.querySelector("#form");
-
-
-
-form.addEventListener("submit", function(evt) {
-    evt.preventDefault();
-console.log("Enviando formulario");
-var mensajeerror=[] ;
-
-if (nombre.value === null || nombre.value===""){
-    mensajeerror.push("Ingresa tu nombre");
-    error.innerHTML= mensajeerror.join(",");
-}
-else if (numero.value === null || numero.value==="" || (!isnumero(numero.value))){
-    mensajeerror.push("Ingresa tu número telefónico");
-    error2.innerHTML= mensajeerror.join(",");
-}
- else if (!isEmail(email.value)){
-    mensajeerror.push("Ingresa un email válido");
-    error3.innerHTML= mensajeerror.join(",");
-}
-else if (comentario===null || comentario.value===""){
-    mensajeerror.push("Ingresa un comentario");
-    error4.innerHTML= mensajeerror.join(",");
-}
-
-    
-    
-});
-
-function isEmail(email) {
-    return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-      email
-    );
-  }
-function isnumero(numero) {
-    return /^\d{10,10}$/.test(
-    numero
-    );
-  }
-
-
 /*
-var infocontacto 
-  {
-    "correo": correo.value
-    "Nombre": correo.value
-    "numero": numero.value
-    "cometario": comentario.value
-  }
+La función isValid recibe dos parámetros: input y type. El parámetro input es un
+elemento del DOM que representa un campo de entrada de texto en un formulario.
+El parámetro type es una cadena de texto que especifica el tipo de dato que se 
+espera que el usuario ingrese en el campo de entrada.
 
+La función comienza declarando un objeto options, que contiene una propiedad por 
+cada tipo de dato que se puede validar. Cada propiedad es una expresión regular 
+que se utilizará para verificar si el valor ingresado por el usuario cumple con 
+los criterios especificados para el tipo de dato en cuestión.
 
+Luego, la función extrae la expresión regular que corresponde al tipo de dato 
+especificado en el parámetro type, y la asigna a una variable local regex.
 
-/*
-var nombre = document.querySelector("#nombre");
-var numero = document.querySelector("#numero");
-var email = document.querySelector("#email");
-var comentario = document.querySelector("#comentario");
-var error = document.querySelector("#error");
-var error2 = document.querySelector("#error2");
-var error3 = document.querySelector("#error3");
-var error4 = document.querySelector("#error4");
-var form = document.querySelector("#form");
-var parrafo=document.querySelector(".todoserrores");
-
-form.addEventListener("submit", e=>  {
-  e.preventDefault()
-  let warnings="";
-  parrafo.innerHTML="";
-  let regexnumero= /^\d{10,10}$/;
-  let entrar=false;
-  let regexemail=  /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-
-  if(nombre.value.length <3){
-   warnings=+ "El nombre no es valido <br>"; 
-   entrar=true;
-    if (entrar){
-      parrafo.innerHTML= warnings;
-    } else{
-      parrafo.innerHTML="enviado";
-  }
-  if (!regexemail.test (email.value)){
-    warnings+="El email no es valido <br>";
-    entrar=true ;
-    if(entrar){
-      parrafo.innerHTML= warnings;
-    }else 
-    parrafo.innerHTML="enviado";
-  }
-  if (!regexnumero.test(numero.value)){
-    warnings+="El numero no es valido <br>";
-    entrar=true;
-  }else{
-    parrafo.innerHTML="enviado";
-    }
-    if(comentario.value===""){
-      warnings+="Por favor escribe un comentario";
-      entrar=true;
-      if ()
-    }
-  if (entrar){
-    parrafo.innerHTML= warnings;
-  } else{
-    parrafo.innerHTML="enviado";
-  }
-  
-});
-
-
+Posteriormente, la función verifica si el valor ingresado por el usuario en el 
+campo de entrada cumple con los criterios especificados en la expresión regular regex.
+ Si el valor no cumple con estos criterios, se agrega la clase "wrongInput" 
+ al campo de entrada y la función devuelve false. Si el valor cumple con los criterios,
+  se elimina la clase "wrongInput" del campo de entrada y la función devuelve true.
 */
 
+function isValid(input, type) {
+	const options = {
+		"names": /^[A-Z][a-z]*(\s[A-Z][a-z]*)?$/,
+		"fullName": /^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+(?: [a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+)*$/,
+		"email": /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+		"password": /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
+		"username": /^[a-zA-Z]+[a-zA-Z0-9]{5,}$/,
+		"phone": /^\d{10}$/
+	}
+	const regex = options[type];
+
+	if (!regex.test(input.value)){
+		input.classList.add("wrongInput");
+		return false;
+	} else {
+		input.classList.remove("wrongInput");
+		return true;
+	}
+}
+
+const formSignUp = document.querySelector("form#UserData");
+if (formSignUp != null){
+	formSignUp.addEventListener("submit", function (evt) {
+	evt.preventDefault();
+
+	const name = document.querySelector("#name");
+	isValid(name, "names");
+
+	const lastName = document.querySelector("#lastName");
+	isValid(lastName, "names");
+
+	const userName = document.querySelector("#username");
+	isValid(userName, "username");
+
+	const eMail = document.querySelector("#email");
+	isValid(eMail, "email");
+
+	const password1 = document.querySelector("#password1");
+	isValid(password1, "password");
+	
+	const password2 = document.querySelector("#password2");
+	isValid(password2, "password");
 
 
-
-
-
-
-
-
-/*
-form.addEventListener("submit", e=> {
-  e.preventDefault();
-  checkInputs();
+	if (password1.value != password2.value){
+		password1.classList.add("wrongInput");
+		password2.classList.add("wrongInput");
+	} 
 });
-
-function checkInputs(){
-  const usernameValue = nombre.value.trim();
-  const emailValue= email.value.trim();
-  const numeroValue=numero.value.trim();
-  const comentarioValue=comentario.value.trim();
-
-  if (usernameValue === ""){
-    setErrorFor(nombre, "Por favor escriba su nombre");
-  }else{
-    setSuccessFor(nombre);
-  }
-  if (emailValue===""){
-    setErrorFor(email, "Poner su Correo electrónico");
-  } else if (!isEmail(emailValue)){
-    setErrorFor(email, "No es un correo electrónico valido");
-  } else {
-    setSuccessFor(email);
-  }
-  if (numeroValue===""){
-   setErrorFor(numero, "No es un número valido");
-  }else if (!isnumero(numeroValue)){
-    setSuccessFor(numero);
-  }
-  if (comentarioValue===""){
-    setErrorFor(comentario, "Escribe un comentario por favor");
-  } else {
-    setSuccessFor(comentario);
-  }
-};
-
-function setErrorFor(input,message){
-  const formcontrol=input.parentElement;
-  const todoserrores1= formcontrol.querySelector("#todoserrores");
-  formcontrol.className= "form-control error";
-  error.innerText=message;
 }
 
-/*
-function setErrorFor(input, message){
-  const formcontrol= input.parentElement;
-  const errores=document.querySelector("#todoserrores");
-*/
-/*
-}
-function setSuccessFor(input){
-  const formcontrol=input.parentElement;
-  formcontrol.className="form-control error";
+
+const formLogIn = document.querySelector("form#loginForm");
+if(formLogIn != null){
+	formLogIn.addEventListener("submit", function (evt) {
+		evt.preventDefault();
+	
+		const username = document.querySelector("#username");
+		isValid(username, "username");
+	
+		const password = document.querySelector("#password");
+		isValid(password, "password");
+	
+	});
 }
 
-function isEmail(email) {
-  return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(
-    email
-  );
+const formContactUs = document.querySelector("form#contactUs");
+if(formContactUs != null){
+	formContactUs.addEventListener("submit", (event) =>{
+		event.preventDefault();
+
+		const fullName = document.querySelector("#name");
+		isValid(fullName, "fullName");
+
+		const eMail = document.querySelector("#email");
+		isValid(eMail, "email");
+
+
+		const phone = document.querySelector("#phone");
+		isValid(phone, "phone");
+
+		const coment = document.querySelector("#coment");
+
+	})
 }
-function isnumero(numero) {
-  return /^\d{10,10}$/.test(
-    numero
-  );
-}
-*/

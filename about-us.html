@@ -229,39 +229,39 @@
         <!--Formulario de contacto-->
         <div class="container mb-5 mt-3" id="form-box">
 
-            <form id="form">
-                <div class="allErrors" id="error"></div>
+            <form id="contactUs">
+                
                 <div class="formcontrol">
                     <label>Nombre Completo</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Nombre Completo"
-                        class="form-placeholders">
+                    <input type="text" id="name" name="nombre" placeholder="Nombre Completo"
+                        class="form-placeholders"  required>
 
                 </div>
 
                 <label>Teléfono</label>
-                <div class="allErrors" id="error2"></div>
-                <div class="formcontrol">
-                    <input type="number" id="numero" name="numero" placeholder="Teléfono (+52)" class="form-placeholders">
+                
+                <div class="formcontrol" >
+                    <input type="number" id="phone" name="numero" placeholder="Teléfono (+52)" class="form-placeholders"  required>
 
 
                     <label>Email</label>
-                    <div class="allErrors" id="error3"></div>
+                    
                     <div class="formcontrol">
                         <input type="email" id="email" name="email" placeholder="Correo Electrónico"
-                            class="form-placeholders">
+                            class="form-placeholders"  required>
 
                     </div>
 
                     <label>Comentario</label>
-                    <div class="allErrors" id="error4"></div>
+                    
                     <div class="formcontrol">
-                        <input type="text" id="comentario" name="comentario" placeholder="Comentario"
-                            class="form-placeholders">
+                        <input type="text" id="coment" name="comentario" placeholder="Comentario"
+                            class="form-placeholders" required>
                         <div class="error">
                         </div>
                     </div>
 
-                    <input type="submit" value="Enviar" class="btn boton btn-lg end-0">
+                    <button type="submit" class="btn boton btn-lg end-0">Enviar</button>
 
             </form>
         </div>
