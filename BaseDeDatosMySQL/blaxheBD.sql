@@ -1,5 +1,8 @@
+-- USE balxhebd;
+-- USE bdbalxhe;
 select * from compania;
 select * from productos;
+
 -- Agregamos las compañías de cerveza en la columna compania
 INSERT INTO compania
 	(compania)
@@ -10,7 +13,7 @@ INSERT INTO compania
 
 -- Agregamos las marcas de cerveza en la columna marcas
 INSERT INTO productos
-	(nombreProducto, precio, descripcion, volumen, gradosAlc, tipo, FK_idCompania)
+	(nombreProducto, precio, descripcion, volumen, gradosAlc, tipo, compania_idCompania)
     VALUES
     -- Grupo Modelo
     ('Barrilito', 10.0, 'Cerveza elaborada con materias primas de alta calidad, color dorado brillante y aroma suave.', 325, 3.4,'Pilsener',1),
@@ -38,3 +41,4 @@ INSERT INTO productos
     -- Lineas para correción de error en la FK 
 -- SET FOREIGN_KEY_CHECKS=0;
 -- SHOW GLOBAL VARIABLES LIKE 'FOREIGN_KEY_CHECKS';
+
