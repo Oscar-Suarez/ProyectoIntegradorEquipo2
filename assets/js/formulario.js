@@ -85,6 +85,18 @@ if(formLogIn != null){
 	});
 }
 
+const forgotPassword = document.querySelector("form#forgotP");
+if(forgotPassword != null){
+	forgotPassword.addEventListener("submit", function (evt) {
+		evt.preventDefault();
+	
+		const mail = document.querySelector("#correo");
+		if(isValid(mail, "email")){
+			alert("Se ha enviado un correo para recuperar su contraseña")
+		}else alert("Favor de ingresar un correo válido")
+	});
+}
+
 const formContactUs = document.querySelector("form#contactUs");
 if(formContactUs != null){
 	formContactUs.addEventListener("submit", (event) =>{
