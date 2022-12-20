@@ -1,4 +1,20 @@
 //Funciones 
+
+/*
+Esta función cambia el tema de un sitio web entre modo claro y oscuro. 
+Para ello, se define un objeto que contiene las variables CSS que se 
+utilizarán para cambiar el tema de la página. Luego, se selecciona el 
+elemento :root del documento HTML, que es el elemento raíz del árbol DOM 
+y que se utiliza para definir variables CSS globales. A continuación, 
+se establece el valor del tema a utilizar en la variable theme, que se 
+obtiene a partir de la variable mode (si mode es verdadero, 
+    se utiliza el tema oscuro, si es falso, se utiliza el tema claro).
+
+Luego, se itera sobre el objeto globalColors[theme], que contiene las 
+variables CSS del tema seleccionado, y se establecen sus valores en el 
+elemento :root. Por último, se guarda el estado del tema (modo claro o oscuro) 
+en una cookie para que pueda ser recuperado en futuras visitas a la página.
+*/
 function darkMode(mode) { //Función para cambiar el tema del sitio Web
     const globalColors = {
         light: {
@@ -42,25 +58,35 @@ function darkMode(mode) { //Función para cambiar el tema del sitio Web
 
 }
 
-function getCookie(cname) { //Funcion para obtener el valor de un parametro (cname) dentro de la cookie
+function getCookie(cname) { 
+    // Añade el nombre de la cookie a la cadena de búsqueda
     let name = cname + "=";
-    let decodedCookie = decodeURIComponent(document.cookie); //obtenemos la Cookie
-    let ca = decodedCookie.split(';'); //La separamos cada "punto y coma"
+
+    // Decodifica la cadena de cookies
+    let decodedCookie = decodeURIComponent(document.cookie); 
+
+    // Divide la cadena en una matriz de cookies individuales
+    let ca = decodedCookie.split(';'); 
+
+    // Recorre la matriz de cookies
     for (let i = 0; i < ca.length; i++) {
         let c = ca[i];
 
-        while (c.charAt(0) == ' ') { // mientras el primer caracter este vacio
-            c = c.substring(1);       // tomamos el resto de la cadena de texto 
-            
+        // Quita los espacios en blanco al principio de la cookie
+        while (c.charAt(0) == ' ') { 
+            c = c.substring(1);      
         }
 
-        if (c.indexOf(name) == 0) { // comprobamos si ya llegamos a la posicion donde se encuentra el parametro que buscamos en la cookie.
-
-            return c.substring(name.length, c.length); //Retornamos el valor del paremetro que buscamos como string
+        // Si se encuentra la cookie, se devuelve su valor
+        if (c.indexOf(name) == 0) { 
+            return c.substring(name.length, c.length); 
         }
     }
+
+    // Si no se encuentra la cookie, se devuelve null
     return null;
 }
+
 
 function animation() { //Función para anadir y quitar clases a ciertor elementos. Permite animarlos con CSS
     togglerMenu.classList.toggle("change"); //Se agrega la clase .change para animar con CSS el boton del menu desplegable 
@@ -184,14 +210,21 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                         </span>
                         Account</a>
                 </li>
+                <li><a href="./user-page.html" class="beforeLogIn">
+                    <span class="material-symbols-outlined">
+                        package
+                    </span>
+                        Mis Pedidos</a>
+                </li>
                 <li class="afterLogInRemove">
                     <a href="./signup.html">
                     <span class="material-symbols-outlined">
                         person_add
                     </span>
-                    Sign Up
+                    Registrarse
                     </a>
                 </li>
+
 
 
                 <li class="afterLogInRemove">
@@ -199,7 +232,7 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                     <span class="material-symbols-outlined">
                         login
                     </span>
-                    Log in
+                    Iniciar Sesión
                     </a>
                 </li>     
                 
@@ -211,6 +244,13 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                             </div>
                         </button>
                 </li>   
+                    <li id="CloseButton" class="beforeLogIn">
+                        <span class="material-symbols-outlined">
+                        logout
+                        </span>
+                        <h>Cerrar Sesión</h>
+                            
+                    </li>
             
             </ul>
             <hr>
@@ -402,7 +442,7 @@ function ageChecker (mode) {
 
         botonAceptar.addEventListener('click', ()=>{
             aviso.classList.add('activo');
-            document.cookie = "isAdult = true;";
+            document.cookie = "isAdult = true;"; //guia
         });
     }
 }
@@ -412,8 +452,8 @@ function ageChecker (mode) {
 //0-. Definir la cookie.
 if (!document.cookie) { //Si la cookie no existe
     document.cookie = "statusDarkMode = false;";
-    document.cookie = "isAdult = false;";
-    document.cookie = "ActiveSesion = true;"
+    document.cookie = "isAdult = false;";  
+    document.cookie = "ActiveSesion = true;" 
 }
 
 console.log()
@@ -514,10 +554,12 @@ const closeSesion = document.querySelector("#CloseSesion");
     })
 }
 
+
+//Carrusel
 let items = document.querySelectorAll('#carouselMultiple .carousel-item')
 
-
-items.forEach((el) => {
+if (items != null){
+    items.forEach((el) => {
     
     var slides = items.length;
     let next = el.nextElementSibling;
@@ -536,6 +578,8 @@ document.querySelector('#carouselMultiple').onresize = (event) => {
         console.log("yes");
     }
 };
+
+}
 
 
 
