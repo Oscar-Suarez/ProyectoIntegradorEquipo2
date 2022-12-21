@@ -10,7 +10,7 @@ let code = `
                     <div class="card-body">
                         <h5 class="card-title">XX Lager</h5>
                         <p class="card-text">La cerveza más mamadora lista para ser entregada
-                            tan fria como el corazon del que se fue por cigarros.
+                            tan fría como el corazon del que se fue por cigarros.
                         </p>
                         <div class="me-3" id="precio-cantidad">
                             <div class="h6">
