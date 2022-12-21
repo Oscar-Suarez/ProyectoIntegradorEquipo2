@@ -820,3 +820,16 @@ h1, h2, h3, h4, h5, h6{
      }
 
     }
+
+    /*Estilos para los errores en la validacion de formulario en sign */
+    #fechas{ /*Esto viene de del html, el color de "fecha de nacimiento" se combinaba con el color rojo de los errores, por eso se agregó un estilo especfífico para esto*/
+        font-family: 'Ubuntu', sans-serif;
+        color:black;
+     }
+    .todoserrores{
+        font-family: 'Ubuntu', sans-serif;
+        font-size: small;
+        color:red;
+     }
+
+     
