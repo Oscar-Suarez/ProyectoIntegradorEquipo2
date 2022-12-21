@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=0.85">
 
     <link rel="icon" type="image/x-icon" href="./assets/img/LogoBalxhe.png">
     <!--FavIcon-->
@@ -17,204 +17,261 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <!--Material Icons by Google-->
 
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
 
     <title>Carrito de compras- Balxhe</title>
 </head>
 
 <body>
-    <div id="navbar">
-
-    </div>
+    <div id="navbar"></div>
     <!--Con JS se agregará la NavBar-->
+    <div id="page-content">
 
-    <div class="container">
-        <!--El contenido de este DIV es temporal-->
-        <br>
-    </div>
-    <div id="info"></div>
-    </div>
+        <div id="LateralBar"></div>
+        <!--Con JS se agregará la LateralBar-->
 
-    <!--Contenedor principal-->
-    <div class="container" id="principalContainer">
-        <!--Contenedor de las columnas de usuario y orden -->
-        <div class="row">
+        <!--Contenedor principal-->
+        <div class="container-fluid mt-3" id="Contents">
+            <!--Contenedor de las columnas de usuario y orden -->
+            <div class="row">
+                <div class="col-lg-7 order-lg-2 mb-5">
+                    <!--Contenedor de la orden-->
+                    <div class="h4 m-2 mb-3 titulo">Tu Orden</div>
+                    <div class="p-2" id="Order">
 
-            <!--Columna de usuario-->
-            <div class="col-md-7" id="user-column">
+                        <div class="orderContainer p-2">
 
-                <!--BOTÓN INICIAR SESIÓN-->
-                <button type="button" class="btn btn-primary btn-lg" id="loginbtn">INICIAR SESIÓN</button>
-
-                <!--ACCORDION DE BOOTSTRAP-->
-                <div class="pricipalAccordion" id="accordionPanelsStayOpenExample">
-                    <!--USUARIO-->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-
-                            <!--BOTÓN DE USUARIO-->
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
-                                aria-controls="panelsStayOpen-collapseOne" id="btn">
-                                USUARIO
-                            </button>
-
-                        </h2>
-                        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
-                            aria-labelledby="panelsStayOpen-headingOne">
-                            <ul id="UserList">
-                                <!--EMAIL CONTENEDOR-->
-                                <li id="email">Correo electrónico: </li>
-                                <!--USERNAME CONTENEDOR-->
-                                <li id="username">Nombre de usuario: </li>
-                            </ul>
+                        </div>
+                        <hr class="mx-2">
+                        <!--PRECIOS CONTENEDOR-->
+                        <div class="me-3" id="desglosePrecios">
+                            <div class="h6 px-3"><h>Subtotal: </h><span>$ 1000.00 MXN</span></div>
+                            <div class="h6 px-3"><h>Descuentos: </h><span>$ 250.00 MXN</span></div>
+                            <div class="h6 px-3"><h>Costo de Envío: </h><span>$ 50.00 MXN</span></div>
+                            <div class="h6 px-3"><h>Impuestos: </h><span>$ 160.00 MXN</span></div>
+                            <hr class="ms-3">
+                            <div class="h5 px-3"><h>Total: </h><span>$ 1460.00 MXN</span></div>
+                        </div>
+                        <div class="container mt-3 mb-2 text-center">
+                            <button class="boton mb-2">Realizar pago</button>
                         </div>
                     </div>
+                </div>
 
-
-                    <!--INFORMACIÓN DE CONTACTO-->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-
-                            <!--BOTÓN DE INFORMACIÓN DE CONTACTO-->
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
-                                aria-controls="panelsStayOpen-collapseTwo" id="btn">
-                                INFORMACIÓN DE CONTACTO
-                            </button>
-
-                        </h2>
-                        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
-                            aria-labelledby="panelsStayOpen-headingTwo">
-                            <div id="contactContainer">
-                                <ul id="contactList">
-                                    <!--NOMBRE CONTENEDOR-->
-                                    <li id="name">Nombre: </li>
-                                    <!--APELLIDO CONTENEDOR-->
-                                    <li id="lastname">Apellido: </li>
-                                    <!--No. TELEFONO CONTENEDOR-->
-                                    <li id="phone">Número de telefóno: </li>
-                                </ul>
+                <div class="col-lg-5 order-lg-1  mb-5" id="user-column">
+                    <!--Columna de usuario-->
+                    <div class="h4 m-2 mb-3 titulo">Tus Datos</div>
+                    <div id="InfoAccount">
+                        <div id="header">
+                            <div id="HeaderUserPhoto2">
+                                <div class="shopping-cart-page" id="UserPhoto2"></div>
                             </div>
-                        </div>
-                    </div>
 
-                    <!--DIRECCIÓN DE ENVÍO-->
-                    <div class="accordion-item">
-                        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-
-                            <!--BOTÓN DE DIRECCIÓN DE ENVÍO-->
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
-                                aria-controls="panelsStayOpen-collapseThree" id="btn">
-                                DIRECCIÓN DE ENVÍO
-                            </button>
-
-                        </h2>
-                        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
-                            aria-labelledby="panelsStayOpen-headingThree">
-                            <div id="adressContainer">
-                                <ul id="adressList">
-                                    <!--CALLE CONTENEDOR-->
-                                    <li id="street">Calle: </li>
-                                    <!--COLONIA CONTENEDOR-->
-                                    <li id="nbh">Colonia: </li>
-                                    <!--HORA DE ENVÍO CONTENEDOR-->
-                                    <li id="hde">Hora de envío: </li>
-                                    <!--INDICACIONES ESPECIALES CONTENEDOR-->
-                                    <li id="ei">Indicaciones especiales: </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!--SECCIÓN DE ENVÍOS-->
-
-                <h2 id="shippingText">TIPO DE ENVÍO</h2>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                        Envío standard:
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-                    <label class="form-check-label" for="flexRadioDefault2">
-                        Envío express:
-                    </label>
-                </div>
-            </div>
-
-
-
-            <div class="col-md-5">
-                <!--Contenedor de la orden-->
-                <div class="row">
-                    <h2 id="orderText">TU ORDEN</h2>
-
-                    <div class="orderContainer">
-                        <div class="card mb-3" style="max-width: 540px;" id="productcard1">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="..." class="img-fluid rounded-start" alt="...">
+                            <div id="HeaderInfo">
+                                <div class="h4" id="UserName">
+                                    WalleMontero97
                                 </div>
 
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a
-                                            natural lead-in to additional content. This content is a little bit longer.
-                                        </p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small>
-                                        </p>
+                                <div class="h6 ms-2" id="e-Mail">
+                                    <div id="e-Mail-1">montero</div>
+                                    <div id="e-Mail-2">@walle.mx</div>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+
+
+                        <!--ACCORDION DE BOOTSTRAP-->
+                        <div class="Accordion  accordion-flush" id="accordionPanelsStayOpenExample">
+                            <!--USUARIO-->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+
+                                    <!--BOTÓN DE USUARIO-->
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                        aria-controls="panelsStayOpen-collapseOne" id="btn">
+                                        Formas de Pago
+                                    </button>
+
+                                </h2>
+                                <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show p-3"
+                                    aria-labelledby="panelsStayOpen-headingOne">
+                                    <div class="">
+                                        <div class="form-check">
+                                            <input id="credit" name="paymentMethod" type="radio"
+                                                class="form-check-input" checked="" required="">
+                                            <label class="form-check-label" for="credit">Tarjeta de
+                                                crédito/débito</label>
+                                        </div>
+
+
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="     col-lg-12 col-md-6 mb-2">
+                                            <label for="cc-name" class="form-label">Nombre en la tarjeta</label>
+                                            <input type="text" class="form-control form-placeholders" id="cc-name"
+                                                placeholder="" required="">
+                                            <small class="text-muted">Nombre completo como se muestra en la
+                                                tarjeta</small>
+                                            <div class="invalid-feedback">
+                                                Se requiere el nombre en la tarjeta
+                                            </div>
+                                        </div>
+                                        <div class="     col-lg-12 col-md-6 mb-2">
+                                            <label for="cc-number" class="form-label">Número de tarjeta de
+                                                crédito</label>
+                                            <input type="text" class="form-control form-placeholders" id="cc-number"
+                                                placeholder="" required="">
+                                            <div class="invalid-feedback">
+                                                Se requiere número de tarjeta de crédito
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2 mb-2">
+                                        <div class="col-md-6 mb-2">
+                                            <label for="cc-expiration" class="form-label">Vencimiento</label>
+                                            <input type="text" class="form-control form-placeholders" id="cc-expiration"
+                                                placeholder="" required="">
+                                            <div class="invalid-feedback">
+                                                Fecha de vencimiento requerida
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 mb-2">
+                                            <label for="cc-cvv" class="form-label">CVV</label>
+                                            <input type="text" class="form-control form-placeholders" id="cc-cvv"
+                                                placeholder="" required="">
+                                            <div class="invalid-feedback">
+                                                Código de seguridad requerido
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="boton mb-2" id="btnInfo">Guardar información</button>
+                            </div>
+
+
+
+
+                            <!--INFORMACIÓN DE CONTACTO-->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+
+                                    <!--BOTÓN DE INFORMACIÓN DE CONTACTO-->
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseTwo" id="">
+                                        Información de Contacto
+                                    </button>
+
+                                </h2>
+                                <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingTwo">
+                                    <div id="contactContainer">
+                                        <ul class="list-group list-group-flush" id="contactList">
+
+                                            <!--NOMBRE CONTENEDOR-->
+                                            <li class="list-group-item">
+                                                Nombre(s):<span id="name">Walbertho Efrain</span>
+                                            </li>
+
+                                            <!--APELLIDO CONTENEDOR-->
+                                            <li class="list-group-item">
+                                                Apellidos:<span id="lastname">Montero Cervantes</span>
+                                            </li>
+
+                                            <!--No. TELEFONO CONTENEDOR-->
+                                            <li class="list-group-item">
+                                                Número de telefóno:<span id="phone">44-3492-1685</span>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="card mb-3" style="max-width: 540px;" id="productcard2">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="..." class="img-fluid rounded-start" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card title</h5>
-                                        <p class="card-text">This is a wider card with supporting text below as a
-                                            natural lead-in to additional content. This content is a little bit longer.
-                                        </p>
-                                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small>
-                                        </p>
+                            <!--DIRECCIÓN DE ENVÍO-->
+                            <div class="accordion-item">
+                                <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+
+                                    <!--BOTÓN DE DIRECCIÓN DE ENVÍO-->
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                        data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+                                        aria-controls="panelsStayOpen-collapseThree" id="">
+                                        Datos de Envío
+                                    </button>
+
+                                </h2>
+                                <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="panelsStayOpen-headingThree">
+                                    <div id="adressContainer">
+                                        <ul class="list-group list-group-flush" id="adressList">
+
+                                            <!--CALLE CONTENEDOR-->
+                                            <li class="list-group-item">
+                                                Calle:<span id="street">Av. Fuentes de las Rosas</span>
+                                            </li>
+
+                                            <!--COLONIA CONTENEDOR-->
+                                            <li class="list-group-item">
+                                                Colonia:<span id="nbh">Fuentes de Morelia</span>
+                                            </li>
+
+                                            <!--HORA DE ENVÍO CONTENEDOR-->
+                                            <li class="list-group-item">
+                                                Hora de Envio:<span id="sendHour">10:56 P.M.</span>
+                                            </li>
+
+                                            <!--INDICACIONES ESPECIALES CONTENEDOR-->
+                                            <li class="list-group-item">
+                                                Indicaciones Especiales:<span id="ei">Frente a una dispensadora de agua
+                                                    potable Manantiales, casa naranja con portones negros.</span>
+                                            </li>
+                                        </ul>
+                                        <div class="p-3">
+                                            <div class="h4">TIPO DE ENVÍO</div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault1">
+                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                    Envío standard: $50
+                                                </label>
+                                            </div>
+
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                    id="flexRadioDefault2" checked>
+                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                    Envío express: $99
+                                                </label>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
+
+                            <div id="botton">
+
+                            </div>
                         </div>
                     </div>
-
                 </div>
 
-                <div class="card" id="totalContainer">
-                    <!--PRECIOS CONTENEDOR-->
-                    <div class="card-body">
-                        <h6>Subtotal:</h6>
-                        <h6>Descuento:</h6>
-                        <h6>Envío:</h6>
-                        <h6>Total:</h6>
-                    </div>
-                </div>
+
+
+
             </div>
-
-
         </div>
     </div>
 
 
-
-
-
-
+    
     <script src="./assets/js/scripts.js"></script>
+    <script src="./assets/js/shoppingCart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
@@ -222,7 +279,3 @@
 </body>
 
 </html>
-
-
-
-
