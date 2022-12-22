@@ -1531,7 +1531,11 @@ div.spacer {
 }
 
 .contenedorVision {
+<<<<<<< Updated upstream
     background-image: url(https://i.postimg.cc/59qLxPyB/amigos-Cerveza-Secundario.jpg);
+=======
+    background-image: url(https://i.postimg.cc/gJjQYwqR/catedral-Morelia.jpg);
+>>>>>>> Stashed changes
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode:multiply;
