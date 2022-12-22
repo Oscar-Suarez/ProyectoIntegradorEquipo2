@@ -1507,6 +1507,8 @@ div.spacer {
 
 .texto {
     font-size: 1.2rem;
+    font-family: 'Montserrat';
+    font-weight: 500;
     color: #f0f0f0;
     text-justify: inter-character;
 }
