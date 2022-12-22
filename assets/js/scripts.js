@@ -54,7 +54,7 @@ function darkMode(mode) { //Función para cambiar el tema del sitio Web
     }
 
 
-    document.cookie = "statusDarkMode = " + mode + ";path=/"; //Guardamos el estado del DarkMode en una cookie.
+    document.cookie = "statusDarkMode = " + mode + ";"; //Guardamos el estado del DarkMode en una cookie.
 
 }
 
