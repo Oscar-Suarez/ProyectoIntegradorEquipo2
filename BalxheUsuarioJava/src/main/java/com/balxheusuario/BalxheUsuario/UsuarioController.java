@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.DeleteMapping;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -40,12 +40,6 @@ public class UsuarioController{
 		public Usuario getUsuario(@PathVariable ("idUsuario") Long idUsuario) {
 			return usuarioService.getUsuario(idUsuario);
 		}
-
-		//DELETE Mapping
-		@DeleteMapping
-		public void deleteUsuario(@PathVariable ("idUsuario") Long idUsuario) {
-			usuarioService.deleteUsuario(idUsuario);
-		}//deleteUsuario
 		
 		//POST Mapping
 		@PostMapping

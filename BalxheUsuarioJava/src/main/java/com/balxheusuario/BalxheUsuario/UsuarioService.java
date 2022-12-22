@@ -28,15 +28,6 @@ public class UsuarioService {
 	}
 	
 	
-	//Metodo DELETE para un usuario por id
-	public void deleteUsuario(Long idUsuario) {
-		if(usuarioRepository.existsById(idUsuario)) { //primero reviso que el user exista
-			usuarioRepository.deleteById(idUsuario); //si existe, lo borro
-		}else { //si recibo algo diferente a un numero, disparo la excepcion
-			throw new IllegalStateException("El usuario con el id solicitado no existe, revisa que estes ingresando un valor numérico");
-		}
-	}
-	
 	
 	//Metodo POST para agregar un usuario
 	public void addUsuario(Usuario user) { //guardando entidades del tipo usuario
