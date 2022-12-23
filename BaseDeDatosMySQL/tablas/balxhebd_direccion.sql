@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: balxhebd
+-- Host: localhost    Database: balxhebd
 -- ------------------------------------------------------
 -- Server version	8.0.31
 
@@ -35,7 +35,7 @@ CREATE TABLE `direccion` (
   PRIMARY KEY (`idDireccion`),
   UNIQUE KEY `idDireccion_UNIQUE` (`idDireccion`),
   KEY `fk_direccion_usuario1_idx` (`usuario_idUsuario`),
-  CONSTRAINT `fk_direccion_usuario1` FOREIGN KEY (`usuario_idUsuario`) REFERENCES `usuario` (`idUsuario`)
+  CONSTRAINT `fk_direccion_usuario1` FOREIGN KEY (`usuario_idUsuario`) REFERENCES `usuario` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -57,4 +57,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-20 16:15:44
+-- Dump completed on 2022-12-22 20:10:36

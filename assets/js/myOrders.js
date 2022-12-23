@@ -24,6 +24,13 @@ var datos = {
                 descripcion: "La kawamita es una cerveza tradicional en Tacambaro, es una cerveza fuerte con 20 grados de alcohol.",
                 cantidad: 2,
                 precioUnitario: 80
+            },
+            4 : {
+                nombre: "Kawamita Mamadora",
+                img: "./assets/img/productos/kawamita.jpg",
+                descripcion: "La kawamita ULTRA MAMADORA es una cerveza tradicional en Tacambaro, es una cerveza fuerte con 20 grados de alcohol.",
+                cantidad: 10,
+                precioUnitario: 800
             }
         },
         total: (20*25) + (3*75) + (2*80)
