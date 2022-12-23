@@ -573,11 +573,7 @@ if (items != null){
     }
 })
 
-document.querySelector('#carouselMultiple').onresize = (event) => {
-    if(screen.width < 576){
-        console.log("yes");
-    }
-};
+
 
 }
 

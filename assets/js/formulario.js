@@ -21,7 +21,6 @@ campo de entrada cumple con los criterios especificados en la expresión regular
 
 function isValid(input, type) {
 	const options = {
-		"names": /^[A-Z][a-z]*(\s[A-Z][a-z]*)?$/,
 		"fullName": /^[a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+(?: [a-zA-ZñÑáéíóúÁÉÍÓÚüÜ]+)*$/,
 		"email": /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 		"password": /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})/,
@@ -45,28 +44,21 @@ if (formSignUp != null){
 	evt.preventDefault();
 	let validValues = [];
 
-
-
-
-
 	const name = document.querySelector("#name");
-	validValues.push(isValid(name, "names"));
-
-	const lastName = document.querySelector("#lastName");
-	validValues.push(isValid(lastName, "names"));
-
 	const userName = document.querySelector("#username");
-	validValues.push(isValid(userName, "username"));
-
 	const eMail = document.querySelector("#email");
-	validValues.push(isValid(eMail, "email"));
-
+	const birthday = document.querySelector("#birthday");
+	const phoneNumber = document.querySelector("#phoneNumber");
 	const password1 = document.querySelector("#password1");
-	validValues.push(isValid(password1, "password"));
-	
 	const password2 = document.querySelector("#password2");
+	
+	validValues.push(isValid(name, "fullName"));
+	validValues.push(isValid(userName, "username"));
+	validValues.push(isValid(eMail, "email"));
+	validValues.push(isValid(phoneNumber, "phone"));
+	validValues.push(isValid(password1, "password"));
 	validValues.push(isValid(password2, "password"));
-
+	
 
 	if (password1.value != password2.value){
 		password1.classList.add("wrongInput");
@@ -78,17 +70,41 @@ if (formSignUp != null){
 
 	const notValid = (element) => element == false;
 	if (!validValues.some(notValid)){
-		alert("datos enviados con exito");
-		location.href = "/login.html";
+		const datos = {
+			nombreYApellido: name.value, //Nombre y apellido
+			nombreUsuario: userName.value, //usuario
+			fecha: birthday.value, //fechaNacimiento
+			telefono: phoneNumber.value, // telefono
+			email: eMail.value, //Email
+			password: password1.value //Contrasenia
+		}
+		
+		//falta direccion del back end
+		fetch("http://localhost:8080/api/usuarios/", { //la direccion que creamos en JAVA
+		method: "POST", //el metodo que voy a utilizar porque estoy enviando informacion al servidor
+		headers:{
+			"Content-Type": "application/json" //Le decimos que el tipo de contenido que usamos es JSON
+		},
+		body: JSON.stringify(datos)//El cuerpo de mi solicitud debe cambiarse a string, para que el servidor lo pueda leer
+		})
+		.then((response) => response.text()) //Esta es la respuesta que nos da el servidor, es este caso la recibo como un texto. Lo hacemos asi por si en algun momento quiero mostrar ese texto en pantall (innerHTML o textContent).
+		.then((datos) => { //esta promesa es para poder mostrar si la conexion al servidor fue exitosa
+			console.log("Datos del usuario enviados al servidor", datos);
+			alert("Datos enviados con exito.\n Se redigirá a la pagina de Inicio de Sesión.");
+			location.href = "/login.html";
+		})
+		.catch((error) =>{  //Esta promesa es por si el servidor no responde. En este caso, mostramos un mensaje de error
+			console.log("Error al enviar los datos al servidor.", error);
+			alert("Algo sucedio con el registro, intenta de nuevo."); //Mostramos un mensaje de alerta en la pagina
+		});
+
+		
 
 	} else {
-		alert("Revisa los formularios marcados en rojo.")
-		
+		alert("Revisa los formularios marcados en rojo.");
 	}
 
-
-
-});
+	});
 }
 
 

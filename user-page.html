@@ -250,7 +250,60 @@
                                     </h2>
                                     <div id="flush-collapseThree" class="accordion-collapse collapse"
                                         aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                        <div class="accordion-body">Tarjeta de crédito</div>
+                                        <div class="accordion-body">
+                                            
+                                            <div class="">
+                                                <div class="form-check">
+                                                    <input id="credit" name="paymentMethod" type="radio"
+                                                        class="form-check-input" checked="" required="">
+                                                    <label class="form-check-label" for="credit">Tarjeta de
+                                                        crédito/débito</label>
+                                                </div>
+        
+        
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="     col-lg-12 col-md-6 mb-2">
+                                                    <label for="cc-name" class="form-label">Nombre en la tarjeta</label>
+                                                    <input type="text" class="form-control form-placeholders" id="cc-name"
+                                                        placeholder="" required="">
+                                                    <small class="text-muted">Nombre completo como se muestra en la
+                                                        tarjeta</small>
+                                                    <div class="invalid-feedback">
+                                                        Se requiere el nombre en la tarjeta
+                                                    </div>
+                                                </div>
+                                                <div class="     col-lg-12 col-md-6 mb-2">
+                                                    <label for="cc-number" class="form-label">Número de tarjeta de
+                                                        crédito</label>
+                                                    <input type="text" class="form-control form-placeholders" id="cc-number"
+                                                        placeholder="" required="">
+                                                    <div class="invalid-feedback">
+                                                        Se requiere número de tarjeta de crédito
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-2 mb-2">
+                                                <div class="col-md-6 mb-2">
+                                                    <label for="cc-expiration" class="form-label">Vencimiento</label>
+                                                    <input type="text" class="form-control form-placeholders" id="cc-expiration"
+                                                        placeholder="" required="">
+                                                    <div class="invalid-feedback">
+                                                        Fecha de vencimiento requerida
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 mb-2">
+                                                    <label for="cc-cvv" class="form-label">CVV</label>
+                                                    <input type="text" class="form-control form-placeholders" id="cc-cvv"
+                                                        placeholder="" required="">
+                                                    <div class="invalid-feedback">
+                                                        Código de seguridad requerido
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <button class="boton mt -2 mb-2" id="btnInfo">Guardar información</button>
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
