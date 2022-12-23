@@ -94,7 +94,7 @@ if (formSignUp != null){
 		.then((response) => response.text()) //Esta es la respuesta que nos da el servidor, es este caso la recibo como un texto. Lo hacemos asi por si en algun momento quiero mostrar ese texto en pantall (innerHTML o textContent).
 		.then((datos) => { //esta promesa es para poder mostrar si la conexion al servidor fue exitosa
 			alert("Datos enviados con exito.\n Se redigirá a la pagina de Inicio de Sesión.");
-			location.href = "/login.html";
+			location.href = "ProyectoIntegradorEquipo2/login.html";
 			
 		})
 		.catch((error) =>{  //Esta promesa es por si el servidor no responde. En este caso, mostramos un mensaje de error
@@ -133,7 +133,7 @@ if(formLogIn != null){
 					if (user["nombreUsuario"] == username.value && user["contrasenia"] == password.value ){
 						document.cookie = "Data_User = " + JSON.stringify(user) + ";"
 						document.cookie = "ActiveSesion = true;" 
-						location.href = "/index.html";
+						location.href = "ProyectoIntegradorEquipo2/index.html";
 						break;
 					} 
 				}
