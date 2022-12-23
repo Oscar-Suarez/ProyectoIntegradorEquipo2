@@ -244,14 +244,16 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                             </div>
                         </button>
                 </li>   
+                
                     <li id="CloseButton" class="beforeLogIn">
+                    
                         <span class="material-symbols-outlined">
                         logout
                         </span>
                         <h>Cerrar Sesión</h>
-                            
+                    
                     </li>
-            
+                </a>
             </ul>
             <hr>
             <ul>
