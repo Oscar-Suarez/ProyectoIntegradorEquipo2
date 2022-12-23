@@ -43,30 +43,51 @@ const formSignUp = document.querySelector("form#UserData");
 if (formSignUp != null){
 	formSignUp.addEventListener("submit", function (evt) {
 	evt.preventDefault();
+	let validValues = [];
+
+
+
+
 
 	const name = document.querySelector("#name");
-	isValid(name, "names");
+	validValues.push(isValid(name, "names"));
 
 	const lastName = document.querySelector("#lastName");
-	isValid(lastName, "names");
+	validValues.push(isValid(lastName, "names"));
 
 	const userName = document.querySelector("#username");
-	isValid(userName, "username");
+	validValues.push(isValid(userName, "username"));
 
 	const eMail = document.querySelector("#email");
-	isValid(eMail, "email");
+	validValues.push(isValid(eMail, "email"));
 
 	const password1 = document.querySelector("#password1");
-	isValid(password1, "password");
+	validValues.push(isValid(password1, "password"));
 	
 	const password2 = document.querySelector("#password2");
-	isValid(password2, "password");
+	validValues.push(isValid(password2, "password"));
 
 
 	if (password1.value != password2.value){
 		password1.classList.add("wrongInput");
 		password2.classList.add("wrongInput");
-	} 
+		validValues.push(false);
+	} else {
+		validValues.push(true);
+	}
+
+	const notValid = (element) => element == false;
+	if (!validValues.some(notValid)){
+		alert("datos enviados con exito");
+		location.href = "/login.html";
+
+	} else {
+		alert("Revisa los formularios marcados en rojo.")
+		
+	}
+
+
+
 });
 }
 
