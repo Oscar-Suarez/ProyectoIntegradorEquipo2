@@ -101,6 +101,16 @@ function animation() { //Función para anadir y quitar clases a ciertor elemento
         }, 300); //Usamos SetTimeOut definir un tiempo de espera y que aparezca la NavBar Desplegada.
         openMenu = !openMenu; //Cambie el estado de la variable a su contrario (false) --> (true)
     }
+
+    const closeSesionNavBar = document.querySelector("#closeSesionNavBar");
+    if(closeSesionNavBar != null){
+    closeSesionNavBar.addEventListener("click", () => {
+        document.cookie = "statusDarkMode = false;";
+        document.cookie = "isAdult = false;";
+        document.cookie = "ActiveSesion = false;";
+        document.cookie = "Data_User = none;";
+        })
+    }
 }
 
 function preventRefreshButton() {
@@ -245,14 +255,16 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                         </button>
                 </li>   
                 
-                    <li id="CloseButton" class="beforeLogIn">
+                    <a href="./index.html"  id="closeSesionNavBar">
+                        <li id="CloseButton" class="beforeLogIn">
                     
-                        <span class="material-symbols-outlined">
-                        logout
-                        </span>
-                        <h>Cerrar Sesión</h>
+                            <span class="material-symbols-outlined">
+                            logout
+                            </span>
+                            <h>Cerrar Sesión</h>
                     
-                    </li>
+                        </li>
+                    </a>
                 </a>
             </ul>
             <hr>
@@ -554,6 +566,6 @@ const closeSesion = document.querySelector("#CloseSesion");
         document.cookie = "isAdult = false;";
         document.cookie = "ActiveSesion = false;";
         document.cookie = "Data_User = none;";
-    })
-}
+        })
+    }
 
