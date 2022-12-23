@@ -208,7 +208,7 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                         <span class="material-symbols-outlined"  id="menuDesplegableIcons">
                             account_circle
                         </span>
-                        Account</a>
+                        Mi cuenta Balxhe</a>
                 </li>
                 <li><a href="./my-orders.html" class="beforeLogIn">
                     <span class="material-symbols-outlined">
