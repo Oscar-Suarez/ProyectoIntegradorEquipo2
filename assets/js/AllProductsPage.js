@@ -1,6 +1,6 @@
 
 
-fetch("http://localhost:8080/balxhe/Cervezas/")
+fetch("https://apibalxhe-production.up.railway.app/balxhe/Cervezas/")
     .then((response) => response.json())
     .then((products) => {
         for (const [index, beer] of Object.entries(products)) {

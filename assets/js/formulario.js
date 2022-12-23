@@ -84,7 +84,7 @@ if (formSignUp != null){
 		
 		
 		//falta direccion del back end
-		fetch("http://localhost:8080/api/usuarios/", { //la direccion que creamos en JAVA
+		fetch("https://apibalxhe-production.up.railway.app/api/usuarios/", { //la direccion que creamos en JAVA
 		method: "POST", //el metodo que voy a utilizar porque estoy enviando informacion al servidor
 		headers:{
 			"Content-Type": "application/json" //Le decimos que el tipo de contenido que usamos es JSON
@@ -126,7 +126,7 @@ if(formLogIn != null){
 	
 		if (!validValues.some(notValid)){
 
-			fetch("http://localhost:8080/api/usuarios/")
+			fetch("https://apibalxhe-production.up.railway.app/api/usuarios/")
 			.then((response) => response.json()) //Esta es la respuesta que nos da el servidor, es este caso la recibo como un texto. Lo hacemos asi por si en algun momento quiero mostrar ese texto en pantall (innerHTML o textContent).
 			.then((datos) => {
 				for (user of datos){
