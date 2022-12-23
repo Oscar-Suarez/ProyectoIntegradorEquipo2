@@ -453,7 +453,7 @@ function ageChecker (mode) {
 if (!document.cookie) { //Si la cookie no existe
     document.cookie = "statusDarkMode = false;";
     document.cookie = "isAdult = false;";  
-    document.cookie = "ActiveSesion = true;" 
+    document.cookie = "ActiveSesion = false;" 
 }
 
 console.log()
@@ -551,6 +551,7 @@ const closeSesion = document.querySelector("#CloseSesion");
         document.cookie = "statusDarkMode = false;";
         document.cookie = "isAdult = false;";
         document.cookie = "ActiveSesion = false;";
+        document.cookie = "Data_User = none;";
     })
 }
 
