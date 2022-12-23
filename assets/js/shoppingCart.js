@@ -1,31 +1,58 @@
+fetch("http://localhost:8080/balxhe/Cervezas/")
+    .then((response) => response.json())
+    .then((products) => {
+        let orderContainer = document.querySelector("div.orderContainer");
+        let subtotal = 0;
+        let descuentos = 0.10;
+        let envio = 50;
+        let impuestos = 0.16;
+        let total = 0;
 
-let code = `
-        <div class="card mb-3">
-            <div class="row">
-                <div class="col-sm-3 center">
-                    <img src="./assets/img/bottleBalxhe.png" class="img-fluid rounded-start">
-                </div>
+        for (const [index, beer] of Object.entries(products)) {
 
-                <div class="col-sm-9 p-">
-                    <div class="card-body">
-                        <h5 class="card-title">XX Lager</h5>
-                        <p class="card-text">La cerveza más mamadora lista para ser entregada
-                            tan fría como el corazon del que se fue por cigarros.
-                        </p>
-                        <div class="me-3" id="precio-cantidad">
-                            <div class="h6">
-                                <h>Precio: <span id="precioUnitario">$ 25.00 MXN</span></h>
-                                <h>Cantidad: <span id="cantidadUnidades">10 unidades</span></h>
+            if (index < 14 && index > 5){
+                let code = `
+                <div class="card mb-3">
+                    <div class="row">
+                        <div class="col-sm-3 center">
+                            <img src="./assets/img/productos/${beer["cervezaImg"]}" class="img-fluid rounded-start">
+                        </div>
+
+                        <div class="col-sm-9 p-">
+                            <div class="card-body">
+                                <h5 class="card-title">${beer["cervezaNombre"]}</h5>
+                                <p class="card-text" style="max-height: 28px; overflow: hidden;">${beer["cervezainfo"]}
+                                </p>
+                                <div class="me-3" id="precio-cantidad">
+                                    <div class="h6">
+                                        <h>Precio: <span id="precioUnitario">$ ${beer["cervezaPrecio"]} MXN</span></h>
+                                        <h>Cantidad: <span id="cantidadUnidades">${beer["cervezaStock"]} unidades</span></h>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-`;
+        `;
+        total += beer["cervezaPrecio"] * beer["cervezaStock"]
 
-let orderContainer = document.querySelector("div.orderContainer");
 
-for (let i=1; i <= 10; i++) {
-    orderContainer.innerHTML += code;
-}
+           
+        
+        orderContainer.innerHTML += code;
+            }
+            
+        }
+        const totalF = total + envio
+        const subtotalF =  totalF - (total * impuestos)
+        const impuestosF = totalF * impuestos
+
+        document.querySelector("span#total").innerHTML =  "$ " + totalF + " MXN"
+        document.querySelector("span#Envio").innerHTML = "$ " + envio + ".00 MXN"
+        document.querySelector("span#impuestos").innerHTML = "$ " + impuestosF + " MXN"
+        document.querySelector("span#subtotal").innerHTML = "$ " + subtotalF + " MXN"
+    })
+
+
+
+

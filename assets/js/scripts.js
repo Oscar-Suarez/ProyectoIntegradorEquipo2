@@ -208,9 +208,9 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                         <span class="material-symbols-outlined"  id="menuDesplegableIcons">
                             account_circle
                         </span>
-                        Account</a>
+                        Mi cuenta Balxhe</a>
                 </li>
-                <li><a href="./user-page.html" class="beforeLogIn">
+                <li><a href="./my-orders.html" class="beforeLogIn">
                     <span class="material-symbols-outlined">
                         package
                     </span>
@@ -244,14 +244,16 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                             </div>
                         </button>
                 </li>   
+                
                     <li id="CloseButton" class="beforeLogIn">
+                    
                         <span class="material-symbols-outlined">
                         logout
                         </span>
                         <h>Cerrar Sesión</h>
-                            
+                    
                     </li>
-            
+                </a>
             </ul>
             <hr>
             <ul>
@@ -453,7 +455,7 @@ function ageChecker (mode) {
 if (!document.cookie) { //Si la cookie no existe
     document.cookie = "statusDarkMode = false;";
     document.cookie = "isAdult = false;";  
-    document.cookie = "ActiveSesion = true;" 
+    document.cookie = "ActiveSesion = false;" 
 }
 
 console.log()
@@ -551,31 +553,7 @@ const closeSesion = document.querySelector("#CloseSesion");
         document.cookie = "statusDarkMode = false;";
         document.cookie = "isAdult = false;";
         document.cookie = "ActiveSesion = false;";
+        document.cookie = "Data_User = none;";
     })
 }
-
-
-//Carrusel
-let items = document.querySelectorAll('#carouselMultiple .carousel-item')
-
-if (items != null){
-    items.forEach((el) => {
-    
-    var slides = items.length;
-    let next = el.nextElementSibling;
-    for (var i = 1; i < slides; i++) {
-        if (!next) {
-            next = items[0]
-        }
-        let cloneChild = next.cloneNode(true)
-        el.appendChild(cloneChild.children[0])
-        next = next.nextElementSibling
-    }
-})
-
-
-
-}
-
-
 

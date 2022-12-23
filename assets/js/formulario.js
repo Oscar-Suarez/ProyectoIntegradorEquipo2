@@ -38,6 +38,8 @@ function isValid(input, type) {
 	}
 }
 
+const notValid = (element) => element == false;
+
 const formSignUp = document.querySelector("form#UserData");
 if (formSignUp != null){
 	formSignUp.addEventListener("submit", function (evt) {
@@ -68,18 +70,18 @@ if (formSignUp != null){
 		validValues.push(true);
 	}
 
-	const notValid = (element) => element == false;
+	
 	if (!validValues.some(notValid)){
 		const datos = {
 			nombreYApellido: name.value, //Nombre y apellido
 			nombreUsuario: userName.value, //usuario
-			fechaNacimiento: birthday.value.split("-").reverse().join(""), //fechaNacimiento
+			fechaNacimiento: birthday.value.split("-").join(""), //fechaNacimiento
 			telefono: phoneNumber.value, // telefono
 			correo: eMail.value, //Email
 			contrasenia: password1.value //Contrasenia
 		}
 
-		console.log(JSON.stringify(datos));
+		
 		
 		//falta direccion del back end
 		fetch("http://localhost:8080/api/usuarios/", { //la direccion que creamos en JAVA
@@ -91,7 +93,6 @@ if (formSignUp != null){
 		})
 		.then((response) => response.text()) //Esta es la respuesta que nos da el servidor, es este caso la recibo como un texto. Lo hacemos asi por si en algun momento quiero mostrar ese texto en pantall (innerHTML o textContent).
 		.then((datos) => { //esta promesa es para poder mostrar si la conexion al servidor fue exitosa
-			console.log("Datos del usuario enviados al servidor", datos);
 			alert("Datos enviados con exito.\n Se redigirá a la pagina de Inicio de Sesión.");
 			location.href = "/login.html";
 			
@@ -115,13 +116,31 @@ const formLogIn = document.querySelector("form#loginForm");
 if(formLogIn != null){
 	formLogIn.addEventListener("submit", function (evt) {
 		evt.preventDefault();
+		let validValues = [];
 	
 		const username = document.querySelector("#username");
-		isValid(username, "username");
+		validValues.push(isValid(username, "username"));
 	
 		const password = document.querySelector("#password");
-		isValid(password, "password");
+		validValues.push(isValid(password, "password"));
 	
+		if (!validValues.some(notValid)){
+
+			fetch("http://localhost:8080/api/usuarios/")
+			.then((response) => response.json()) //Esta es la respuesta que nos da el servidor, es este caso la recibo como un texto. Lo hacemos asi por si en algun momento quiero mostrar ese texto en pantall (innerHTML o textContent).
+			.then((datos) => {
+				for (user of datos){
+					if (user["nombreUsuario"] == username.value && user["contrasenia"] == password.value ){
+						document.cookie = "Data_User = " + JSON.stringify(user) + ";"
+						document.cookie = "ActiveSesion = true;" 
+						location.href = "/index.html";
+						break;
+					} 
+				}
+				
+			})
+		}
+
 	});
 }
 
