@@ -81,7 +81,7 @@ if (formSignUp != null){
 			contrasenia: password1.value //Contrasenia
 		}
 
-		console.log(JSON.stringify(datos));
+		
 		
 		//falta direccion del back end
 		fetch("http://localhost:8080/api/usuarios/", { //la direccion que creamos en JAVA
@@ -93,7 +93,6 @@ if (formSignUp != null){
 		})
 		.then((response) => response.text()) //Esta es la respuesta que nos da el servidor, es este caso la recibo como un texto. Lo hacemos asi por si en algun momento quiero mostrar ese texto en pantall (innerHTML o textContent).
 		.then((datos) => { //esta promesa es para poder mostrar si la conexion al servidor fue exitosa
-			console.log("Datos del usuario enviados al servidor", datos);
 			alert("Datos enviados con exito.\n Se redigirá a la pagina de Inicio de Sesión.");
 			location.href = "/login.html";
 			
@@ -126,15 +125,10 @@ if(formLogIn != null){
 		validValues.push(isValid(password, "password"));
 	
 		if (!validValues.some(notValid)){
-			const datos = {
-				nombreUsuario: username.value, //usuario
-				contrasenia: password.value //Contrasenia
-			}
 
 			fetch("http://localhost:8080/api/usuarios/")
 			.then((response) => response.json()) //Esta es la respuesta que nos da el servidor, es este caso la recibo como un texto. Lo hacemos asi por si en algun momento quiero mostrar ese texto en pantall (innerHTML o textContent).
 			.then((datos) => {
-				console.log(datos, typeof(datos));
 				for (user of datos){
 					if (user["nombreUsuario"] == username.value && user["contrasenia"] == password.value ){
 						document.cookie = "Data_User = " + JSON.stringify(user) + ";"
