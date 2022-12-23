@@ -93,6 +93,7 @@ if (formSignUp != null){
 		.then((datos) => { //esta promesa es para poder mostrar si la conexion al servidor fue exitosa
 			console.log("Datos del usuario enviados al servidor", datos);
 			alert("Datos enviados con exito.\n Se redigirá a la pagina de Inicio de Sesión.");
+			location.href = "/login.html";
 			
 		})
 		.catch((error) =>{  //Esta promesa es por si el servidor no responde. En este caso, mostramos un mensaje de error
