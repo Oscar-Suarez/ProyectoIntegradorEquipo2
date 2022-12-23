@@ -8,6 +8,7 @@ public class BalxheUsuarioApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(BalxheUsuarioApplication.class, args);
+		
 	}
 
 }

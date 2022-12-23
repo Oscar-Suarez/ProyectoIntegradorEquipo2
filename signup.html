@@ -35,23 +35,19 @@
 
         <form id="UserData" >
             <div class="row ">
-                <div class="col-lg-6 col-md-6 mb-2">
-                    <label for="name">Nombre (s) </label>
+                <div class="col-12 mb-2">
+                    <label for="name">Nombre completo </label>
                     <input class="form-placeholders" required placeholder="Nombre*" type="text" id="name" />
                 </div>
                 
-                <div class="col-lg-6 col-md-6 mb-2">
-                    <label for="lastName">Apellido (s) </label>
-                    <input class="form-placeholders" required placeholder="Apellido*" type="text" id="lastName" />
-                </div>
             </div>
 
             <div class="row">
-                <div class="col-lg-4 col-md-4 mb-2">
+                <div class="col-lg-5 col-md-5 mb-2">
                     <label for="username">Nombre de Usuario </label>
                     <input class="form-placeholders" required placeholder="Nombre de Usuario*" type="text" id="username" />
                 </div>
-                <div class="col-lg-8 col-md-8 mb-2">
+                <div class="col-lg-7 col-md-7 mb-2">
                     <label for="email">Correo Electronico</label>
                     <input class="form-placeholders" required placeholder="Correo electronico*" type="text"
                         id="email" />
@@ -62,24 +58,50 @@
             <div class="row">
                 <div class="col-12 mb-2">
                     <label for="">Fecha de Nacimiento </label>
-                    <input class="form-placeholders" required placeholder="fecha*" type="date" id="start"
+                    <input class="form-placeholders" required placeholder="fecha*" type="date" id="birthday"
                         name="trip-start" value="aaaa-mm-dd" min="1920-01-01" max="2004-12-31">
+                </div>
+                
+            </div>
+            <div class="row">
+                <div class="col-12 mb-2">
+                    <label for="">Telefono </label>
+                    <input class="form-placeholders" required placeholder="Numero telefonico*" type="number"
+                        id="phoneNumber" />
                 </div>
                 
             </div>
 
             <div class="row">
-                <div class="col-lg-6 col-md-6 mb-2">
+                <div class="col-md-6 mb-2">
                     <label for="password1">Contraseña</label>
                     <input class="form-placeholders" required placeholder="Contraseña*" type="password"
                         id="password1" />
                 </div>
                 <br>
-                <div class="col-lg-6 col-md-6 mb-2">
+                <div class="col-md-6 mb-2">
                     <label for="password2">Repetir Contraseña</label>
                     <input class="form-placeholders" required placeholder="Confirmar contraseña*" type="password"
                         id="password2" />
                 </div>
+            </div>
+            <div class="row">
+
+                <ul id="formRules">
+                    <li id="tittle">Consideraciones:</li>
+                    <li>Los nombres y/o apellidos deben comenzar con una Mayuscula, puedes ingresar hasta 2 nombres y 2 apellidos.</li>
+                    <li>El nombre de usuario solo puede contener letras y numeros.</li>
+                    <li>La contraseña debe contener obligatoriamente los siguientes caracteres:
+                        <ul>
+                            <li>Al menos un numero</li>
+                            <li>Al menos una letra mayuscula</li>
+                            <li>Al menos una letra minuscula</li>
+                            <li>Al menos un carácter especial (!, @, #, $, %, ^, &, *).</li>
+                            <li>Debe tener al menos 8 caracteres de longitud.</li>
+                        </ul>
+                    </li>
+
+                </ul>
             </div>
             <br>
             <div class="row">

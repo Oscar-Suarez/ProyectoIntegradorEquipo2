@@ -1072,7 +1072,7 @@ div.spacer {
         top: -75px;
         height: 150px;
         width: 150px;
-        background-image: url("../img/wallePhoto.jpg");
+        background-image: url("../img/unknown_user.png");
         background-size: 100%;
         border-radius: 100px;
         box-shadow: var(--shadow-before);
@@ -1280,6 +1280,26 @@ div.spacer {
      form#UserData label {
         color: var(--font-color);
     }
+    ul#formRules{
+        color: #0000009a;
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    li#tittle{
+        list-style-type: none;
+        position: relative;
+        right: 20px;
+        font-size: 14px;
+    }
+
+    ul#formRules > *{
+        margin-left: 30px;
+    }
+
+
+
+
 
 }
 
@@ -1508,17 +1528,18 @@ div.spacer {
 
 .texto {
     font-size: 1.2rem;
+    font-family: 'Montserrat';
+    font-weight: 500;
     color: #f0f0f0;
-    text-justify: inter-character;
+    text-justify: inter-word;
 }
 
 
 .contenedorMision {
-    background-image: url(/assets/img/amigosCervezaPrincipal.jpg);
+    background-image: url(https://i.postimg.cc/bJ7V0mkY/amigos-Cerveza-Principal.jpg);
     background-size: cover;
-    background-repeat: no-repeat;
     background-blend-mode:multiply;
-    background-color: rgba(0, 0, 0, 30%);
+    background-color: rgba(0, 0, 0, 0.75);
     padding: 50px;
     border-radius: 20px;
     margin-top: 20px;
@@ -1530,11 +1551,11 @@ div.spacer {
 }
 
 .contenedorVision {
-    background-image: url(/assets/img/amigosCervezaSecundario.jpg);
+    background-image: url(https://i.postimg.cc/gJjQYwqR/catedral-Morelia.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode:multiply;
-    background-color: rgba(0, 0, 0, 30%);
+    background-color: rgba(0, 0, 0, 75%);
     padding: 50px;
     border-radius: 20px;
     margin-top: 50px;
@@ -1546,11 +1567,11 @@ div.spacer {
 }
 
 .contenedorCompromiso {
-    background-image: url(/assets/img/catedralMorelia.jpg);
+    background-image: url(https://i.postimg.cc/gJjQYwqR/catedral-Morelia.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-blend-mode:multiply;
-    background-color: rgba(0, 0, 0, 30%);
+    background-color: rgba(0, 0, 0, 75%);
     padding: 50px;
     border-radius: 20px;
     margin-top: 50px;
