@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.31, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: balxhebd
+-- Host: localhost    Database: balxhebd
 -- ------------------------------------------------------
 -- Server version	8.0.31
 
@@ -23,16 +23,16 @@ DROP TABLE IF EXISTS `usuario`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `usuario` (
-  `idUsuario` int NOT NULL AUTO_INCREMENT,
-  `nombreYApellido` varchar(100) NOT NULL,
-  `nombreUsuario` varchar(50) NOT NULL,
-  `fechaNacimiento` date NOT NULL,
+  `id_usuario` int NOT NULL AUTO_INCREMENT,
+  `nombreyapellido` varchar(100) NOT NULL,
+  `nombre_usuario` varchar(50) NOT NULL,
+  `fecha_nacimiento` int NOT NULL,
   `telefono` int NOT NULL,
   `correo` varchar(60) NOT NULL,
   `contrasenia` varchar(30) NOT NULL,
-  PRIMARY KEY (`idUsuario`),
-  UNIQUE KEY `idUsuario_UNIQUE` (`idUsuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`id_usuario`),
+  UNIQUE KEY `idUsuario_UNIQUE` (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -41,6 +41,7 @@ CREATE TABLE `usuario` (
 
 LOCK TABLES `usuario` WRITE;
 /*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` VALUES (1,'Juan Hernandez','JNPZ',20121212,33333333,'OOO@mail.com','123qwerrt'),(2,'David Salguero','DS',19971212,33333333,'DS@mail.com','qwert1234'),(3,'Clariza Correa','CC',19971212,33333333,'CC@mail.com','trewq4321'),(4,'Hector Garcés','PelónGarcés69',20121212,33333333,'pp@mail.com','123qwerrt');
 /*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -53,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-12-20 16:15:45
+-- Dump completed on 2022-12-22 20:10:36

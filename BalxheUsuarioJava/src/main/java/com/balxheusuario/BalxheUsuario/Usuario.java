@@ -94,9 +94,5 @@ public class Usuario {
 		return "Usuario [idUsuario=" + idUsuario + ", nombreYApellido=" + nombreYApellido + ", nombreUsuario="
 				+ nombreUsuario + ", fechaNacimiento=" + fechaNacimiento + ", telefono=" + telefono + ", correo="
 				+ correo + ", contrasenia=" + contrasenia + "]";
-	}
-	
-	
-	
-	
+	}	
 }
