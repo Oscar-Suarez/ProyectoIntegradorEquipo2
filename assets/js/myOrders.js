@@ -87,7 +87,7 @@ fetch("http://localhost:8080/balxhe/Cervezas/")
                                  <img src=${datos[i].productos[j].img}>
                              </div>
      
-                             <div class="Tittle h6">
+                             <div class="Tittle h5">
                                  ${datos[i].productos[j].nombre}
                              </div>
                              <div class="BuyAgain">
@@ -95,7 +95,7 @@ fetch("http://localhost:8080/balxhe/Cervezas/")
                                      Agregar al Carrito
                                  </button>
                              </div>
-                             <div class="Info" style="max-height: 100px; overflow: hidden;">
+                             <div class="Info" style="max-height: 86px; overflow: hidden; font-size: 14px;">
                                  ${datos[i].productos[j].descripcion}
                              </div>
      

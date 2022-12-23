@@ -210,7 +210,7 @@ function runNavBar(element){ //Función para agregar la NavBar a todos los archi
                         </span>
                         Account</a>
                 </li>
-                <li><a href="./user-page.html" class="beforeLogIn">
+                <li><a href="./my-orders.html" class="beforeLogIn">
                     <span class="material-symbols-outlined">
                         package
                     </span>
