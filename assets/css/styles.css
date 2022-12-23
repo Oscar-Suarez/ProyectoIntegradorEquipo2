@@ -1279,6 +1279,22 @@ div.spacer {
      form#UserData label {
         color: var(--font-color);
     }
+    ul#formRules{
+        color: #0000009a;
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    li#tittle{
+        list-style-type: none;
+        position: relative;
+        right: 20px;
+        font-size: 14px;
+    }
+
+    ul#formRules > *{
+        margin-left: 30px;
+    }
 
 }
 

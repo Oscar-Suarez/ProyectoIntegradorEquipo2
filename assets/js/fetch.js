@@ -1,37 +1,35 @@
 document.getElementById("boton-guardar").addEventListener("click", function(){
 
-let nombreUsuario = document.getElementById("name");
-let apellidoUsuario = document.getElementById("lastName");
-let direccionUsuario = document.getElementById("username");
-let telefonoUsuario = document.getElementById("email");
-let fechaUsuario = document.getElementById("start");
+let nombreUsuario = document.getElementById("name"); //nombreApellido
+let direccionUsuario = document.getElementById("username"); //Usuario
+let fechaUsuario = document.getElementById("start");//fecha de nacimiento
+let telefonoUsuario = document.getElementById("tel")//Telefono
+let emailUsuario = document.getElementById("email"); //correo
+let contra1Usuario = document.getElementById("password1"); //contrasenia
 
-let contra1Usuario = document.getElementById("password1");
-let contra2Usuario = document.getElementById("password2");
+
 
 console.log(nombreUsuario.value);
-console.log(apellidoUsuario.value);
 console.log(direccionUsuario.value);
+console.log(fechaUsuario.value);
 console.log(telefonoUsuario.value);
 console.log(emailUsuario.value);
-console.log(fechaUsuario.value);
 console.log(contra1Usuario.value);
-console.log(contra2Usuario.value);
+
+
 
 
 const datos = {
-    nombre:nombreUsuario.value,
-    apellido:apellidoUsuario.value,
-    direccion:direccionUsuario.value,
-    telefono:telefonoUsuario.value,
-    email:emailUsuario.value,
-    fecha:fechaUsuario.value,
-    contra1:contra1Usuario.value,
-    contra2:contra2Usuario.value
+    nombreYApellido:nombreUsuario.value, //Nombre y apellido
+    nombreUsuario:direccionUsuario.value, //usuario
+    fecha:fechaUsuario.value, //fechaNacimiento
+    telefono:telefonoUsuario.value, // telefono
+    email:emailUsuario.value, //Email
+    contra1:contra1Usuario.value //Contrasenia
 }
 
 //falta direccion del back end
-fetch("http://localhost:8080/sistemaContable/personas/", { //la direccion que creamos en JAVA
+fetch("http://localhost:8080//api/usuarios/", { //la direccion que creamos en JAVA
 method: "POST", //el metodo que voy a utilizar porque estoy enviando informacion al servidor
 headers:{
     "Content-Type": "application/json" //Le decimos que el tipo de contenido que usamos es JSON
